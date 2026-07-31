@@ -1,0 +1,8 @@
+{
+  "n_datasets": 15,
+  "n_algorithms": 7,
+  "friedman_chi2": 10.038882138517621,
+  "iman_davenport_F": 1.75765864332604,
+  "p_value": 0.12302412935170298,
+  "nemenyi_cd": 2.326202570714769
+}

@@ -1,0 +1,1415 @@
+{
+  "description": "Datasets bundled for the MBC EI submission package. Raw data preserve source tables when available; processed data are the matrices used by the paper scripts after encoding, scaling, PCA and/or sampling.",
+  "entries": [
+    {
+      "file": "data/raw/main_benchmark/iris_seed3.csv",
+      "n_samples": 150,
+      "n_features": 4,
+      "dataset": "iris",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/iris_seed3_processed.csv",
+      "n_samples": 150,
+      "n_features": 4,
+      "dataset": "iris",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/wine_seed3.csv",
+      "n_samples": 178,
+      "n_features": 13,
+      "dataset": "wine",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/wine_seed3_processed.csv",
+      "n_samples": 178,
+      "n_features": 10,
+      "dataset": "wine",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/breast_cancer_seed3.csv",
+      "n_samples": 569,
+      "n_features": 30,
+      "dataset": "breast_cancer",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/breast_cancer_seed3_processed.csv",
+      "n_samples": 569,
+      "n_features": 10,
+      "dataset": "breast_cancer",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/digits_0_4_seed3.csv",
+      "n_samples": 901,
+      "n_features": 64,
+      "dataset": "digits_0_4",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/digits_0_4_seed3_processed.csv",
+      "n_samples": 901,
+      "n_features": 10,
+      "dataset": "digits_0_4",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/two_moons_seed3.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "two_moons",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/two_moons_seed3_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "two_moons",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/circles_seed3.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "circles",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/circles_seed3_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "circles",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_moons_seed3.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_moons",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_moons_seed3_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_moons",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_circles_seed3.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_circles",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_circles_seed3_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_circles",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/varied_density_seed3.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "varied_density",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/varied_density_seed3_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "varied_density",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/anisotropic_blobs_seed3.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "anisotropic_blobs",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/anisotropic_blobs_seed3_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "anisotropic_blobs",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/ecoli_seed3.csv",
+      "n_samples": 336,
+      "n_features": 7,
+      "dataset": "ecoli",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/ecoli_seed3_processed.csv",
+      "n_samples": 336,
+      "n_features": 7,
+      "dataset": "ecoli",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/glass_seed3.csv",
+      "n_samples": 214,
+      "n_features": 9,
+      "dataset": "glass",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/glass_seed3_processed.csv",
+      "n_samples": 214,
+      "n_features": 9,
+      "dataset": "glass",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/vehicle_seed3.csv",
+      "n_samples": 846,
+      "n_features": 18,
+      "dataset": "vehicle",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/vehicle_seed3_processed.csv",
+      "n_samples": 846,
+      "n_features": 10,
+      "dataset": "vehicle",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/cmc_seed3.csv",
+      "n_samples": 1473,
+      "n_features": 9,
+      "dataset": "cmc",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/cmc_seed3_processed.csv",
+      "n_samples": 1473,
+      "n_features": 9,
+      "dataset": "cmc",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/wdbc_seed3.csv",
+      "n_samples": 569,
+      "n_features": 30,
+      "dataset": "wdbc",
+      "seed": 3,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/wdbc_seed3_processed.csv",
+      "n_samples": 569,
+      "n_features": 10,
+      "dataset": "wdbc",
+      "seed": 3,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/iris_seed7.csv",
+      "n_samples": 150,
+      "n_features": 4,
+      "dataset": "iris",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/iris_seed7_processed.csv",
+      "n_samples": 150,
+      "n_features": 4,
+      "dataset": "iris",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/wine_seed7.csv",
+      "n_samples": 178,
+      "n_features": 13,
+      "dataset": "wine",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/wine_seed7_processed.csv",
+      "n_samples": 178,
+      "n_features": 10,
+      "dataset": "wine",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/breast_cancer_seed7.csv",
+      "n_samples": 569,
+      "n_features": 30,
+      "dataset": "breast_cancer",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/breast_cancer_seed7_processed.csv",
+      "n_samples": 569,
+      "n_features": 10,
+      "dataset": "breast_cancer",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/digits_0_4_seed7.csv",
+      "n_samples": 901,
+      "n_features": 64,
+      "dataset": "digits_0_4",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/digits_0_4_seed7_processed.csv",
+      "n_samples": 901,
+      "n_features": 10,
+      "dataset": "digits_0_4",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/two_moons_seed7.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "two_moons",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/two_moons_seed7_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "two_moons",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/circles_seed7.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "circles",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/circles_seed7_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "circles",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_moons_seed7.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_moons",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_moons_seed7_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_moons",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_circles_seed7.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_circles",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_circles_seed7_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_circles",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/varied_density_seed7.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "varied_density",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/varied_density_seed7_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "varied_density",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/anisotropic_blobs_seed7.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "anisotropic_blobs",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/anisotropic_blobs_seed7_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "anisotropic_blobs",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/ecoli_seed7.csv",
+      "n_samples": 336,
+      "n_features": 7,
+      "dataset": "ecoli",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/ecoli_seed7_processed.csv",
+      "n_samples": 336,
+      "n_features": 7,
+      "dataset": "ecoli",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/glass_seed7.csv",
+      "n_samples": 214,
+      "n_features": 9,
+      "dataset": "glass",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/glass_seed7_processed.csv",
+      "n_samples": 214,
+      "n_features": 9,
+      "dataset": "glass",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/vehicle_seed7.csv",
+      "n_samples": 846,
+      "n_features": 18,
+      "dataset": "vehicle",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/vehicle_seed7_processed.csv",
+      "n_samples": 846,
+      "n_features": 10,
+      "dataset": "vehicle",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/cmc_seed7.csv",
+      "n_samples": 1473,
+      "n_features": 9,
+      "dataset": "cmc",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/cmc_seed7_processed.csv",
+      "n_samples": 1473,
+      "n_features": 9,
+      "dataset": "cmc",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/wdbc_seed7.csv",
+      "n_samples": 569,
+      "n_features": 30,
+      "dataset": "wdbc",
+      "seed": 7,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/wdbc_seed7_processed.csv",
+      "n_samples": 569,
+      "n_features": 10,
+      "dataset": "wdbc",
+      "seed": 7,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/iris_seed11.csv",
+      "n_samples": 150,
+      "n_features": 4,
+      "dataset": "iris",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/iris_seed11_processed.csv",
+      "n_samples": 150,
+      "n_features": 4,
+      "dataset": "iris",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/wine_seed11.csv",
+      "n_samples": 178,
+      "n_features": 13,
+      "dataset": "wine",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/wine_seed11_processed.csv",
+      "n_samples": 178,
+      "n_features": 10,
+      "dataset": "wine",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/breast_cancer_seed11.csv",
+      "n_samples": 569,
+      "n_features": 30,
+      "dataset": "breast_cancer",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/breast_cancer_seed11_processed.csv",
+      "n_samples": 569,
+      "n_features": 10,
+      "dataset": "breast_cancer",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/digits_0_4_seed11.csv",
+      "n_samples": 901,
+      "n_features": 64,
+      "dataset": "digits_0_4",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/digits_0_4_seed11_processed.csv",
+      "n_samples": 901,
+      "n_features": 10,
+      "dataset": "digits_0_4",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/two_moons_seed11.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "two_moons",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/two_moons_seed11_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "two_moons",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/circles_seed11.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "circles",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/circles_seed11_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "circles",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_moons_seed11.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_moons",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_moons_seed11_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_moons",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_circles_seed11.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_circles",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_circles_seed11_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_circles",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/varied_density_seed11.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "varied_density",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/varied_density_seed11_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "varied_density",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/anisotropic_blobs_seed11.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "anisotropic_blobs",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/anisotropic_blobs_seed11_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "anisotropic_blobs",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/ecoli_seed11.csv",
+      "n_samples": 336,
+      "n_features": 7,
+      "dataset": "ecoli",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/ecoli_seed11_processed.csv",
+      "n_samples": 336,
+      "n_features": 7,
+      "dataset": "ecoli",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/glass_seed11.csv",
+      "n_samples": 214,
+      "n_features": 9,
+      "dataset": "glass",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/glass_seed11_processed.csv",
+      "n_samples": 214,
+      "n_features": 9,
+      "dataset": "glass",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/vehicle_seed11.csv",
+      "n_samples": 846,
+      "n_features": 18,
+      "dataset": "vehicle",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/vehicle_seed11_processed.csv",
+      "n_samples": 846,
+      "n_features": 10,
+      "dataset": "vehicle",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/cmc_seed11.csv",
+      "n_samples": 1473,
+      "n_features": 9,
+      "dataset": "cmc",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/cmc_seed11_processed.csv",
+      "n_samples": 1473,
+      "n_features": 9,
+      "dataset": "cmc",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/wdbc_seed11.csv",
+      "n_samples": 569,
+      "n_features": 30,
+      "dataset": "wdbc",
+      "seed": 11,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/wdbc_seed11_processed.csv",
+      "n_samples": 569,
+      "n_features": 10,
+      "dataset": "wdbc",
+      "seed": 11,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/iris_seed19.csv",
+      "n_samples": 150,
+      "n_features": 4,
+      "dataset": "iris",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/iris_seed19_processed.csv",
+      "n_samples": 150,
+      "n_features": 4,
+      "dataset": "iris",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/wine_seed19.csv",
+      "n_samples": 178,
+      "n_features": 13,
+      "dataset": "wine",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/wine_seed19_processed.csv",
+      "n_samples": 178,
+      "n_features": 10,
+      "dataset": "wine",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/breast_cancer_seed19.csv",
+      "n_samples": 569,
+      "n_features": 30,
+      "dataset": "breast_cancer",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/breast_cancer_seed19_processed.csv",
+      "n_samples": 569,
+      "n_features": 10,
+      "dataset": "breast_cancer",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/digits_0_4_seed19.csv",
+      "n_samples": 901,
+      "n_features": 64,
+      "dataset": "digits_0_4",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/digits_0_4_seed19_processed.csv",
+      "n_samples": 901,
+      "n_features": 10,
+      "dataset": "digits_0_4",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/two_moons_seed19.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "two_moons",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/two_moons_seed19_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "two_moons",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/circles_seed19.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "circles",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/circles_seed19_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "circles",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_moons_seed19.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_moons",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_moons_seed19_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_moons",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_circles_seed19.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_circles",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_circles_seed19_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_circles",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/varied_density_seed19.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "varied_density",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/varied_density_seed19_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "varied_density",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/anisotropic_blobs_seed19.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "anisotropic_blobs",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/anisotropic_blobs_seed19_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "anisotropic_blobs",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/ecoli_seed19.csv",
+      "n_samples": 336,
+      "n_features": 7,
+      "dataset": "ecoli",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/ecoli_seed19_processed.csv",
+      "n_samples": 336,
+      "n_features": 7,
+      "dataset": "ecoli",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/glass_seed19.csv",
+      "n_samples": 214,
+      "n_features": 9,
+      "dataset": "glass",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/glass_seed19_processed.csv",
+      "n_samples": 214,
+      "n_features": 9,
+      "dataset": "glass",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/vehicle_seed19.csv",
+      "n_samples": 846,
+      "n_features": 18,
+      "dataset": "vehicle",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/vehicle_seed19_processed.csv",
+      "n_samples": 846,
+      "n_features": 10,
+      "dataset": "vehicle",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/cmc_seed19.csv",
+      "n_samples": 1473,
+      "n_features": 9,
+      "dataset": "cmc",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/cmc_seed19_processed.csv",
+      "n_samples": 1473,
+      "n_features": 9,
+      "dataset": "cmc",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/wdbc_seed19.csv",
+      "n_samples": 569,
+      "n_features": 30,
+      "dataset": "wdbc",
+      "seed": 19,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/wdbc_seed19_processed.csv",
+      "n_samples": 569,
+      "n_features": 10,
+      "dataset": "wdbc",
+      "seed": 19,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/iris_seed23.csv",
+      "n_samples": 150,
+      "n_features": 4,
+      "dataset": "iris",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/iris_seed23_processed.csv",
+      "n_samples": 150,
+      "n_features": 4,
+      "dataset": "iris",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/wine_seed23.csv",
+      "n_samples": 178,
+      "n_features": 13,
+      "dataset": "wine",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/wine_seed23_processed.csv",
+      "n_samples": 178,
+      "n_features": 10,
+      "dataset": "wine",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/breast_cancer_seed23.csv",
+      "n_samples": 569,
+      "n_features": 30,
+      "dataset": "breast_cancer",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/breast_cancer_seed23_processed.csv",
+      "n_samples": 569,
+      "n_features": 10,
+      "dataset": "breast_cancer",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/digits_0_4_seed23.csv",
+      "n_samples": 901,
+      "n_features": 64,
+      "dataset": "digits_0_4",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/digits_0_4_seed23_processed.csv",
+      "n_samples": 901,
+      "n_features": 10,
+      "dataset": "digits_0_4",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/two_moons_seed23.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "two_moons",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/two_moons_seed23_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "two_moons",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/circles_seed23.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "circles",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/circles_seed23_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "circles",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_moons_seed23.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_moons",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_moons_seed23_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_moons",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_circles_seed23.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_circles",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_circles_seed23_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "noisy_circles",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/varied_density_seed23.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "varied_density",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/varied_density_seed23_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "varied_density",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/anisotropic_blobs_seed23.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "anisotropic_blobs",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/anisotropic_blobs_seed23_processed.csv",
+      "n_samples": 500,
+      "n_features": 2,
+      "dataset": "anisotropic_blobs",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/ecoli_seed23.csv",
+      "n_samples": 336,
+      "n_features": 7,
+      "dataset": "ecoli",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/ecoli_seed23_processed.csv",
+      "n_samples": 336,
+      "n_features": 7,
+      "dataset": "ecoli",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/glass_seed23.csv",
+      "n_samples": 214,
+      "n_features": 9,
+      "dataset": "glass",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/glass_seed23_processed.csv",
+      "n_samples": 214,
+      "n_features": 9,
+      "dataset": "glass",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/vehicle_seed23.csv",
+      "n_samples": 846,
+      "n_features": 18,
+      "dataset": "vehicle",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/vehicle_seed23_processed.csv",
+      "n_samples": 846,
+      "n_features": 10,
+      "dataset": "vehicle",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/cmc_seed23.csv",
+      "n_samples": 1473,
+      "n_features": 9,
+      "dataset": "cmc",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/cmc_seed23_processed.csv",
+      "n_samples": 1473,
+      "n_features": 9,
+      "dataset": "cmc",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/main_benchmark/wdbc_seed23.csv",
+      "n_samples": 569,
+      "n_features": 30,
+      "dataset": "wdbc",
+      "seed": 23,
+      "type": "main_raw"
+    },
+    {
+      "file": "data/processed/main_benchmark/wdbc_seed23_processed.csv",
+      "n_samples": 569,
+      "n_features": 10,
+      "dataset": "wdbc",
+      "seed": 23,
+      "type": "main_processed"
+    },
+    {
+      "file": "data/raw/openml/openml_40966_MiceProtein.csv",
+      "openml_id": 40966,
+      "openml_name": "MiceProtein",
+      "used_as": [
+        "MiceProtein_8class",
+        "MiceProtein_behavior",
+        "MiceProtein_genotype",
+        "MiceProtein_treatment"
+      ],
+      "n_samples": 1080,
+      "n_columns_including_target": 78,
+      "type": "openml_raw"
+    },
+    {
+      "file": "data/raw/openml/openml_45090_Leukemia.csv",
+      "openml_id": 45090,
+      "openml_name": "Leukemia",
+      "used_as": [
+        "Leukemia_2class"
+      ],
+      "n_samples": 72,
+      "n_columns_including_target": 7130,
+      "type": "openml_raw"
+    },
+    {
+      "file": "data/raw/openml/openml_45091_Leukemia-3.csv",
+      "openml_id": 45091,
+      "openml_name": "Leukemia-3",
+      "used_as": [
+        "Leukemia_3class"
+      ],
+      "n_samples": 72,
+      "n_columns_including_target": 7130,
+      "type": "openml_raw"
+    },
+    {
+      "file": "data/raw/openml/openml_45094_Lymphoma-3.csv",
+      "openml_id": 45094,
+      "openml_name": "Lymphoma-3",
+      "used_as": [
+        "Lymphoma_3class"
+      ],
+      "n_samples": 66,
+      "n_columns_including_target": 4027,
+      "type": "openml_raw"
+    },
+    {
+      "file": "data/raw/openml/openml_31_credit-g.csv",
+      "openml_id": 31,
+      "openml_name": "credit-g",
+      "used_as": [
+        "credit-g"
+      ],
+      "n_samples": 1000,
+      "n_columns_including_target": 21,
+      "type": "openml_raw"
+    },
+    {
+      "file": "data/raw/openml/openml_37_diabetes.csv",
+      "openml_id": 37,
+      "openml_name": "diabetes",
+      "used_as": [
+        "diabetes"
+      ],
+      "n_samples": 768,
+      "n_columns_including_target": 9,
+      "type": "openml_raw"
+    },
+    {
+      "file": "data/raw/openml/openml_54_vehicle.csv",
+      "openml_id": 54,
+      "openml_name": "vehicle",
+      "used_as": [
+        "vehicle"
+      ],
+      "n_samples": 846,
+      "n_columns_including_target": 19,
+      "type": "openml_raw"
+    },
+    {
+      "file": "data/raw/openml/openml_59_ionosphere.csv",
+      "openml_id": 59,
+      "openml_name": "ionosphere",
+      "used_as": [
+        "ionosphere"
+      ],
+      "n_samples": 351,
+      "n_columns_including_target": 35,
+      "type": "openml_raw"
+    },
+    {
+      "file": "data/raw/openml/openml_1464_blood-transfusion-service-center.csv",
+      "openml_id": 1464,
+      "openml_name": "blood-transfusion-service-center",
+      "used_as": [
+        "blood-transfusion"
+      ],
+      "n_samples": 748,
+      "n_columns_including_target": 5,
+      "type": "openml_raw"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/MiceProtein_8class_processed.csv",
+      "n_samples": 1080,
+      "n_features": 12,
+      "dataset": "MiceProtein_8class",
+      "family": "biological_protein_expression",
+      "openml_id": 40966,
+      "type": "external_processed"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/MiceProtein_genotype_processed.csv",
+      "n_samples": 1080,
+      "n_features": 12,
+      "dataset": "MiceProtein_genotype",
+      "family": "biological_factor",
+      "openml_id": 40966,
+      "type": "external_processed"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/MiceProtein_behavior_processed.csv",
+      "n_samples": 1080,
+      "n_features": 12,
+      "dataset": "MiceProtein_behavior",
+      "family": "biological_factor",
+      "openml_id": 40966,
+      "type": "external_processed"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/MiceProtein_treatment_processed.csv",
+      "n_samples": 1080,
+      "n_features": 12,
+      "dataset": "MiceProtein_treatment",
+      "family": "biological_factor",
+      "openml_id": 40966,
+      "type": "external_processed"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/Leukemia_2class_processed.csv",
+      "n_samples": 72,
+      "n_features": 12,
+      "dataset": "Leukemia_2class",
+      "family": "biological_gene_expression",
+      "openml_id": 45090,
+      "type": "external_processed"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/Leukemia_3class_processed.csv",
+      "n_samples": 72,
+      "n_features": 12,
+      "dataset": "Leukemia_3class",
+      "family": "biological_gene_expression",
+      "openml_id": 45091,
+      "type": "external_processed"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/Lymphoma_3class_processed.csv",
+      "n_samples": 66,
+      "n_features": 12,
+      "dataset": "Lymphoma_3class",
+      "family": "biological_gene_expression",
+      "openml_id": 45094,
+      "type": "external_processed"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/credit-g_processed.csv",
+      "n_samples": 1000,
+      "n_features": 12,
+      "dataset": "credit-g",
+      "family": "real_mixed_tabular",
+      "openml_id": 31,
+      "type": "external_processed"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/diabetes_processed.csv",
+      "n_samples": 768,
+      "n_features": 8,
+      "dataset": "diabetes",
+      "family": "real_medical_tabular",
+      "openml_id": 37,
+      "type": "external_processed"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/vehicle_processed.csv",
+      "n_samples": 846,
+      "n_features": 12,
+      "dataset": "vehicle",
+      "family": "real_shape_features",
+      "openml_id": 54,
+      "type": "external_processed"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/ionosphere_processed.csv",
+      "n_samples": 351,
+      "n_features": 12,
+      "dataset": "ionosphere",
+      "family": "real_signal_features",
+      "openml_id": 59,
+      "type": "external_processed"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/blood-transfusion_processed.csv",
+      "n_samples": 748,
+      "n_features": 4,
+      "dataset": "blood-transfusion",
+      "family": "real_medical_tabular",
+      "openml_id": 1464,
+      "type": "external_processed"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+scope,dataset,source,type,n_original,n_used,d_original,d_used,K,class_counts
+primary,anisotropic_blobs,scikit-learn make_blobs plus linear transform,compact Gaussian,500,500,2,2,4,125/125/125/125
+primary,breast_cancer,scikit-learn load_breast_cancer,real tabular,569,569,30,10,2,212/357
+primary,circles,scikit-learn make_circles,synthetic non-convex,500,500,2,2,2,250/250
+primary,cmc,OpenML cmc,real tabular,1473,1473,9,9,3,629/333/511
+primary,digits_0_4,"scikit-learn load_digits, labels 0--4",image-feature,901,901,64,10,5,178/182/177/183/181
+primary,ecoli,OpenML ecoli,real tabular,336,336,7,7,8,143/77/2/2/35/20/5/52
+primary,glass,OpenML glass,real tabular,214,214,9,9,6,70/76/13/29/9/17
+primary,iris,scikit-learn load_iris,real low-dimensional,150,150,4,4,3,50/50/50
+primary,noisy_circles,scikit-learn make_circles,synthetic non-convex,500,500,2,2,2,250/250
+primary,noisy_moons,scikit-learn make_moons,synthetic non-convex,500,500,2,2,2,250/250
+primary,two_moons,scikit-learn make_moons,synthetic non-convex,500,500,2,2,2,250/250
+primary,varied_density,project generator make_varied_density,density-varying,500,500,2,2,3,140/220/140
+primary,vehicle,OpenML vehicle,real tabular,846,846,18,10,4,218/212/217/199
+primary,wdbc,OpenML wdbc,real tabular,569,569,30,10,2,357/212
+primary,wine,scikit-learn load_wine,real tabular,178,178,13,10,3,59/71/48
+external,MiceProtein_8class,OpenML 40966,gene-expression/protein,1080,1080,see source,12,8,150/135/150/135/135/105/135/135
+external,Leukemia_2class,OpenML 45090,gene-expression,72,72,see source,12,2,47/25
+external,Leukemia_3class,OpenML 45091,gene-expression,72,72,see source,12,3,25/38/9
+external,Lymphoma_3class,OpenML 45094,gene-expression,66,66,see source,12,3,11/46/9
+external,Lung_5class,OpenML 45093,gene-expression,203,203,see source,12,5,139/17/6/21/20
+external,Asian Games Village YYC200,bundled ENVI BSQ scene,hyperspectral,40000,40000,64,10,unlabeled; illustrative K=6,not available

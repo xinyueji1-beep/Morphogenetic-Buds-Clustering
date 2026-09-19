@@ -1,0 +1,16 @@
+seed,supplied_k,clusters_without_refinement,clusters_after_compact_refinement
+3,2,2,2
+3,4,2,4
+3,6,3,6
+7,2,2,2
+7,4,3,4
+7,6,3,6
+11,2,2,2
+11,4,3,4
+11,6,4,6
+19,2,2,2
+19,4,2,4
+19,6,3,6
+23,2,2,2
+23,4,2,4
+23,6,2,6

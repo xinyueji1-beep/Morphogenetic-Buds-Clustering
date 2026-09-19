@@ -1,4 +1,4 @@
-﻿parameter,value,mean,std
+parameter,value,mean,std
 compact_refinement_restarts,1.0,0.8402350519464443,0.2248091279953221
 compact_refinement_restarts,3.0,0.8894473610944845,0.14367160469415893
 compact_refinement_restarts,5.0,0.9028139188466713,0.12409186322112693

@@ -92,6 +92,11 @@ class MorphogeneticBudsClustering:
         self.labels_: np.ndarray | None = None
         self.sigma_: float | None = None
         self.history_: list[np.ndarray] = []
+        # Diagnostic fields make the refinement choice auditable without
+        # changing the selected partition.
+        self.refinement_winner_: str | None = None
+        self.refinement_candidate_types_: list[str] = []
+        self.refinement_inertias_: list[float] = []
 
     def fit(self, x: np.ndarray) -> "MorphogeneticBudsClustering":
         rng = np.random.default_rng(self.random_state)
@@ -345,19 +350,26 @@ class MorphogeneticBudsClustering:
         target = int(self.target_clusters)
         seed_centers = self._compact_seed_centers(x, target, rng)
         candidates = [seed_centers]
+        candidate_types = ["MBC-derived"]
         for _ in range(max(0, self.compact_refinement_restarts - 1)):
             candidates.append(kmeanspp_centers(x, target, rng))
+            candidate_types.append("k-means++")
 
         best_labels = None
         best_centers = None
         best_inertia = np.inf
-        for centers in candidates:
+        inertias = []
+        for candidate_type, centers in zip(candidate_types, candidates):
             labels, centers, inertia = refine_centers(x, centers, self.compact_refinement_steps)
+            inertias.append(float(inertia))
             if inertia < best_inertia:
                 best_labels = labels
                 best_centers = centers
                 best_inertia = inertia
+                self.refinement_winner_ = candidate_type
 
+        self.refinement_candidate_types_ = candidate_types
+        self.refinement_inertias_ = inertias
         self.labels_ = compress_labels(best_labels)
         self.organ_centers_ = best_centers
 

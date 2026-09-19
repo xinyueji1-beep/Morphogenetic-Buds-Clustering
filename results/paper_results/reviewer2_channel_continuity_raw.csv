@@ -1,0 +1,11 @@
+dataset,seed,variant,accepted_edge,accepted_without_channel,organs,note
+populated_channel,3,channel_predicate,1,1,3,same candidate buds; only channel threshold changes
+empty_channel,3,channel_predicate,0,1,4,same candidate buds; only channel threshold changes
+populated_channel,7,channel_predicate,1,1,3,same candidate buds; only channel threshold changes
+empty_channel,7,channel_predicate,0,1,4,same candidate buds; only channel threshold changes
+populated_channel,11,channel_predicate,1,1,3,same candidate buds; only channel threshold changes
+empty_channel,11,channel_predicate,0,1,4,same candidate buds; only channel threshold changes
+populated_channel,19,channel_predicate,1,1,3,same candidate buds; only channel threshold changes
+empty_channel,19,channel_predicate,0,1,4,same candidate buds; only channel threshold changes
+populated_channel,23,channel_predicate,1,1,3,same candidate buds; only channel threshold changes
+empty_channel,23,channel_predicate,0,1,4,same candidate buds; only channel threshold changes

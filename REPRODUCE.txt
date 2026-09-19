@@ -1,0 +1,33 @@
+MBC final independent reproduction folder
+
+No separate Supplementary Materials file is needed. The revised manuscript
+contains the supporting dataset inventories, diagnostics, and limitations, and
+this folder contains the code, data, raw tables, figures, and LaTeX sources
+needed to regenerate them.
+
+1. Open PowerShell in this folder.
+2. Activate the environment and install dependencies:
+     conda activate hologpu
+     python -m pip install -r requirements.txt
+3. Reproduce all manuscript and Reviewer 1--3 analyses:
+     python code/reproduce_all.py
+4. To inspect the execution order without running analyses:
+     python code/reproduce_all.py --list
+5. Compile the tracked manuscript and all three response letters:
+     pdflatex MBC_CMC_revision_tracked.tex
+     pdflatex MBC_CMC_revision_tracked.tex
+     pdflatex Response_to_Reviewer_1.tex
+     pdflatex Response_to_Reviewer_1.tex
+     pdflatex Response_to_Reviewer_2.tex
+     pdflatex Response_to_Reviewer_2.tex
+     pdflatex Response_to_Reviewer_3.tex
+     pdflatex Response_to_Reviewer_3.tex
+
+The folder includes two readable Python source files: code/mbc.py contains the
+method implementation and code/reproduce_all.py contains all paper and
+reviewer analyses. It also includes the original journal class
+Definitions/tsp.cls, cached datasets, generated figures, and saved result
+tables. The Lung-5 case is used only in the external inventory. If its
+processed file has been removed, the unified script falls back to the matching
+raw OpenML cache; if neither is available, it skips that inventory row with a
+warning rather than failing the full run.

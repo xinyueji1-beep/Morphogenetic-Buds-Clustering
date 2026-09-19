@@ -5,3 +5,10 @@ __pycache__/
 .idea/
 data/sklearn_cache/
 data/sklearn_cache_local/
+
+.venv*/
+MBC_CMC_revision_tracked.tex
+MBC_CMC_revision_tracked.pdf
+Response_to_Reviewer_*.tex
+Response_to_Reviewer_*.pdf
+Definitions/

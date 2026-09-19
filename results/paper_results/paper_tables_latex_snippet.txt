@@ -1,0 +1,79 @@
+% mean_ari
+\begin{tabular}{lrr}
+\toprule
+ & mean & std \\
+algorithm &  &  \\
+\midrule
+Spectral & 0.6323 & 0.3206 \\
+MBC & 0.5969 & 0.3668 \\
+Agglomerative & 0.4747 & 0.3228 \\
+KMeans & 0.4527 & 0.3200 \\
+CompactRefineOnly & 0.4491 & 0.3170 \\
+GMM & 0.4390 & 0.3750 \\
+DBSCAN & 0.4210 & 0.2453 \\
+\bottomrule
+\end{tabular}
+
+
+% family_ari
+\begin{tabular}{lrrrrrrr}
+\toprule
+algorithm & Agglomerative & CompactRefineOnly & DBSCAN & GMM & KMeans & MBC & Spectral \\
+family &  &  &  &  &  &  &  \\
+\midrule
+nonconvex & 0.2960 & 0.2367 & 0.5897 & 0.2444 & 0.2369 & 0.9200 & 0.8790 \\
+real_image_features & 0.8325 & 0.7489 & 0.6499 & 0.7018 & 0.7795 & 0.7335 & 0.8838 \\
+real_low_dim & 0.6153 & 0.6201 & 0.4833 & 0.9039 & 0.6201 & 0.6161 & 0.5821 \\
+real_tabular & 0.4185 & 0.4253 & 0.2186 & 0.2979 & 0.4281 & 0.4313 & 0.4440 \\
+synthetic_density & 0.6005 & 0.4879 & 0.5144 & 0.9550 & 0.4905 & 0.0151 & 0.5120 \\
+synthetic_gaussian & 0.9587 & 0.9560 & 0.7788 & 0.9618 & 0.9560 & 0.8895 & 0.8830 \\
+\bottomrule
+\end{tabular}
+
+
+% average_ranks
+\begin{tabular}{lrr}
+\toprule
+ & mean & std \\
+algorithm &  &  \\
+\midrule
+Spectral & 3.0000 & 2.1297 \\
+MBC & 3.5667 & 2.0777 \\
+Agglomerative & 3.6000 & 1.7238 \\
+KMeans & 4.1667 & 1.3973 \\
+GMM & 4.2000 & 2.4842 \\
+DBSCAN & 4.6000 & 2.1974 \\
+CompactRefineOnly & 4.8667 & 1.3819 \\
+\bottomrule
+\end{tabular}
+
+
+% wilcoxon
+\begin{tabular}{lrrrrr}
+\toprule
+comparison & mbc_mean & other_mean & mean_difference & wilcoxon_statistic & p_value \\
+\midrule
+MBC vs KMeans & 0.5969 & 0.4527 & 0.1442 & 25.0000 & 0.4769 \\
+MBC vs GMM & 0.5969 & 0.4390 & 0.1579 & 42.0000 & 0.3065 \\
+MBC vs Agglomerative & 0.5969 & 0.4747 & 0.1222 & 48.0000 & 0.4954 \\
+MBC vs Spectral & 0.5969 & 0.6323 & -0.0354 & 39.0000 & 0.6495 \\
+MBC vs DBSCAN & 0.5969 & 0.4210 & 0.1759 & 23.0000 & 0.0356 \\
+MBC vs CompactRefineOnly & 0.5969 & 0.4491 & 0.1478 & 35.0000 & 0.2718 \\
+\bottomrule
+\end{tabular}
+
+
+% friedman_ranks
+\begin{tabular}{lrrr}
+\toprule
+algorithm & average_rank & diff_from_best & significant_vs_best \\
+\midrule
+Spectral & 3.0000 & 0.0000 & False \\
+MBC & 3.5667 & 0.5667 & False \\
+Agglomerative & 3.6000 & 0.6000 & False \\
+KMeans & 4.1667 & 1.1667 & False \\
+GMM & 4.2000 & 1.2000 & False \\
+DBSCAN & 4.6000 & 1.6000 & False \\
+CompactRefineOnly & 4.8667 & 1.8667 & False \\
+\bottomrule
+\end{tabular}

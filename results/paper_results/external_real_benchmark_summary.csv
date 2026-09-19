@@ -1,4 +1,4 @@
-﻿dataset,family,algorithm,mean,std
+dataset,family,algorithm,mean,std
 Leukemia_2class,biological_gene_expression,Agglomerative,0.2684803702502005,0.0
 Leukemia_2class,biological_gene_expression,CompactRefineOnly,0.25682201017235395,0.01634637812511642
 Leukemia_2class,biological_gene_expression,MBC,0.25682201017235395,0.01634637812511642
@@ -53,7 +53,7 @@ blood-transfusion,real_medical_tabular,CompactRefineOnly,0.04955281118704844,0.0
 blood-transfusion,real_medical_tabular,MBC,0.04800126911870522,0.0
 blood-transfusion,real_medical_tabular,Agglomerative,0.028561438859974173,0.0
 blood-transfusion,real_medical_tabular,Spectral,0.0008436356985681452,0.0
-blood-transfusion,real_medical_tabular,DBSCAN,-0.014618461941419183,0.0
+blood-transfusion,real_medical_tabular,DBSCAN,-0.01570543287007331,0.0
 blood-transfusion,real_medical_tabular,GMM,-0.04796406935603337,0.0
 credit-g,real_mixed_tabular,Agglomerative,0.05665152541826534,0.0
 credit-g,real_mixed_tabular,DBSCAN,0.03649622843152881,0.0

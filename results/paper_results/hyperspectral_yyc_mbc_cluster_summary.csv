@@ -1,4 +1,4 @@
-﻿cluster,pixel_count,area_pct,mean_intensity,peak_band,peak_wavelength_nm,peak_value
+cluster,pixel_count,area_pct,mean_intensity,peak_band,peak_wavelength_nm,peak_value
 C1,13681,34.2025,582.6568603515625,18,669.599976,1404.2718505859375
 C2,11676,29.189999999999998,705.1947021484375,18,669.599976,1642.2142333984375
 C3,4499,11.2475,834.5775146484375,24,739.200012,1917.355224609375

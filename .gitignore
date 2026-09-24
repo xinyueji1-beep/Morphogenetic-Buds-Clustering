@@ -12,3 +12,17 @@ MBC_CMC_revision_tracked.pdf
 Response_to_Reviewer_*.tex
 Response_to_Reviewer_*.pdf
 Definitions/
+
+# 论文与投稿材料
+*.tex
+*.pdf
+Definitions/
+attrib.sty
+Cover_Letter.*
+MBC_CMC_revision_*
+Response_to_Reviewer_*
+
+# 论文专用输出
+figures/paper_figures/
+figures/paper_png_previews/
+results/paper_results/

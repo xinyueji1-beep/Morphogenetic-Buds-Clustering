@@ -1204,7 +1204,7 @@
     {
       "file": "data/raw/openml/openml_40966_MiceProtein.csv",
       "openml_id": 40966,
-      "openml_name": "MiceProtein",
+      "openml_name": "openml_40966_MiceProtein",
       "used_as": [
         "MiceProtein_8class",
         "MiceProtein_behavior",
@@ -1218,7 +1218,7 @@
     {
       "file": "data/raw/openml/openml_45090_Leukemia.csv",
       "openml_id": 45090,
-      "openml_name": "Leukemia",
+      "openml_name": "openml_45090_Leukemia",
       "used_as": [
         "Leukemia_2class"
       ],
@@ -1229,7 +1229,7 @@
     {
       "file": "data/raw/openml/openml_45091_Leukemia-3.csv",
       "openml_id": 45091,
-      "openml_name": "Leukemia-3",
+      "openml_name": "openml_45091_Leukemia-3",
       "used_as": [
         "Leukemia_3class"
       ],
@@ -1240,7 +1240,7 @@
     {
       "file": "data/raw/openml/openml_45094_Lymphoma-3.csv",
       "openml_id": 45094,
-      "openml_name": "Lymphoma-3",
+      "openml_name": "openml_45094_Lymphoma-3",
       "used_as": [
         "Lymphoma_3class"
       ],
@@ -1251,7 +1251,7 @@
     {
       "file": "data/raw/openml/openml_31_credit-g.csv",
       "openml_id": 31,
-      "openml_name": "credit-g",
+      "openml_name": "openml_31_credit-g",
       "used_as": [
         "credit-g"
       ],
@@ -1262,7 +1262,7 @@
     {
       "file": "data/raw/openml/openml_37_diabetes.csv",
       "openml_id": 37,
-      "openml_name": "diabetes",
+      "openml_name": "openml_37_diabetes",
       "used_as": [
         "diabetes"
       ],
@@ -1273,7 +1273,7 @@
     {
       "file": "data/raw/openml/openml_54_vehicle.csv",
       "openml_id": 54,
-      "openml_name": "vehicle",
+      "openml_name": "openml_54_vehicle",
       "used_as": [
         "vehicle"
       ],
@@ -1282,20 +1282,9 @@
       "type": "openml_raw"
     },
     {
-      "file": "data/raw/openml/openml_59_ionosphere.csv",
-      "openml_id": 59,
-      "openml_name": "ionosphere",
-      "used_as": [
-        "ionosphere"
-      ],
-      "n_samples": 351,
-      "n_columns_including_target": 35,
-      "type": "openml_raw"
-    },
-    {
       "file": "data/raw/openml/openml_1464_blood-transfusion-service-center.csv",
       "openml_id": 1464,
-      "openml_name": "blood-transfusion-service-center",
+      "openml_name": "openml_1464_blood-transfusion-service-center",
       "used_as": [
         "blood-transfusion"
       ],
@@ -1391,15 +1380,6 @@
       "dataset": "vehicle",
       "family": "real_shape_features",
       "openml_id": 54,
-      "type": "external_processed"
-    },
-    {
-      "file": "data/processed/external_real_benchmark/ionosphere_processed.csv",
-      "n_samples": 351,
-      "n_features": 12,
-      "dataset": "ionosphere",
-      "family": "real_signal_features",
-      "openml_id": 59,
       "type": "external_processed"
     },
     {

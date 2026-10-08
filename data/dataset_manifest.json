@@ -226,22 +226,6 @@
       "type": "main_processed"
     },
     {
-      "file": "data/raw/main_benchmark/wdbc_seed3.csv",
-      "n_samples": 569,
-      "n_features": 30,
-      "dataset": "wdbc",
-      "seed": 3,
-      "type": "main_raw"
-    },
-    {
-      "file": "data/processed/main_benchmark/wdbc_seed3_processed.csv",
-      "n_samples": 569,
-      "n_features": 10,
-      "dataset": "wdbc",
-      "seed": 3,
-      "type": "main_processed"
-    },
-    {
       "file": "data/raw/main_benchmark/iris_seed7.csv",
       "n_samples": 150,
       "n_features": 4,
@@ -462,22 +446,6 @@
       "n_samples": 1473,
       "n_features": 9,
       "dataset": "cmc",
-      "seed": 7,
-      "type": "main_processed"
-    },
-    {
-      "file": "data/raw/main_benchmark/wdbc_seed7.csv",
-      "n_samples": 569,
-      "n_features": 30,
-      "dataset": "wdbc",
-      "seed": 7,
-      "type": "main_raw"
-    },
-    {
-      "file": "data/processed/main_benchmark/wdbc_seed7_processed.csv",
-      "n_samples": 569,
-      "n_features": 10,
-      "dataset": "wdbc",
       "seed": 7,
       "type": "main_processed"
     },
@@ -706,22 +674,6 @@
       "type": "main_processed"
     },
     {
-      "file": "data/raw/main_benchmark/wdbc_seed11.csv",
-      "n_samples": 569,
-      "n_features": 30,
-      "dataset": "wdbc",
-      "seed": 11,
-      "type": "main_raw"
-    },
-    {
-      "file": "data/processed/main_benchmark/wdbc_seed11_processed.csv",
-      "n_samples": 569,
-      "n_features": 10,
-      "dataset": "wdbc",
-      "seed": 11,
-      "type": "main_processed"
-    },
-    {
       "file": "data/raw/main_benchmark/iris_seed19.csv",
       "n_samples": 150,
       "n_features": 4,
@@ -942,22 +894,6 @@
       "n_samples": 1473,
       "n_features": 9,
       "dataset": "cmc",
-      "seed": 19,
-      "type": "main_processed"
-    },
-    {
-      "file": "data/raw/main_benchmark/wdbc_seed19.csv",
-      "n_samples": 569,
-      "n_features": 30,
-      "dataset": "wdbc",
-      "seed": 19,
-      "type": "main_raw"
-    },
-    {
-      "file": "data/processed/main_benchmark/wdbc_seed19_processed.csv",
-      "n_samples": 569,
-      "n_features": 10,
-      "dataset": "wdbc",
       "seed": 19,
       "type": "main_processed"
     },
@@ -1186,22 +1122,6 @@
       "type": "main_processed"
     },
     {
-      "file": "data/raw/main_benchmark/wdbc_seed23.csv",
-      "n_samples": 569,
-      "n_features": 30,
-      "dataset": "wdbc",
-      "seed": 23,
-      "type": "main_raw"
-    },
-    {
-      "file": "data/processed/main_benchmark/wdbc_seed23_processed.csv",
-      "n_samples": 569,
-      "n_features": 10,
-      "dataset": "wdbc",
-      "seed": 23,
-      "type": "main_processed"
-    },
-    {
       "file": "data/raw/openml/openml_40966_MiceProtein.csv",
       "openml_id": 40966,
       "openml_name": "openml_40966_MiceProtein",
@@ -1249,6 +1169,17 @@
       "type": "openml_raw"
     },
     {
+      "file": "data/raw/openml/openml_45093_Lung.csv",
+      "openml_id": 45093,
+      "openml_name": "openml_45093_Lung",
+      "used_as": [
+        "Lung_5class"
+      ],
+      "n_samples": 130,
+      "n_columns_including_target": 12601,
+      "type": "openml_raw"
+    },
+    {
       "file": "data/raw/openml/openml_31_credit-g.csv",
       "openml_id": 31,
       "openml_name": "openml_31_credit-g",
@@ -1279,6 +1210,17 @@
       ],
       "n_samples": 846,
       "n_columns_including_target": 19,
+      "type": "openml_raw"
+    },
+    {
+      "file": "data/raw/openml/openml_59_ionosphere.csv",
+      "openml_id": 59,
+      "openml_name": "openml_59_ionosphere",
+      "used_as": [
+        "ionosphere"
+      ],
+      "n_samples": 351,
+      "n_columns_including_target": 35,
       "type": "openml_raw"
     },
     {
@@ -1356,6 +1298,15 @@
       "type": "external_processed"
     },
     {
+      "file": "data/processed/external_real_benchmark/Lung_5class_processed.csv",
+      "n_samples": 203,
+      "n_features": 12,
+      "dataset": "Lung_5class",
+      "family": "biological_gene_expression",
+      "openml_id": 45093,
+      "type": "external_processed"
+    },
+    {
       "file": "data/processed/external_real_benchmark/credit-g_processed.csv",
       "n_samples": 1000,
       "n_features": 12,
@@ -1380,6 +1331,15 @@
       "dataset": "vehicle",
       "family": "real_shape_features",
       "openml_id": 54,
+      "type": "external_processed"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/ionosphere_processed.csv",
+      "n_samples": 351,
+      "n_features": 12,
+      "dataset": "ionosphere",
+      "family": "real_signal_features",
+      "openml_id": 59,
       "type": "external_processed"
     },
     {

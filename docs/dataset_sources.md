@@ -6,7 +6,7 @@ ground-truth labels are used only for evaluation, never to fit the clustering mo
 
 ## Primary Benchmark
 
-The primary benchmark contains 15 datasets or generators, evaluated with seeds `3, 7, 11, 19, 23`.
+The primary benchmark contains 14 datasets or generators, evaluated with seeds `3, 7, 11, 19, 23`.
 
 | Dataset | Source or generator | Bundled location |
 |---|---|---|
@@ -24,7 +24,6 @@ The primary benchmark contains 15 datasets or generators, evaluated with seeds `
 | Glass | OpenML cached table | `data/raw/main_benchmark/glass_seed*.csv` |
 | Vehicle | OpenML cached table | `data/raw/main_benchmark/vehicle_seed*.csv` |
 | CMC | OpenML cached table | `data/raw/main_benchmark/cmc_seed*.csv` |
-| WDBC | OpenML cached table | `data/raw/main_benchmark/wdbc_seed*.csv` |
 
 The corresponding matrices after standardization and optional PCA are stored under
 `data/processed/main_benchmark/`.

@@ -97,6 +97,7 @@ class MorphogeneticBudsClustering:
         self.refinement_winner_: str | None = None
         self.refinement_candidate_types_: list[str] = []
         self.refinement_inertias_: list[float] = []
+        self.refinement_inertia_trajectories_: dict[str, list[float]] = {}
 
     def fit(self, x: np.ndarray) -> "MorphogeneticBudsClustering":
         rng = np.random.default_rng(self.random_state)
@@ -155,6 +156,11 @@ class MorphogeneticBudsClustering:
 
             self.history_.append(state.centers.copy())
 
+        if len(state.centers) == 0:
+            state.centers = x[rng.choice(n, size=1)].copy()
+            state.strengths = np.ones(1)
+            state.velocities = np.zeros((1, d))
+
         self.centers_ = state.centers
         self.bud_labels_ = squared_distances(x, self.centers_).argmin(axis=1)
         self.bud_to_organ_ = self._form_organs(x, state, sigma)
@@ -193,6 +199,8 @@ class MorphogeneticBudsClustering:
         sigma: float,
         rng: np.random.Generator,
     ) -> BudState:
+        if len(state.centers) == 0:
+            return state
         dist2 = squared_distances(x, state.centers)
         stress = dist2.min(axis=1)
         threshold = np.quantile(stress, self.birth_quantile)
@@ -212,6 +220,8 @@ class MorphogeneticBudsClustering:
 
     def _merge_overgrown_buds(self, state: BudState, radius: float) -> BudState:
         centers = state.centers
+        if len(centers) == 0:
+            return state
         strengths = state.strengths
         velocities = state.velocities
         alive = np.ones(len(centers), dtype=bool)
@@ -359,8 +369,14 @@ class MorphogeneticBudsClustering:
         best_centers = None
         best_inertia = np.inf
         inertias = []
+        trajectories: dict[str, list[float]] = {}
         for candidate_type, centers in zip(candidate_types, candidates):
-            labels, centers, inertia = refine_centers(x, centers, self.compact_refinement_steps)
+            history: list[float] = []
+            labels, centers, inertia = refine_centers(
+                x, centers, self.compact_refinement_steps, inertia_history=history
+            )
+            history.append(float(inertia))
+            trajectories[candidate_type + f"#{len(inertias)}"] = history
             inertias.append(float(inertia))
             if inertia < best_inertia:
                 best_labels = labels
@@ -370,6 +386,7 @@ class MorphogeneticBudsClustering:
 
         self.refinement_candidate_types_ = candidate_types
         self.refinement_inertias_ = inertias
+        self.refinement_inertia_trajectories_ = trajectories
         self.labels_ = compress_labels(best_labels)
         self.organ_centers_ = best_centers
 
@@ -434,11 +451,16 @@ def refine_centers(
     x: np.ndarray,
     centers: np.ndarray,
     steps: int,
+    inertia_history: list[float] | None = None,
 ) -> tuple[np.ndarray, np.ndarray, float]:
     centers = centers.copy()
     labels = squared_distances(x, centers).argmin(axis=1)
     for _ in range(max(1, steps)):
         labels = squared_distances(x, centers).argmin(axis=1)
+        if inertia_history is not None:
+            inertia_history.append(
+                float(((x - centers[labels]) ** 2).sum())
+            )
         new_centers = centers.copy()
         for j in range(len(centers)):
             pts = x[labels == j]

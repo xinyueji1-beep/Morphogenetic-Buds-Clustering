@@ -89,7 +89,7 @@ def main_benchmark_make_datasets(seed: int) -> list[main_benchmark_DatasetSpec]:
     noisy_circles_x, noisy_circles_y = main_benchmark_make_circles(n_samples=500, factor=0.5, noise=0.06, random_state=seed + 1)
     mask = digits.target < 5
     specs = [main_benchmark_DatasetSpec('iris', iris.data, iris.target, 'real_low_dim'), main_benchmark_DatasetSpec('wine', wine.data, wine.target, 'real_tabular'), main_benchmark_DatasetSpec('breast_cancer', cancer.data, cancer.target, 'real_tabular'), main_benchmark_DatasetSpec('digits_0_4', digits.data[mask], digits.target[mask], 'real_image_features'), main_benchmark_DatasetSpec('two_moons', moons_x, moons_y, 'nonconvex'), main_benchmark_DatasetSpec('circles', circles_x, circles_y, 'nonconvex'), main_benchmark_DatasetSpec('noisy_moons', noisy_moons_x, noisy_moons_y, 'nonconvex'), main_benchmark_DatasetSpec('noisy_circles', noisy_circles_x, noisy_circles_y, 'nonconvex'), main_benchmark_DatasetSpec('varied_density', varied_x, varied_y, 'synthetic_density'), main_benchmark_DatasetSpec('anisotropic_blobs', blobs_x @ main_benchmark_np.array([[0.6, -0.7], [1.4, 0.35]]), blobs_y, 'synthetic_gaussian')]
-    openml_candidates = [('ecoli', 'real_tabular'), ('glass', 'real_tabular'), ('vehicle', 'real_tabular'), ('cmc', 'real_tabular'), ('wdbc', 'real_tabular')]
+    openml_candidates = [('ecoli', 'real_tabular'), ('glass', 'real_tabular'), ('vehicle', 'real_tabular'), ('cmc', 'real_tabular')]
     for name, family in openml_candidates:
         loaded = main_benchmark_load_openml_clean(name, seed=seed)
         if loaded is None:
@@ -273,8 +273,12 @@ def main_benchmark_wilcoxon_against_mbc(df: main_benchmark_pd.DataFrame) -> main
         common = mbc.index.intersection(other.index)
         if len(common) < 2:
             continue
+        differences = mbc.loc[common].to_numpy(dtype=float) - other.loc[common].to_numpy(dtype=float)
+        n_nonzero = int((differences != 0).sum())
+        if n_nonzero < 1:
+            continue
         statistic, p_value = main_benchmark_wilcoxon(mbc.loc[common], other.loc[common], zero_method='wilcox')
-        rows.append({'comparison': f'MBC vs {algorithm}', 'mbc_mean': float(mbc.loc[common].mean()), 'other_mean': float(other.loc[common].mean()), 'mean_difference': float((mbc.loc[common] - other.loc[common]).mean()), 'wilcoxon_statistic': float(statistic), 'p_value': float(p_value)})
+        rows.append({'comparison': f'MBC vs {algorithm}', 'n_datasets': int(len(common)), 'n_nonzero_differences': n_nonzero, 'mbc_mean': float(mbc.loc[common].mean()), 'other_mean': float(other.loc[common].mean()), 'mean_difference': float(differences.mean()), 'wilcoxon_statistic': float(statistic), 'p_value': float(p_value)})
     return main_benchmark_pd.DataFrame(rows)
 main_benchmark_NEMENYI_Q = {2: 1.96, 3: 2.344, 4: 2.569, 5: 2.728, 6: 2.85, 7: 2.949, 8: 3.031, 9: 3.102, 10: 3.164, 11: 3.219, 12: 3.268, 13: 3.312, 14: 3.352, 15: 3.389, 16: 3.422, 17: 3.452, 18: 3.48, 19: 3.506, 20: 3.53}
 
@@ -347,7 +351,7 @@ def main_benchmark_save_latex_tables(out_dir: main_benchmark_Path, mean_ari: mai
 def main_benchmark_save_figures(out_dir: main_benchmark_Path, benchmark_df: main_benchmark_pd.DataFrame, ablation_df: main_benchmark_pd.DataFrame) -> None:
     main_benchmark_plt.rcParams.update({'font.size': 10, 'axes.titlesize': 13, 'axes.labelsize': 11, 'legend.fontsize': 9, 'figure.dpi': 140})
     dataset_pivot = benchmark_df.groupby(['dataset', 'algorithm'])['ari'].mean().reset_index().pivot(index='dataset', columns='algorithm', values='ari')
-    dataset_pivot = dataset_pivot.reindex(['two_moons', 'circles', 'noisy_moons', 'noisy_circles', 'anisotropic_blobs', 'varied_density', 'iris', 'wine', 'breast_cancer', 'digits_0_4', 'ecoli', 'glass', 'vehicle', 'cmc', 'wdbc'])
+    dataset_pivot = dataset_pivot.reindex(['two_moons', 'circles', 'noisy_moons', 'noisy_circles', 'anisotropic_blobs', 'varied_density', 'iris', 'wine', 'breast_cancer', 'digits_0_4', 'ecoli', 'glass', 'vehicle', 'cmc'])
     ax = dataset_pivot.plot(kind='bar', figsize=(12, 5.8), width=0.82)
     ax.set_title('Adjusted Rand Index Across Benchmark Datasets')
     ax.set_ylabel('ARI')
@@ -434,7 +438,7 @@ external_PACKAGE_ROOT = external_Path(__file__).resolve().parents[1]
 external_LOCAL_EXTERNAL_DATA = external_PACKAGE_ROOT / 'data' / 'processed' / 'external_real_benchmark'
 external_SEEDS = [3, 7, 11]
 external_ALGORITHMS = ['MBC', 'KMeans', 'GMM', 'Agglomerative', 'Spectral', 'DBSCAN', 'CompactRefineOnly']
-external_OPENML_DATASETS = [{'name': 'MiceProtein_8class', 'id': 40966, 'family': 'biological_protein_expression', 'target_mode': 'class'}, {'name': 'MiceProtein_genotype', 'id': 40966, 'family': 'biological_factor', 'target_mode': 'prefix'}, {'name': 'MiceProtein_behavior', 'id': 40966, 'family': 'biological_factor', 'target_mode': 'middle'}, {'name': 'MiceProtein_treatment', 'id': 40966, 'family': 'biological_factor', 'target_mode': 'suffix'}, {'name': 'Leukemia_2class', 'id': 45090, 'family': 'biological_gene_expression'}, {'name': 'Leukemia_3class', 'id': 45091, 'family': 'biological_gene_expression'}, {'name': 'Lymphoma_3class', 'id': 45094, 'family': 'biological_gene_expression'}, {'name': 'credit-g', 'id': 31, 'family': 'real_mixed_tabular'}, {'name': 'diabetes', 'id': 37, 'family': 'real_medical_tabular'}, {'name': 'vehicle', 'id': 54, 'family': 'real_shape_features'}, {'name': 'ionosphere', 'id': 59, 'family': 'real_signal_features'}, {'name': 'blood-transfusion', 'id': 1464, 'family': 'real_medical_tabular'}]
+external_OPENML_DATASETS = [{'name': 'MiceProtein_8class', 'id': 40966, 'family': 'biological_protein_expression', 'target_mode': 'class'}, {'name': 'MiceProtein_genotype', 'id': 40966, 'family': 'biological_factor', 'target_mode': 'prefix'}, {'name': 'MiceProtein_behavior', 'id': 40966, 'family': 'biological_factor', 'target_mode': 'middle'}, {'name': 'MiceProtein_treatment', 'id': 40966, 'family': 'biological_factor', 'target_mode': 'suffix'}, {'name': 'Leukemia_2class', 'id': 45090, 'family': 'biological_gene_expression'}, {'name': 'Leukemia_3class', 'id': 45091, 'family': 'biological_gene_expression'}, {'name': 'Lymphoma_3class', 'id': 45094, 'family': 'biological_gene_expression'}, {'name': 'Lung_5class', 'id': 45093, 'family': 'biological_gene_expression'}, {'name': 'credit-g', 'id': 31, 'family': 'real_mixed_tabular'}, {'name': 'diabetes', 'id': 37, 'family': 'real_medical_tabular'}, {'name': 'vehicle', 'id': 54, 'family': 'real_shape_features'}, {'name': 'ionosphere', 'id': 59, 'family': 'real_signal_features'}, {'name': 'blood-transfusion', 'id': 1464, 'family': 'real_medical_tabular'}]
 
 def external_load_openml_dataset(spec: dict) -> tuple[str, str, external_np.ndarray, external_np.ndarray]:
     local_path = external_LOCAL_EXTERNAL_DATA / f"{spec['name']}_processed.csv"
@@ -817,9 +821,11 @@ from pathlib import Path as hyperspectral_Path
 import matplotlib.pyplot as hyperspectral_plt
 import numpy as hyperspectral_np
 import pandas as hyperspectral_pd
-from sklearn.cluster import KMeans as hyperspectral_KMeans
+from sklearn.cluster import AgglomerativeClustering as hyperspectral_AgglomerativeClustering, DBSCAN as hyperspectral_DBSCAN, HDBSCAN as hyperspectral_HDBSCAN, KMeans as hyperspectral_KMeans, SpectralClustering as hyperspectral_SpectralClustering
 from sklearn.decomposition import PCA as hyperspectral_PCA
 from sklearn.metrics import calinski_harabasz_score as hyperspectral_calinski_harabasz_score, davies_bouldin_score as hyperspectral_davies_bouldin_score, silhouette_score as hyperspectral_silhouette_score
+from sklearn.mixture import GaussianMixture as hyperspectral_GaussianMixture
+from sklearn.neighbors import NearestNeighbors as hyperspectral_NearestNeighbors
 from sklearn.preprocessing import StandardScaler as hyperspectral_StandardScaler
 from mbc import MorphogeneticBudsClustering as hyperspectral_MorphogeneticBudsClustering
 hyperspectral_PACKAGE_ROOT = hyperspectral_Path(__file__).resolve().parents[1]
@@ -925,6 +931,26 @@ def hyperspectral_run_mbc(x: hyperspectral_np.ndarray, k: int, seed: int) -> tup
     labels = model.fit_predict(x)
     return (labels, hyperspectral_time.perf_counter() - start)
 
+def hyperspectral_run_baseline(name: str, x: hyperspectral_np.ndarray, k: int, seed: int) -> tuple[hyperspectral_np.ndarray, float]:
+    start = hyperspectral_time.perf_counter()
+    if name == 'GMM':
+        labels = hyperspectral_GaussianMixture(n_components=k, random_state=seed).fit_predict(x)
+    elif name == 'Agglomerative':
+        connectivity = hyperspectral_NearestNeighbors(n_neighbors=min(10, len(x) - 1)).fit(x).kneighbors_graph(mode='connectivity')
+        labels = hyperspectral_AgglomerativeClustering(n_clusters=k, connectivity=connectivity).fit_predict(x)
+    elif name == 'Spectral':
+        labels = hyperspectral_SpectralClustering(n_clusters=k, affinity='nearest_neighbors', n_neighbors=12, random_state=seed).fit_predict(x)
+    elif name == 'DBSCAN':
+        query = min(6, len(x))
+        distances = hyperspectral_NearestNeighbors(n_neighbors=query).fit(x).kneighbors(x)[0][:, -1]
+        eps = float(hyperspectral_np.quantile(distances, 0.72))
+        labels = hyperspectral_DBSCAN(eps=eps, min_samples=max(4, x.shape[1] + 1)).fit_predict(x)
+    elif name == 'HDBSCAN':
+        labels = hyperspectral_HDBSCAN(min_cluster_size=max(10, len(x) // 40), min_samples=5).fit_predict(x)
+    else:
+        raise ValueError(name)
+    return (labels, hyperspectral_time.perf_counter() - start)
+
 def hyperspectral_cluster_summary(cube: hyperspectral_np.ndarray, labels: hyperspectral_np.ndarray, wavelengths: hyperspectral_np.ndarray) -> hyperspectral_pd.DataFrame:
     flat_cube = hyperspectral_np.moveaxis(cube, 0, -1).reshape(-1, cube.shape[0])
     rows = []
@@ -1007,6 +1033,9 @@ def hyperspectral_main() -> None:
             labels = hyperspectral_remap_by_mean_signal(labels, mean_signal)
             rows.append(hyperspectral_evaluate('MBC', feature_name, x, labels, elapsed, lines, samples))
             labels_for_fig['MBC'] = labels
+            for baseline in ['GMM', 'Agglomerative', 'Spectral', 'DBSCAN', 'HDBSCAN']:
+                base_labels, base_elapsed = hyperspectral_run_baseline(baseline, x, k, seed)
+                rows.append(hyperspectral_evaluate(baseline, feature_name, x, base_labels, base_elapsed, lines, samples))
     metrics = hyperspectral_pd.DataFrame(rows)
     metrics.to_csv(hyperspectral_RESULTS_DIR / 'hyperspectral_yyc_mbc_metrics.csv', index=False, encoding='utf-8-sig')
     mbc_labels = labels_for_fig['MBC']
@@ -1240,14 +1269,14 @@ def advanced_figures_family_heatmap():
 def advanced_figures_dataset_heatmap():
     df = advanced_figures_pd.read_csv(advanced_figures_RESULTS / 'paper_benchmark_summary.csv')
     pivot = df.pivot_table(index='dataset', columns='algorithm', values='ari_mean', aggfunc='mean')
-    order = ['two_moons', 'circles', 'noisy_moons', 'noisy_circles', 'anisotropic_blobs', 'varied_density', 'iris', 'wine', 'breast_cancer', 'digits_0_4', 'ecoli', 'glass', 'vehicle', 'cmc', 'wdbc']
+    order = ['two_moons', 'circles', 'noisy_moons', 'noisy_circles', 'anisotropic_blobs', 'varied_density', 'iris', 'wine', 'breast_cancer', 'digits_0_4', 'ecoli', 'glass', 'vehicle', 'cmc']
     pivot = pivot.loc[[x for x in order if x in pivot.index]]
     advanced_figures__heatmap(pivot, 'Dataset-level ARI matrix', 'paper_fig_dataset_heatmap.png', cmap='mako' if 'mako' in advanced_figures_plt.colormaps() else 'PuBuGn', highlight=('MBC',), figsize=(9.6, 5.5))
 
 def advanced_figures_dataset_dot_profile():
     df = advanced_figures_pd.read_csv(advanced_figures_RESULTS / 'paper_benchmark_summary.csv')
     pivot = df.pivot_table(index='dataset', columns='algorithm', values='ari_mean', aggfunc='mean')
-    order = ['two_moons', 'circles', 'noisy_moons', 'noisy_circles', 'anisotropic_blobs', 'varied_density', 'iris', 'wine', 'breast_cancer', 'digits_0_4', 'ecoli', 'glass', 'vehicle', 'cmc', 'wdbc']
+    order = ['two_moons', 'circles', 'noisy_moons', 'noisy_circles', 'anisotropic_blobs', 'varied_density', 'iris', 'wine', 'breast_cancer', 'digits_0_4', 'ecoli', 'glass', 'vehicle', 'cmc']
     pivot = advanced_figures__ordered_columns(pivot.loc[[x for x in order if x in pivot.index]])
     fig, ax = advanced_figures_plt.subplots(figsize=(9.6, 6.0))
     y = advanced_figures_np.arange(len(pivot))
@@ -1278,7 +1307,7 @@ def advanced_figures_dataset_dot_profile():
 def advanced_figures_ablation_lollipop():
     df = advanced_figures_pd.read_csv(advanced_figures_RESULTS / 'paper_ablation_summary.csv')
     agg = df.groupby('algorithm', as_index=False).agg(mean=('ari_mean', 'mean'), std=('ari_mean', 'std')).sort_values('mean', ascending=True)
-    labels = {'MBC': 'Full MBC', 'MBC_no_capillary': 'No capillary', 'MBC_no_polarity': 'No polarity', 'MBC_no_compact': 'No steady refinement', 'MBC_micro_only': 'Micro-buds only'}
+    labels = {'MBC': 'Full MBC', 'MBC_no_capillary': 'No channel continuity', 'MBC_no_polarity': 'No polarity', 'MBC_no_compact': 'No steady refinement', 'MBC_micro_only': 'Micro-buds only'}
     agg['label'] = agg['algorithm'].map(labels).fillna(agg['algorithm'])
     colors = ['#557c9e' if a != 'MBC' else '#d95f02' for a in agg['algorithm']]
     fig, ax = advanced_figures_plt.subplots(figsize=(8.6, 4.8))
@@ -1996,8 +2025,8 @@ def reviewer3_run_geometry_panel() -> None:
         x, y = reviewer3_load_main(name, 3, processed=False)
         ax.scatter(x[:, 0], x[:, 1], c=y, cmap='tab10', s=7, linewidths=0, alpha=0.85)
         ax.set_title(title)
-        ax.set_xticks([])
-        ax.set_yticks([])
+        ax.set_xlabel('feature 1')
+        ax.set_ylabel('feature 2')
         ax.set_aspect('equal', adjustable='box')
         rows.append({'dataset': name, 'seed': 3, 'n_samples': len(x), 'n_features': x.shape[1], 'classes': len(reviewer3_np.unique(y)), 'label_counts': reviewer3_label_profile(y)})
     fig.suptitle('Primary Synthetic Generator Geometry', y=0.98)
@@ -2059,17 +2088,18 @@ def reviewer3_run_bud_dynamics() -> None:
 
 def reviewer3_run_trigger_sensitivity() -> None:
     rows = []
-    datasets = ['two_moons', 'circles', 'iris', 'wine', 'digits_0_4']
+    datasets = ['two_moons', 'circles', 'iris', 'ecoli', 'glass', 'wine', 'digits_0_4']
     for dataset in datasets:
         for seed in reviewer3_SEEDS:
             x, y = reviewer3_load_main(dataset, seed, processed=True)
-            for trigger in [2, 3, 4]:
+            for trigger in [2, 3, 4, 7, 9, 10, 11]:
                 model = reviewer3_mbc(x, len(reviewer3_np.unique(y)), seed, compact_refinement_dim_threshold=trigger)
                 labels = model.fit_predict(x)
                 rows.append({'dataset': dataset, 'seed': seed, 'dimension': x.shape[1], 'trigger': trigger, 'refinement_active': int(x.shape[1] >= trigger), 'ari': reviewer3_adjusted_rand_score(y, labels)})
     raw = reviewer3_pd.DataFrame(rows)
     raw.to_csv(reviewer3_RESULTS / 'reviewer3_trigger_sensitivity_raw.csv', index=False)
     raw.groupby('trigger')['ari'].agg(['mean', 'std', 'min', 'max']).to_csv(reviewer3_RESULTS / 'reviewer3_trigger_sensitivity_summary.csv')
+    raw.groupby(['dataset', 'trigger'])['ari'].mean().reset_index().pivot(index='dataset', columns='trigger', values='ari').to_csv(reviewer3_RESULTS / 'reviewer3_trigger_sensitivity_by_dataset.csv')
 
 def reviewer3_timed_fit(x: reviewer3_np.ndarray, k: int, seed: int, **overrides) -> float:
     start = reviewer3_time.perf_counter()
@@ -2077,70 +2107,121 @@ def reviewer3_timed_fit(x: reviewer3_np.ndarray, k: int, seed: int, **overrides)
     return reviewer3_time.perf_counter() - start
 
 def reviewer3_make_runtime_data(n: int, k: int, d: int, seed: int) -> reviewer3_np.ndarray:
-    centers = reviewer3_np.zeros((k, d))
-    centers[:, :min(k, d)] = reviewer3_np.eye(k, d)[:, :min(k, d)] * 5.0
+    rng = reviewer3_np.random.default_rng(seed + 9000)
+    directions = rng.normal(0.0, 1.0, size=(k, d))
+    directions /= reviewer3_np.linalg.norm(directions, axis=1, keepdims=True) + 1e-12
+    centers = 5.0 * directions
     x, _ = reviewer3_make_blobs(n_samples=n, centers=centers, cluster_std=1.0, random_state=seed)
     return reviewer3_StandardScaler().fit_transform(x)
 
 def reviewer3_run_independent_runtime() -> None:
     rows = []
     settings = []
-    settings.extend((('n', value, value, 4, 10) for value in [500, 1000, 2000]))
-    settings.extend((('k', value, 900, value, 10) for value in [2, 4, 8, 16]))
-    settings.extend((('d', value, 900, 4, value) for value in [2, 10, 30, 60]))
+    settings.extend((('n', value, value, 4, 10) for value in [500, 1000, 2000, 4000, 8000, 16000]))
+    settings.extend((('k', value, 2000, value, 10) for value in [2, 4, 8, 16, 32, 64]))
+    settings.extend((('d', value, 2000, 4, value) for value in [2, 10, 30, 60]))
     for axis, value, n, k, d in settings:
-        x = reviewer3_make_runtime_data(n, k, d, 3)
-        seconds = reviewer3_timed_fit(x, k, 3, steps=60, compact_refinement_steps=12)
-        rows.append({'axis': axis, 'value': value, 'n_samples': n, 'target_k': k, 'dimension': d, 'steps': 60, 'seconds': seconds})
+        for seed in [3, 7, 11]:
+            x = reviewer3_make_runtime_data(n, k, d, seed)
+            seconds = reviewer3_timed_fit(x, k, seed, steps=140, compact_refinement_steps=18)
+            rows.append({'axis': axis, 'value': value, 'n_samples': n, 'target_k': k, 'dimension': d, 'seed': seed, 'steps': 140, 'refinement_steps': 18, 'seconds': seconds})
     raw = reviewer3_pd.DataFrame(rows)
     raw.to_csv(reviewer3_RESULTS / 'reviewer3_runtime_axes_raw.csv', index=False)
+    summary = raw.groupby(['axis', 'value'])['seconds'].agg(['mean', 'std']).reset_index()
+    summary.to_csv(reviewer3_RESULTS / 'reviewer3_runtime_axes_summary.csv', index=False)
+    predicted = 140.0 * raw['n_samples'] * raw['target_k'] * raw['dimension'] + 10.0 * 18.0 * raw['n_samples'] * raw['target_k'] * raw['dimension']
+    c_fit = float((raw['seconds'] * predicted).sum() / (predicted * predicted).sum())
+    raw_pred = c_fit * predicted
+    ss_res = float(((raw['seconds'] - raw_pred) ** 2).sum())
+    ss_tot = float(((raw['seconds'] - raw['seconds'].mean()) ** 2).sum())
+    fit_report = reviewer3_pd.DataFrame([{'constant_c': c_fit, 'r_squared': 1.0 - ss_res / ss_tot, 'max_measured_over_predicted': float((raw['seconds'] / raw_pred).max()), 'min_measured_over_predicted': float((raw['seconds'] / raw_pred).min())}])
+    fit_report.to_csv(reviewer3_RESULTS / 'reviewer3_runtime_complexity_fit.csv', index=False)
     fig, axes = reviewer3_plt.subplots(1, 3, figsize=(10.6, 3.3), dpi=180)
     for ax, axis, xlabel in zip(axes, ['n', 'k', 'd'], ['samples n', 'target count K', 'dimension d']):
-        group = raw[raw['axis'] == axis]
-        ax.plot(group['value'], group['seconds'], marker='o')
+        group = raw[raw['axis'] == axis].groupby('value')['seconds'].agg(['mean', 'std']).reset_index()
+        ax.errorbar(group['value'], group['mean'], yerr=group['std'], marker='o', capsize=3)
         ax.set_xlabel(xlabel)
         ax.set_ylabel('seconds')
         ax.grid(alpha=0.25)
-    fig.suptitle('Independent Runtime Diagnostics for MBC')
+    fig.suptitle('Independent Runtime Diagnostics for MBC (three seeds per point)')
     fig.tight_layout()
     fig.savefig(reviewer3_FIGURES / 'reviewer3_runtime_axes.pdf')
     fig.savefig(reviewer3_RESULTS / 'reviewer3_runtime_axes.png')
     reviewer3_plt.close(fig)
 
-def reviewer3_run_stress_cases() -> None:
-    rows = []
-    rng = reviewer3_np.random.default_rng(3)
-    large_x, large_y = reviewer3_make_blobs(n_samples=[9000, 1100], centers=[[-2.0, 0.0], [2.0, 0.0]], cluster_std=[0.85, 0.85], random_state=3)
-    large_x = reviewer3_StandardScaler().fit_transform(large_x)
-    start = reviewer3_time.perf_counter()
-    large_labels = reviewer3_mbc(large_x, 2, 3, steps=80).fit_predict(large_x)
-    rows.append({'case': 'large_n_10100_imbalanced', 'n_original': len(large_x), 'd_original': 2, 'd_used': 2, 'K': 2, 'largest_to_smallest': '9000:1100', 'algorithm': 'MBC', 'ari': reviewer3_adjusted_rand_score(large_y, large_labels), 'seconds': reviewer3_time.perf_counter() - start})
+def reviewer3_make_scale_benchmark(seed: int) -> tuple[reviewer3_np.ndarray, reviewer3_np.ndarray]:
+    """Large-n, imbalanced, large-K, moderately high-d labelled generator.
+
+    Fifteen unit-direction centres scaled to radius 8 in d=30, class sizes on a
+    geometric grid from 2000 down to 120, isotropic unit-scale noise.
+    """
+    rng = reviewer3_np.random.default_rng(seed + 4000)
+    k = 15
+    directions = rng.normal(0.0, 1.0, size=(k, 30))
+    directions /= reviewer3_np.linalg.norm(directions, axis=1, keepdims=True) + 1e-12
+    centers = 8.0 * directions
+    sizes = reviewer3_np.round(reviewer3_np.geomspace(2000, 120, k)).astype(int)
+    parts = [rng.normal(center, 1.0, size=(int(count), 30)) for center, count in zip(centers, sizes)]
+    x = reviewer3_np.vstack(parts)
+    y = reviewer3_np.concatenate([reviewer3_np.full(int(count), label, dtype=int) for label, count in enumerate(sizes)])
+    return (x, y)
+
+def reviewer3_make_high_d_benchmark(seed: int) -> tuple[reviewer3_np.ndarray, reviewer3_np.ndarray]:
+    rng = reviewer3_np.random.default_rng(seed + 5000)
     counts = reviewer3_np.linspace(90, 12, 20).astype(int)
-    high_parts = []
-    high_labels = []
     centers = rng.normal(0, 1.3, size=(20, 6000))
     centers[:, :20] += reviewer3_np.eye(20) * 8.0
-    for label, count in enumerate(counts):
-        high_parts.append(rng.normal(centers[label], 0.8, size=(count, 6000)))
-        high_labels.extend([label] * count)
-    high_x = reviewer3_np.vstack(high_parts)
-    high_y = reviewer3_np.asarray(high_labels)
-    high_scaled = reviewer3_StandardScaler().fit_transform(high_x)
-    high_pca = reviewer3_PCA(n_components=10, random_state=0).fit_transform(high_scaled)
-    start = reviewer3_time.perf_counter()
-    high_labels_pred = reviewer3_mbc(high_pca, 20, 3, steps=100).fit_predict(high_pca)
-    rows.append({'case': 'high_d_6000_K20_imbalanced', 'n_original': len(high_x), 'd_original': 6000, 'd_used': 10, 'K': 20, 'largest_to_smallest': f'{counts.max()}:{counts.min()}', 'algorithm': 'MBC', 'ari': reviewer3_adjusted_rand_score(high_y, high_labels_pred), 'seconds': reviewer3_time.perf_counter() - start})
-    reviewer3_pd.DataFrame(rows).to_csv(reviewer3_RESULTS / 'reviewer3_stress_cases.csv', index=False)
+    parts = [rng.normal(centers[label], 0.8, size=(int(count), 6000)) for label, count in enumerate(counts)]
+    x = reviewer3_np.vstack(parts)
+    y = reviewer3_np.concatenate([reviewer3_np.full(int(count), label, dtype=int) for label, count in enumerate(counts)])
+    return (x, y)
+
+def reviewer3_run_scale_benchmark() -> None:
+    rows = []
+    for seed in [3, 7, 11]:
+        raw_x, y = reviewer3_make_scale_benchmark(seed)
+        x = reviewer3_StandardScaler().fit_transform(raw_x)
+        k = len(reviewer3_np.unique(y))
+        for algorithm in main_benchmark_ALGORITHMS:
+            start = reviewer3_time.perf_counter()
+            with reviewer3_np.errstate(all='ignore'):
+                labels = main_benchmark_run_algorithm(algorithm, x, k, seed)
+            rows.append({'case': 'large_n_imbalanced_largeK_d30', 'n_original': len(x), 'd_original': 30, 'd_used': x.shape[1], 'K': k, 'largest_to_smallest': '2000:120', 'algorithm': algorithm, 'seed': seed, 'ari': reviewer3_adjusted_rand_score(y, labels), 'seconds': reviewer3_time.perf_counter() - start})
+        high_x, high_y = reviewer3_make_high_d_benchmark(seed)
+        high_scaled = reviewer3_StandardScaler().fit_transform(high_x)
+        high_pca = reviewer3_PCA(n_components=10, random_state=0).fit_transform(high_scaled)
+        k_high = len(reviewer3_np.unique(high_y))
+        for algorithm in main_benchmark_ALGORITHMS:
+            start = reviewer3_time.perf_counter()
+            with reviewer3_np.errstate(all='ignore'):
+                labels = main_benchmark_run_algorithm(algorithm, high_pca, k_high, seed)
+            rows.append({'case': 'high_d_6000_K20_imbalanced_pca10', 'n_original': len(high_x), 'd_original': 6000, 'd_used': 10, 'K': k_high, 'largest_to_smallest': '90:12', 'algorithm': algorithm, 'seed': seed, 'ari': reviewer3_adjusted_rand_score(high_y, labels), 'seconds': reviewer3_time.perf_counter() - start})
+    df = reviewer3_pd.DataFrame(rows)
+    df.to_csv(reviewer3_RESULTS / 'reviewer3_scale_benchmark_raw.csv', index=False)
+    df.groupby(['case', 'algorithm'])[['ari', 'seconds']].mean().reset_index().to_csv(reviewer3_RESULTS / 'reviewer3_scale_benchmark_summary.csv', index=False)
 
 def reviewer3_run_dataset_inventory() -> None:
     rows = []
-    sources = {'iris': 'scikit-learn load_iris', 'wine': 'scikit-learn load_wine', 'breast_cancer': 'scikit-learn load_breast_cancer', 'digits_0_4': 'scikit-learn load_digits, labels 0--4', 'two_moons': 'scikit-learn make_moons', 'circles': 'scikit-learn make_circles', 'noisy_moons': 'scikit-learn make_moons', 'noisy_circles': 'scikit-learn make_circles', 'varied_density': 'project generator make_varied_density', 'anisotropic_blobs': 'scikit-learn make_blobs plus linear transform', 'ecoli': 'OpenML ecoli', 'glass': 'OpenML glass', 'vehicle': 'OpenML vehicle', 'cmc': 'OpenML cmc', 'wdbc': 'OpenML wdbc'}
-    families = {'two_moons': 'synthetic non-convex', 'circles': 'synthetic non-convex', 'noisy_moons': 'synthetic non-convex', 'noisy_circles': 'synthetic non-convex', 'varied_density': 'density-varying', 'anisotropic_blobs': 'compact Gaussian', 'iris': 'real low-dimensional', 'wine': 'real tabular', 'breast_cancer': 'real tabular', 'digits_0_4': 'image-feature', 'ecoli': 'real tabular', 'glass': 'real tabular', 'vehicle': 'real tabular', 'cmc': 'real tabular', 'wdbc': 'real tabular'}
+    sources = {'iris': 'scikit-learn load_iris', 'wine': 'scikit-learn load_wine', 'breast_cancer': 'scikit-learn load_breast_cancer', 'digits_0_4': 'scikit-learn load_digits, labels 0--4', 'two_moons': 'scikit-learn make_moons', 'circles': 'scikit-learn make_circles', 'noisy_moons': 'scikit-learn make_moons', 'noisy_circles': 'scikit-learn make_circles', 'varied_density': 'project generator make_varied_density', 'anisotropic_blobs': 'scikit-learn make_blobs plus linear transform', 'ecoli': 'OpenML ecoli (id 38)', 'glass': 'OpenML glass (id 41)', 'vehicle': 'OpenML vehicle (id 54)', 'cmc': 'OpenML cmc (id 23)'}
+    families = {'two_moons': 'synthetic non-convex', 'circles': 'synthetic non-convex', 'noisy_moons': 'synthetic non-convex', 'noisy_circles': 'synthetic non-convex', 'varied_density': 'density-varying', 'anisotropic_blobs': 'compact Gaussian', 'iris': 'real low-dimensional', 'wine': 'real tabular', 'breast_cancer': 'real tabular', 'digits_0_4': 'image-feature', 'ecoli': 'real tabular', 'glass': 'real tabular', 'vehicle': 'real tabular', 'cmc': 'real tabular'}
     names = sorted((p.name.removesuffix('_seed3_processed.csv') for p in (reviewer3_ROOT / 'data' / 'processed' / 'main_benchmark').glob('*_seed3_processed.csv')))
     for name in names:
         raw_x, raw_y = reviewer3_load_main(name, 3, processed=False)
         proc_x, proc_y = reviewer3_load_main(name, 3, processed=True)
         rows.append({'scope': 'primary', 'dataset': name, 'source': sources[name], 'type': families[name], 'n_original': len(raw_x), 'n_used': len(proc_x), 'd_original': raw_x.shape[1], 'd_used': proc_x.shape[1], 'K': len(reviewer3_np.unique(proc_y)), 'class_counts': reviewer3_label_profile(proc_y)})
+    structure_sources = {'three_spirals': 'project generator: 3 arms, 150 samples/arm, radius 0.2+0.2t, noise 0.035', 's_curve_sections': 'project generator: 480 samples, sine curve, noise 0.045, thirds labelled', 'bridged_blobs': 'project generator: 2 Gaussians (std 0.18/0.55) + 140-sample bridge, noise 0.08', 'disconnected_manifolds': 'project generator: 4 Gaussians (std 0.16/0.24) paired into 2 classes', 'additional_moons': 'scikit-learn make_moons, 480 samples, noise 0.08', 'additional_circles': 'scikit-learn make_circles, 480 samples, factor 0.42, noise 0.05'}
+    structure_specs = {item[0]: item for item in reviewer2_make_nonconvex(3)}
+    for name, source in structure_sources.items():
+        x, y = structure_specs[name][1], structure_specs[name][2]
+        rows.append({'scope': 'structure_suite', 'dataset': name, 'source': source, 'type': 'synthetic non-convex stress', 'n_original': len(x), 'n_used': len(x), 'd_original': x.shape[1], 'd_used': x.shape[1], 'K': len(reviewer3_np.unique(y)), 'class_counts': reviewer3_label_profile(y)})
+    rows.append({'scope': 'scale_benchmark', 'dataset': 'large_n_imbalanced_largeK_d30', 'source': 'project generator: 15 unit-direction centres at radius 8 in d=30, geometric sizes 2000..120, unit noise', 'type': 'synthetic compact imbalanced', 'n_original': 10446, 'n_used': 10446, 'd_original': 30, 'd_used': 30, 'K': 15, 'class_counts': 'geometric 2000..120'})
+    rows.append({'scope': 'scale_benchmark', 'dataset': 'high_d_6000_K20_imbalanced_pca10', 'source': 'project generator: 20 centres in d=6000, sizes 90..12, PCA to 10 components', 'type': 'synthetic compact high-d', 'n_original': 1011, 'n_used': 1011, 'd_original': 6000, 'd_used': 10, 'K': 20, 'class_counts': 'linear 90..12'})
+    sipu_dir = reviewer3_ROOT / 'data' / 'raw' / 'sipu'
+    if sipu_dir.exists():
+        for path in sorted(sipu_dir.glob('*.txt')):
+            frame = reviewer3_pd.read_csv(path, sep=r'\s+', header=None)
+            y = frame.iloc[:, -1].to_numpy(int)
+            rows.append({'scope': 'real_nonconvex', 'dataset': path.stem, 'source': f'sipu clustering basic benchmarks ({path.name})', 'type': 'real 2-D non-convex shapes', 'n_original': len(frame), 'n_used': len(frame), 'd_original': frame.shape[1] - 1, 'd_used': frame.shape[1] - 1, 'K': len(reviewer3_np.unique(y)), 'class_counts': reviewer3_label_profile(y)})
     external = [('MiceProtein_8class', 'OpenML 40966', 'gene-expression/protein'), ('Leukemia_2class', 'OpenML 45090', 'gene-expression'), ('Leukemia_3class', 'OpenML 45091', 'gene-expression'), ('Lymphoma_3class', 'OpenML 45094', 'gene-expression'), ('Lung_5class', 'OpenML 45093', 'gene-expression')]
     for name, source, kind in external:
         processed_path = reviewer3_ROOT / 'data' / 'processed' / 'external_real_benchmark' / f'{name}_processed.csv'
@@ -2166,11 +2247,299 @@ def reviewer3_main() -> None:
     reviewer3_run_bud_dynamics()
     reviewer3_run_trigger_sensitivity()
     reviewer3_run_independent_runtime()
-    reviewer3_run_stress_cases()
+    reviewer3_run_scale_benchmark()
     reviewer3_run_dataset_inventory()
     benchmark = reviewer3_pd.read_csv(reviewer3_RESULTS / 'paper_benchmark_raw.csv')
     benchmark.groupby('algorithm')['seconds'].sum().sort_values().rename('total_seconds').to_csv(reviewer3_RESULTS / 'reviewer3_full_suite_wallclock.csv')
     print(f'Reviewer 3 analyses written to {reviewer3_RESULTS}')
+
+
+# ============================================================================
+# Reviewer 3 round-2 analyses
+# ============================================================================
+
+"""Round-2 diagnostics requested by Reviewer 3's follow-up report.
+
+Covers the related-method comparison on the primary suite, a disjoint-seed
+rerun, refinement-stage inertia trajectories, the six-structure scatter panel,
+the labelled real-world non-convex benchmark, and the sensitivity reconciliation.
+"""
+import time as r2_time
+from pathlib import Path as r2_Path
+import matplotlib as r2_matplotlib
+r2_matplotlib.use('Agg')
+import matplotlib.pyplot as r2_plt
+import numpy as r2_np
+import pandas as r2_pd
+from sklearn.preprocessing import StandardScaler as r2_StandardScaler
+r2_ROOT = r2_Path(__file__).resolve().parents[1]
+r2_RESULTS = r2_ROOT / 'results' / 'paper_results'
+r2_FIGURES = r2_ROOT / 'figures' / 'paper_figures'
+r2_PRIMARY_SEEDS = [3, 7, 11, 19, 23]
+r2_DISJOINT_SEEDS = [101, 103, 107, 109, 113]
+r2_RELATED_METHODS = ['HDBSCAN', 'MeanShift', 'AffinityPropagation']
+
+def r2_run_related_primary() -> None:
+    rows = []
+    names = sorted((p.name.removesuffix('_seed3_processed.csv') for p in (r2_ROOT / 'data' / 'processed' / 'main_benchmark').glob('*_seed3_processed.csv')))
+    for name in names:
+        for seed in r2_PRIMARY_SEEDS:
+            frame = r2_pd.read_csv(r2_ROOT / 'data' / 'processed' / 'main_benchmark' / f'{name}_seed{seed}_processed.csv')
+            x, y = (frame.iloc[:, 1:].to_numpy(float), frame.iloc[:, 0].to_numpy(int))
+            k = len(r2_np.unique(y))
+            for method in r2_RELATED_METHODS:
+                start = r2_time.perf_counter()
+                labels = reviewer2_run_related(method, x, k, seed)
+                rows.append({'dataset': name, 'seed': seed, 'method': method, 'true_k': k, 'found_k': len(r2_np.unique(labels[labels >= 0])) if r2_np.any(labels >= 0) else 0, 'ari': r2_adjusted_rand(y, labels), 'seconds': r2_time.perf_counter() - start})
+    df = r2_pd.DataFrame(rows)
+    df.to_csv(r2_RESULTS / 'reviewer3r2_related_primary_raw.csv', index=False)
+    df.groupby('method')['ari'].agg(['mean', 'std']).to_csv(r2_RESULTS / 'reviewer3r2_related_primary_summary.csv')
+    df.groupby(['dataset', 'method'])['ari'].mean().reset_index().pivot(index='dataset', columns='method', values='ari').to_csv(r2_RESULTS / 'reviewer3r2_related_primary_by_dataset.csv')
+
+def r2_adjusted_rand(y: r2_np.ndarray, labels: r2_np.ndarray) -> float:
+    from sklearn.metrics import adjusted_rand_score
+    return float(adjusted_rand_score(y, labels))
+
+def r2_run_disjoint_seeds() -> None:
+    rows = []
+    for seed in r2_DISJOINT_SEEDS:
+        for spec in main_benchmark_make_datasets(seed):
+            x = main_benchmark_preprocess(r2_np.asarray(spec.x))
+            y = r2_np.asarray(spec.y)
+            k = len(r2_np.unique(y))
+            for algorithm in main_benchmark_ALGORITHMS:
+                labels = main_benchmark_run_algorithm(algorithm, x, k, seed)
+                rows.append({'dataset': spec.name, 'family': spec.family, 'seed': seed, 'algorithm': algorithm, 'ari': r2_adjusted_rand(y, labels)})
+    df = r2_pd.DataFrame(rows)
+    df.to_csv(r2_RESULTS / 'reviewer3r2_disjoint_seeds_raw.csv', index=False)
+    df.groupby('algorithm')['ari'].agg(['mean', 'std']).sort_values('mean', ascending=False).to_csv(r2_RESULTS / 'reviewer3r2_disjoint_seeds_summary.csv')
+
+def r2_run_refinement_trajectory() -> None:
+    from sklearn.datasets import load_wine
+    wine = load_wine()
+    raw_x = r2_StandardScaler().fit_transform(wine.data)
+    pca_x = reviewer3_PCA(n_components=10, random_state=0).fit_transform(raw_x)
+    rows = []
+    for representation, x in [('wine_original_13d', raw_x), ('wine_pca_10d', pca_x)]:
+        k = len(r2_np.unique(wine.target))
+        model = reviewer3_mbc(x, k, 3).fit(x)
+        for candidate, trajectory in model.refinement_inertia_trajectories_.items():
+            kind = 'component_derived' if candidate.startswith('MBC-derived') else 'kmeanspp'
+            for step, inertia in enumerate(trajectory, 1):
+                rows.append({'representation': representation, 'candidate': candidate, 'candidate_kind': kind, 'refinement_step': step, 'inertia': inertia, 'winner': candidate.startswith(model.refinement_winner_ or '@')})
+    df = r2_pd.DataFrame(rows)
+    df.to_csv(r2_RESULTS / 'reviewer3r2_refinement_trajectory.csv', index=False)
+    fig, axes = r2_plt.subplots(1, 2, figsize=(10.4, 3.8), dpi=180, sharey=False)
+    for ax, representation in zip(axes, ['wine_original_13d', 'wine_pca_10d']):
+        sub = df[df['representation'] == representation]
+        for candidate, group in sub.groupby('candidate'):
+            kind = group['candidate_kind'].iloc[0]
+            style = dict(color='#d95f02', linewidth=2.4) if kind == 'component_derived' else dict(color='#9aa5b1', linewidth=1.0, alpha=0.7)
+            ax.plot(group['refinement_step'], group['inertia'], marker='o' if kind == 'component_derived' else None, markersize=3, label=candidate if kind == 'component_derived' else None, **style)
+        ax.set_xlabel('refinement update')
+        ax.set_ylabel('k-means inertia')
+        ax.set_title(representation.replace('_', ' '))
+        ax.grid(alpha=0.25)
+    axes[0].legend(frameon=False, fontsize=8)
+    fig.suptitle('Compact-refinement inertia trajectories (wine, seed 3)')
+    fig.tight_layout()
+    fig.savefig(r2_FIGURES / 'reviewer3r2_refinement_trajectory.pdf')
+    fig.savefig(r2_RESULTS / 'reviewer3r2_refinement_trajectory.png')
+    r2_plt.close(fig)
+
+def r2_run_six_structure_scatter() -> None:
+    specs = reviewer2_make_nonconvex(3)
+    fig, axes = r2_plt.subplots(2, 3, figsize=(10.5, 6.6), dpi=180)
+    for ax, (name, x, y) in zip(axes.flat, specs):
+        ax.scatter(x[:, 0], x[:, 1], c=y, cmap='tab10', s=8, linewidths=0, alpha=0.85)
+        ax.set_title(name.replace('_', ' '))
+        ax.set_xlabel('feature 1')
+        ax.set_ylabel('feature 2')
+    fig.suptitle('Six-Structure Stress Suite Generators', y=0.99)
+    fig.tight_layout()
+    fig.savefig(r2_FIGURES / 'reviewer3r2_six_structures.pdf')
+    fig.savefig(r2_RESULTS / 'reviewer3r2_six_structures.png')
+    r2_plt.close(fig)
+
+def r2_load_sipu(name: str) -> tuple[r2_np.ndarray, r2_np.ndarray] | None:
+    path = r2_ROOT / 'data' / 'raw' / 'sipu' / f'{name}.txt'
+    if not path.exists():
+        return None
+    frame = r2_pd.read_csv(path, sep=r'\s+', header=None)
+    x = frame.iloc[:, :-1].to_numpy(float)
+    y = frame.iloc[:, -1].to_numpy(int)
+    return (x, y)
+
+def r2_run_sipu_benchmark() -> None:
+    names = ['aggregation', 'compound', 'spiral', 'jain']
+    rows = []
+    for name in names:
+        loaded = r2_load_sipu(name)
+        if loaded is None:
+            print(f'[warn] skipped sipu dataset {name}: file absent')
+            continue
+        raw_x, y = loaded
+        x = r2_StandardScaler().fit_transform(raw_x)
+        k = len(r2_np.unique(y))
+        for seed in [3, 7, 11]:
+            for algorithm in main_benchmark_ALGORITHMS:
+                labels = main_benchmark_run_algorithm(algorithm, x, k, seed)
+                rows.append({'dataset': name, 'seed': seed, 'algorithm': algorithm, 'n_samples': len(x), 'K': k, 'ari': r2_adjusted_rand(y, labels)})
+    if not rows:
+        return
+    df = r2_pd.DataFrame(rows)
+    df.to_csv(r2_RESULTS / 'reviewer3r2_sipu_benchmark_raw.csv', index=False)
+    summary = df.groupby(['dataset', 'algorithm'])['ari'].mean().reset_index().pivot(index='dataset', columns='algorithm', values='ari')
+    summary.to_csv(r2_RESULTS / 'reviewer3r2_sipu_benchmark_summary.csv')
+    fig, axes = r2_plt.subplots(1, len(summary.index), figsize=(3.4 * len(summary.index), 3.2), dpi=180)
+    axes = r2_np.atleast_1d(axes)
+    for ax, name in zip(axes, summary.index):
+        loaded = r2_load_sipu(name)
+        x, y = loaded
+        ax.scatter(x[:, 0], x[:, 1], c=y, cmap='tab10', s=6, linewidths=0, alpha=0.85)
+        ax.set_title(name)
+        ax.set_xlabel('x')
+        ax.set_ylabel('y')
+    fig.suptitle('Labelled real-world non-convex shape benchmarks (sipu)')
+    fig.tight_layout()
+    fig.savefig(r2_FIGURES / 'reviewer3r2_sipu_shapes.pdf')
+    fig.savefig(r2_RESULTS / 'reviewer3r2_sipu_shapes.png')
+    r2_plt.close(fig)
+
+def r2_run_sensitivity_reconcile() -> None:
+    raw = r2_pd.read_csv(r2_RESULTS / 'reviewer1_broad_sensitivity_raw.csv')
+    radius = raw[raw['parameter'] == 'organ_merge_radius'].copy()
+    nonconvex = ['two_moons', 'circles', 'noisy_moons', 'noisy_circles']
+    rows = []
+    for value, group in radius.groupby('value'):
+        rows.append({'value': value, 'grid_all_11': group['ari'].mean(), 'grid_nonconvex_4': group[group['dataset'].isin(nonconvex)]['ari'].mean(), 'grid_compact_7': group[~group['dataset'].isin(nonconvex)]['ari'].mean()})
+    screen = r2_pd.read_csv(r2_RESULTS / 'mbc_sensitivity_summary.csv')
+    screen_radius = screen[screen['parameter'] == 'organ_merge_radius'][['value', 'mean']].rename(columns={'mean': 'screen_4_mean'})
+    out = r2_pd.DataFrame(rows).merge(screen_radius, on='value', how='outer').sort_values('value')
+    out.to_csv(r2_RESULTS / 'reviewer3r2_sensitivity_reconcile.csv', index=False)
+
+def reviewer3r2_main() -> None:
+    r2_RESULTS.mkdir(parents=True, exist_ok=True)
+    r2_FIGURES.mkdir(parents=True, exist_ok=True)
+    r2_run_related_primary()
+    r2_run_disjoint_seeds()
+    r2_run_refinement_trajectory()
+    r2_run_six_structure_scatter()
+    r2_run_sipu_benchmark()
+    r2_run_sensitivity_reconcile()
+    print(f'Reviewer 3 round-2 analyses written to {r2_RESULTS}')
+
+
+def r2_fetch_indian_pines() -> bool:
+    import urllib.request as r2_urllib
+    hsi_dir = r2_ROOT / 'data' / 'raw' / 'hsi'
+    hsi_dir.mkdir(parents=True, exist_ok=True)
+    names = ['Indian_pines.mat', 'Indian_pines_gt.mat']
+    for name in names:
+        target = hsi_dir / name
+        if target.exists():
+            continue
+        url = f'https://zenodo.org/records/22828439/files/{name}?download=1'
+        try:
+            r2_urllib.urlretrieve(url, target)
+        except Exception as exc:
+            print(f'[warn] could not download {name}: {exc}')
+            return False
+    return all((hsi_dir / name).exists() for name in names)
+
+
+def r2_run_indian_pines_benchmark() -> None:
+    import scipy.io as r2_sio
+    if not r2_fetch_indian_pines():
+        print('[warn] Indian Pines benchmark skipped: data unavailable')
+        return
+    hsi_dir = r2_ROOT / 'data' / 'raw' / 'hsi'
+    cube = r2_np.asarray(r2_sio.loadmat(hsi_dir / 'Indian_pines.mat')['indian_pines'], dtype=float)
+    gt = r2_np.asarray(r2_sio.loadmat(hsi_dir / 'Indian_pines_gt.mat')['indian_pines_gt'], dtype=int)
+    lines, samples, bands = cube.shape
+    mask = gt > 0
+    rows_idx, cols_idx = r2_np.nonzero(mask)
+    x_bands = cube[mask]
+    y = r2_np.unique(gt[mask] - 1, return_inverse=True)[1]
+    scaled = r2_StandardScaler().fit_transform(x_bands)
+    pca10 = reviewer3_PCA(n_components=10, random_state=0).fit_transform(scaled)
+    coords = r2_np.column_stack([rows_idx / max(lines - 1, 1), cols_idx / max(samples - 1, 1)])
+    feature_sets = {'pca10': pca10, 'pca10_xy': r2_np.hstack([pca10, 0.35 * coords])}
+    k = int(len(r2_np.unique(y)))
+    counts = [int((y == c).sum()) for c in range(k)]
+    r2_pd.DataFrame([{
+        'dataset': 'Indian Pines', 'source': 'Zenodo 10.5281/zenodo.22828439 (AVIRIS 1992)',
+        'type': 'labelled real hyperspectral', 'n_original': int(lines * samples),
+        'n_retained': int(mask.sum()), 'd_original': int(bands), 'd_retained': 10,
+        'K': k, 'class_counts': '/'.join(str(c) for c in counts),
+    }]).to_csv(r2_RESULTS / 'reviewer3r2_indian_pines_inventory.csv', index=False)
+    rows = []
+    for features_name, x in feature_sets.items():
+        for seed in [3, 7, 11]:
+            # Affinity propagation is retained in the primary suite, but its
+            # dense n-by-n responsibility matrix is not computationally
+            # feasible for all 10,249 labelled Indian Pines pixels.  The
+            # labelled scene therefore reports every primary method plus the
+            # two additional density/mode methods that can be run directly.
+            for algorithm in [*main_benchmark_ALGORITHMS, 'HDBSCAN', 'MeanShift']:
+                start = r2_time.perf_counter()
+                if algorithm in main_benchmark_ALGORITHMS:
+                    labels = main_benchmark_run_algorithm(algorithm, x, k, seed)
+                else:
+                    labels = reviewer2_run_related(algorithm, x, k, seed)
+                seconds = r2_time.perf_counter() - start
+                rows.append({'features': features_name, 'seed': seed, 'algorithm': algorithm, 'ari': r2_adjusted_rand(y, labels), 'seconds': seconds})
+    df = r2_pd.DataFrame(rows)
+    df.to_csv(r2_RESULTS / 'reviewer3r2_indian_pines_raw.csv', index=False)
+    df.groupby(['features', 'algorithm']).agg(ari_mean=('ari', 'mean'), ari_std=('ari', 'std'), seconds_mean=('seconds', 'mean')).reset_index().to_csv(r2_RESULTS / 'reviewer3r2_indian_pines_summary.csv', index=False)
+    display = {'Ground truth': y, 'MBC': None, 'KMeans': None, 'Spectral': None}
+    seed = 7
+    x_map = feature_sets['pca10_xy']
+    for algorithm in ['MBC', 'KMeans', 'Spectral']:
+        display[algorithm] = main_benchmark_run_algorithm(algorithm, x_map, k, seed)
+    fig, axes = r2_plt.subplots(1, 4, figsize=(13.2, 3.5), dpi=180)
+    for ax, (title, labels_flat) in zip(axes, display.items()):
+        grid = r2_np.full(lines * samples, r2_np.nan)
+        grid[mask.ravel()] = labels_flat
+        ax.imshow(grid.reshape(lines, samples), cmap='tab20', interpolation='nearest')
+        ax.set_title(title, fontsize=10)
+        ax.set_xticks([])
+        ax.set_yticks([])
+    fig.suptitle('Indian Pines labelled hyperspectral benchmark (16 classes, seed 7, PCA+XY)')
+    fig.tight_layout()
+    fig.savefig(r2_FIGURES / 'reviewer3r2_indian_pines_maps.pdf')
+    fig.savefig(r2_RESULTS / 'reviewer3r2_indian_pines_maps.png')
+    r2_plt.close(fig)
+    print('Indian Pines benchmark written to', r2_RESULTS)
+
+
+def r2_followup_main() -> None:
+    import shutil as r2_shutil
+    import sys as r2_sys
+    r2_RESULTS.mkdir(parents=True, exist_ok=True)
+    r2_FIGURES.mkdir(parents=True, exist_ok=True)
+    r2_run_indian_pines_benchmark()
+    advanced_figures_ablation_lollipop()
+    sync = {
+        'reviewer3_synthetic_geometry.pdf': 'synthetic_geometries.pdf',
+        'reviewer3_bud_evolution.pdf': 'bud_evolution.pdf',
+        'reviewer3_runtime_axes.pdf': 'runtime_axes.pdf',
+        'reviewer3r2_refinement_trajectory.pdf': 'refinement_trajectory.pdf',
+        'reviewer3r2_six_structures.pdf': 'six_structures.pdf',
+        'reviewer3r2_indian_pines_maps.pdf': 'indian_pines_maps.pdf',
+    }
+    for source, target in sync.items():
+        src = r2_FIGURES / source
+        if src.exists():
+            r2_shutil.copyfile(src, r2_FIGURES / target)
+    trajectory_csv = r2_RESULTS / 'reviewer3_dynamics_trajectory.csv'
+    if trajectory_csv.exists():
+        r2_shutil.copyfile(trajectory_csv, r2_RESULTS / 'dynamics_trajectory.csv')
+        if str(r2_ROOT) not in r2_sys.path:
+            r2_sys.path.insert(0, str(r2_ROOT))
+        import generate_figures as r2_genfigs
+        r2_genfigs.figure1_dynamics_trajectory()
+    print('Round-2 follow-up tables written to', r2_RESULTS)
 
 
 # ============================================================================
@@ -2291,7 +2660,9 @@ RUNNERS = [
     ("YYC200 analysis", yyc_analysis_main),
     ("Reviewer 1 analyses", reviewer1_main),
     ("Reviewer 2 analyses", reviewer2_main),
-    ("Reviewer 3 analyses", reviewer3_main)
+    ("Reviewer 3 analyses", reviewer3_main),
+    ("Reviewer 3 round-2 analyses", reviewer3r2_main),
+    ("Round-2 follow-up tables", r2_followup_main)
 ]
 
 

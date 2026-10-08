@@ -2,18 +2,25 @@ scope,dataset,source,type,n_original,n_used,d_original,d_used,K,class_counts
 primary,anisotropic_blobs,scikit-learn make_blobs plus linear transform,compact Gaussian,500,500,2,2,4,125/125/125/125
 primary,breast_cancer,scikit-learn load_breast_cancer,real tabular,569,569,30,10,2,212/357
 primary,circles,scikit-learn make_circles,synthetic non-convex,500,500,2,2,2,250/250
-primary,cmc,OpenML cmc,real tabular,1473,1473,9,9,3,629/333/511
+primary,cmc,OpenML cmc (id 23),real tabular,1473,1473,9,9,3,629/333/511
 primary,digits_0_4,"scikit-learn load_digits, labels 0--4",image-feature,901,901,64,10,5,178/182/177/183/181
-primary,ecoli,OpenML ecoli,real tabular,336,336,7,7,8,143/77/2/2/35/20/5/52
-primary,glass,OpenML glass,real tabular,214,214,9,9,6,70/76/13/29/9/17
+primary,ecoli,OpenML ecoli (id 38),real tabular,336,336,7,7,8,143/77/2/2/35/20/5/52
+primary,glass,OpenML glass (id 41),real tabular,214,214,9,9,6,70/76/13/29/9/17
 primary,iris,scikit-learn load_iris,real low-dimensional,150,150,4,4,3,50/50/50
 primary,noisy_circles,scikit-learn make_circles,synthetic non-convex,500,500,2,2,2,250/250
 primary,noisy_moons,scikit-learn make_moons,synthetic non-convex,500,500,2,2,2,250/250
 primary,two_moons,scikit-learn make_moons,synthetic non-convex,500,500,2,2,2,250/250
 primary,varied_density,project generator make_varied_density,density-varying,500,500,2,2,3,140/220/140
-primary,vehicle,OpenML vehicle,real tabular,846,846,18,10,4,218/212/217/199
-primary,wdbc,OpenML wdbc,real tabular,569,569,30,10,2,357/212
+primary,vehicle,OpenML vehicle (id 54),real tabular,846,846,18,10,4,218/212/217/199
 primary,wine,scikit-learn load_wine,real tabular,178,178,13,10,3,59/71/48
+structure_suite,three_spirals,"project generator: 3 arms, 150 samples/arm, radius 0.2+0.2t, noise 0.035",synthetic non-convex stress,450,450,2,2,3,150/150/150
+structure_suite,s_curve_sections,"project generator: 480 samples, sine curve, noise 0.045, thirds labelled",synthetic non-convex stress,480,480,2,2,3,154/177/149
+structure_suite,bridged_blobs,"project generator: 2 Gaussians (std 0.18/0.55) + 140-sample bridge, noise 0.08",synthetic non-convex stress,420,420,2,2,2,140/280
+structure_suite,disconnected_manifolds,project generator: 4 Gaussians (std 0.16/0.24) paired into 2 classes,synthetic non-convex stress,480,480,2,2,2,240/240
+structure_suite,additional_moons,"scikit-learn make_moons, 480 samples, noise 0.08",synthetic non-convex stress,480,480,2,2,2,240/240
+structure_suite,additional_circles,"scikit-learn make_circles, 480 samples, factor 0.42, noise 0.05",synthetic non-convex stress,480,480,2,2,2,240/240
+scale_benchmark,large_n_imbalanced_largeK_d30,"project generator: 15 unit-direction centres at radius 8 in d=30, geometric sizes 2000..120, unit noise",synthetic compact imbalanced,10446,10446,30,30,15,geometric 2000..120
+scale_benchmark,high_d_6000_K20_imbalanced_pca10,"project generator: 20 centres in d=6000, sizes 90..12, PCA to 10 components",synthetic compact high-d,1011,1011,6000,10,20,linear 90..12
 external,MiceProtein_8class,OpenML 40966,gene-expression/protein,1080,1080,see source,12,8,150/135/150/135/135/105/135/135
 external,Leukemia_2class,OpenML 45090,gene-expression,72,72,see source,12,2,47/25
 external,Leukemia_3class,OpenML 45091,gene-expression,72,72,see source,12,3,25/38/9

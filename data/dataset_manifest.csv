@@ -162,3 +162,5 @@ data/processed/external_real_benchmark/diabetes_processed.csv,external_processed
 data/processed/external_real_benchmark/vehicle_processed.csv,external_processed,vehicle,54,846,12
 data/processed/external_real_benchmark/ionosphere_processed.csv,external_processed,ionosphere,59,351,12
 data/processed/external_real_benchmark/blood-transfusion_processed.csv,external_processed,blood-transfusion,1464,748,4
+data/raw/hsi/Indian_pines.mat,hsi_raw,Indian Pines cube,Zenodo 10.5281/zenodo.22828439,21025,220
+data/raw/hsi/Indian_pines_gt.mat,hsi_raw,Indian Pines ground truth,Zenodo 10.5281/zenodo.22828439,21025,1

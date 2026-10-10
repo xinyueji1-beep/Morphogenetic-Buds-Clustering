@@ -2072,15 +2072,19 @@ def reviewer3_run_bud_dynamics() -> None:
         rows.append({'representation': representation, 'iteration': 141, 'buds': len(model.centers_), 'coverage_inertia': float(reviewer3_squared_distances(x, model.organ_centers_).min(axis=1).sum()), 'stage': 'post_refinement'})
     trajectory = reviewer3_pd.DataFrame(rows)
     trajectory.to_csv(reviewer3_RESULTS / 'reviewer3_dynamics_trajectory.csv', index=False)
-    fig, ax = reviewer3_plt.subplots(figsize=(7.6, 4.2), dpi=180)
+    fig, axes = reviewer3_plt.subplots(2, 1, figsize=(8.2, 6.0), dpi=180, sharex=True)
     for representation, group in trajectory.groupby('representation'):
         group = group[group['iteration'] <= 140]
-        ax.plot(group['iteration'], group['coverage_inertia'], label=representation)
-    ax.set_xlabel('morphogenetic iteration')
-    ax.set_ylabel('nearest-bud coverage inertia')
-    ax.set_title('Finite-Step Bud Dynamics Before Compact Refinement')
-    ax.grid(alpha=0.25)
-    ax.legend(frameon=False)
+        axes[0].plot(group['iteration'], group['coverage_inertia'], label=representation)
+        axes[1].plot(group['iteration'], group['buds'], label=representation)
+    axes[0].set_ylabel('nearest-bud coverage inertia')
+    axes[0].set_yscale('log')
+    axes[1].set_ylabel('number of buds')
+    axes[1].set_xlabel('morphogenetic iteration')
+    for ax in axes:
+        ax.grid(alpha=0.25)
+    axes[0].legend(frameon=False, fontsize=8, ncol=3)
+    fig.suptitle('Finite-Step Bud Dynamics Before Compact Refinement')
     fig.tight_layout()
     fig.savefig(reviewer3_FIGURES / 'reviewer3_dynamics_trajectory.pdf')
     fig.savefig(reviewer3_RESULTS / 'reviewer3_dynamics_trajectory.png')
@@ -2626,6 +2630,28 @@ def export_data_export_external_processed() -> list[dict]:
         entries.append(export_data_save_matrix(path, x, y, dataset=name, family=family, openml_id=spec['id'], type='external_processed'))
     return entries
 
+def export_data_export_indian_pines_raw() -> list[dict]:
+    """Record the bundled Zenodo Indian Pines source files in both manifests."""
+    entries = []
+    hsi_dir = export_data_RAW_DIR / 'hsi'
+    source = 'Zenodo 10.5281/zenodo.22828439'
+    records = [
+        ('Indian_pines.mat', 'Indian Pines cube', 21025, 220),
+        ('Indian_pines_gt.mat', 'Indian Pines ground truth', 21025, 1),
+    ]
+    for filename, dataset, n_samples, n_features in records:
+        path = hsi_dir / filename
+        if path.exists():
+            entries.append({
+                'file': str(path.relative_to(export_data_ROOT)).replace('\\', '/'),
+                'dataset': dataset,
+                'source': source,
+                'n_samples': n_samples,
+                'n_features': n_features,
+                'type': 'hsi_raw',
+            })
+    return entries
+
 def export_data_write_manifest(entries: list[dict]) -> None:
     export_data_DATA_DIR.mkdir(parents=True, exist_ok=True)
     manifest = {'description': 'Datasets bundled for the MBC EI submission package. Raw data preserve source tables when available; processed data are the matrices used by the paper scripts after encoding, scaling, PCA and/or sampling.', 'entries': entries}
@@ -2640,6 +2666,7 @@ def export_data_main() -> None:
     entries.extend(export_data_export_main_benchmark())
     entries.extend(export_data_export_openml_raw())
     entries.extend(export_data_export_external_processed())
+    entries.extend(export_data_export_indian_pines_raw())
     export_data_write_manifest(entries)
     print(export_data_json.dumps({'data_dir': str(export_data_DATA_DIR), 'entries': len(entries)}, indent=2))
 

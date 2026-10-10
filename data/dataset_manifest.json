@@ -1350,6 +1350,22 @@
       "family": "real_medical_tabular",
       "openml_id": 1464,
       "type": "external_processed"
+    },
+    {
+      "file": "data/raw/hsi/Indian_pines.mat",
+      "dataset": "Indian Pines cube",
+      "source": "Zenodo 10.5281/zenodo.22828439",
+      "n_samples": 21025,
+      "n_features": 220,
+      "type": "hsi_raw"
+    },
+    {
+      "file": "data/raw/hsi/Indian_pines_gt.mat",
+      "dataset": "Indian Pines ground truth",
+      "source": "Zenodo 10.5281/zenodo.22828439",
+      "n_samples": 21025,
+      "n_features": 1,
+      "type": "hsi_raw"
     }
   ]
 }

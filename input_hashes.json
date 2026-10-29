@@ -1,0 +1,1176 @@
+{
+  "schema_version": 1,
+  "purpose": "Integrity hashes of the exact bundled data bytes; these do not establish upstream-provider identity.",
+  "files": [
+    {
+      "file": "data/raw/hsi/Indian_pines.mat",
+      "bytes": 6296374,
+      "sha256": "fd6498950de76fb68680e335d30dae63f2337be8ba4b3ab8aa8dbb7b36cff273",
+      "md5": "b21b9c5bedebaf1cb149909c06ae4b1a"
+    },
+    {
+      "file": "data/raw/hsi/Indian_pines_gt.mat",
+      "bytes": 1125,
+      "sha256": "65c4687a8ab04f6da4789799bc3bc4f6e88bccac3ed6a2e6ae367e5e6b9e429c",
+      "md5": "9414943dac1d80faaa9165c8b460510c"
+    },
+    {
+      "file": "data/raw/main_benchmark/anisotropic_blobs_seed11.csv",
+      "bytes": 20394,
+      "sha256": "843f262c77f01538bc891ed92420e0e3d7dc53e458a1480661d48827ccee0bdc",
+      "md5": "003ca08b9253dacd143cfbb96cf3df72"
+    },
+    {
+      "file": "data/raw/main_benchmark/anisotropic_blobs_seed19.csv",
+      "bytes": 20729,
+      "sha256": "89e3fd8eec624256b108343a9c038d4e25d7849912c730646f202e7c3e953009",
+      "md5": "b5f9f272407f570a49ef62eb24da0f6c"
+    },
+    {
+      "file": "data/raw/main_benchmark/anisotropic_blobs_seed23.csv",
+      "bytes": 20278,
+      "sha256": "d03d13043cb6bb80126d70aaf0bcb1833b8317ce3ddf59d301fa357369e69200",
+      "md5": "1295cafcda7cc5ac2ed6649a021b597b"
+    },
+    {
+      "file": "data/raw/main_benchmark/anisotropic_blobs_seed3.csv",
+      "bytes": 20492,
+      "sha256": "8d1820e7aa1fb87776b18024ee5ab70131faaabb4d2d8566f998d62b8408f528",
+      "md5": "4ce86deb20237be7b3c5347721641774"
+    },
+    {
+      "file": "data/raw/main_benchmark/anisotropic_blobs_seed7.csv",
+      "bytes": 20202,
+      "sha256": "10fedc39485578244b8421963084efa00f97817e4e1df98635e8047619b1340f",
+      "md5": "0cd437c878349e7fdfe057c287bf02a6"
+    },
+    {
+      "file": "data/raw/main_benchmark/breast_cancer_seed11.csv",
+      "bytes": 121623,
+      "sha256": "d67c928059f9bd192b4b7a4f268b0c8017205bac3258e11462aa5fee4c65b061",
+      "md5": "0f11b7ab344a215f05d76c56d22d8c09"
+    },
+    {
+      "file": "data/raw/main_benchmark/breast_cancer_seed19.csv",
+      "bytes": 121623,
+      "sha256": "d67c928059f9bd192b4b7a4f268b0c8017205bac3258e11462aa5fee4c65b061",
+      "md5": "0f11b7ab344a215f05d76c56d22d8c09"
+    },
+    {
+      "file": "data/raw/main_benchmark/breast_cancer_seed23.csv",
+      "bytes": 121623,
+      "sha256": "d67c928059f9bd192b4b7a4f268b0c8017205bac3258e11462aa5fee4c65b061",
+      "md5": "0f11b7ab344a215f05d76c56d22d8c09"
+    },
+    {
+      "file": "data/raw/main_benchmark/breast_cancer_seed3.csv",
+      "bytes": 121623,
+      "sha256": "d67c928059f9bd192b4b7a4f268b0c8017205bac3258e11462aa5fee4c65b061",
+      "md5": "0f11b7ab344a215f05d76c56d22d8c09"
+    },
+    {
+      "file": "data/raw/main_benchmark/breast_cancer_seed7.csv",
+      "bytes": 121623,
+      "sha256": "d67c928059f9bd192b4b7a4f268b0c8017205bac3258e11462aa5fee4c65b061",
+      "md5": "0f11b7ab344a215f05d76c56d22d8c09"
+    },
+    {
+      "file": "data/raw/main_benchmark/circles_seed11.csv",
+      "bytes": 21372,
+      "sha256": "892f1dc008413e09439c3b551314f7d872af51671aa6cd0a5caa17523c115919",
+      "md5": "f214001eff18dd394e60a16964ec4f63"
+    },
+    {
+      "file": "data/raw/main_benchmark/circles_seed19.csv",
+      "bytes": 21389,
+      "sha256": "251238f36cf15c9ff162796f64caac59bcd04f5d806fa52a80096d0364685eb7",
+      "md5": "7f19d01a079c7981a523b90b3c79af0b"
+    },
+    {
+      "file": "data/raw/main_benchmark/circles_seed23.csv",
+      "bytes": 21408,
+      "sha256": "fc3c2ab70aa482d7b15790351d8642396d96e7bd60d1ca75c58bcfb61b8baf86",
+      "md5": "16dec565b6200119b9ecb2b35408c71b"
+    },
+    {
+      "file": "data/raw/main_benchmark/circles_seed3.csv",
+      "bytes": 21369,
+      "sha256": "cc085d10dbf7dd017ea0910c35c5c2014d9de398b14ca3c03faa16fbf905bd00",
+      "md5": "2df7e04dd9188c553c575bc124833547"
+    },
+    {
+      "file": "data/raw/main_benchmark/circles_seed7.csv",
+      "bytes": 21414,
+      "sha256": "61ac69678a6e09e0ef24566c738d2b89936ecdebb2342cedab57d3826047c808",
+      "md5": "f035f2e685b6293638dbda4785994a42"
+    },
+    {
+      "file": "data/raw/main_benchmark/cmc_seed11.csv",
+      "bytes": 59005,
+      "sha256": "b87003c986edde12676ca122e9ab3140688e524020c1ea293729c79516de78b4",
+      "md5": "bb281bf2bdc944c859b1dd3e9cbe86c2"
+    },
+    {
+      "file": "data/raw/main_benchmark/cmc_seed19.csv",
+      "bytes": 59005,
+      "sha256": "b87003c986edde12676ca122e9ab3140688e524020c1ea293729c79516de78b4",
+      "md5": "bb281bf2bdc944c859b1dd3e9cbe86c2"
+    },
+    {
+      "file": "data/raw/main_benchmark/cmc_seed23.csv",
+      "bytes": 59005,
+      "sha256": "b87003c986edde12676ca122e9ab3140688e524020c1ea293729c79516de78b4",
+      "md5": "bb281bf2bdc944c859b1dd3e9cbe86c2"
+    },
+    {
+      "file": "data/raw/main_benchmark/cmc_seed3.csv",
+      "bytes": 59005,
+      "sha256": "b87003c986edde12676ca122e9ab3140688e524020c1ea293729c79516de78b4",
+      "md5": "bb281bf2bdc944c859b1dd3e9cbe86c2"
+    },
+    {
+      "file": "data/raw/main_benchmark/cmc_seed7.csv",
+      "bytes": 59005,
+      "sha256": "b87003c986edde12676ca122e9ab3140688e524020c1ea293729c79516de78b4",
+      "md5": "bb281bf2bdc944c859b1dd3e9cbe86c2"
+    },
+    {
+      "file": "data/raw/main_benchmark/digits_0_4_seed11.csv",
+      "bytes": 249201,
+      "sha256": "c40128adde5e80cd90b5b24d452e9394daee9ce7a58f29f05b64f64a2f34f590",
+      "md5": "bf2f2add405ad1ebb8143bb8c4743b32"
+    },
+    {
+      "file": "data/raw/main_benchmark/digits_0_4_seed19.csv",
+      "bytes": 249201,
+      "sha256": "c40128adde5e80cd90b5b24d452e9394daee9ce7a58f29f05b64f64a2f34f590",
+      "md5": "bf2f2add405ad1ebb8143bb8c4743b32"
+    },
+    {
+      "file": "data/raw/main_benchmark/digits_0_4_seed23.csv",
+      "bytes": 249201,
+      "sha256": "c40128adde5e80cd90b5b24d452e9394daee9ce7a58f29f05b64f64a2f34f590",
+      "md5": "bf2f2add405ad1ebb8143bb8c4743b32"
+    },
+    {
+      "file": "data/raw/main_benchmark/digits_0_4_seed3.csv",
+      "bytes": 249201,
+      "sha256": "c40128adde5e80cd90b5b24d452e9394daee9ce7a58f29f05b64f64a2f34f590",
+      "md5": "bf2f2add405ad1ebb8143bb8c4743b32"
+    },
+    {
+      "file": "data/raw/main_benchmark/digits_0_4_seed7.csv",
+      "bytes": 249201,
+      "sha256": "c40128adde5e80cd90b5b24d452e9394daee9ce7a58f29f05b64f64a2f34f590",
+      "md5": "bf2f2add405ad1ebb8143bb8c4743b32"
+    },
+    {
+      "file": "data/raw/main_benchmark/ecoli_seed11.csv",
+      "bytes": 12308,
+      "sha256": "e149d11e969f7b14c8345a9bdd94af1d19b6557f5225f18f39faac255dde2331",
+      "md5": "5e9c303dcc4560d030d662d527a04562"
+    },
+    {
+      "file": "data/raw/main_benchmark/ecoli_seed19.csv",
+      "bytes": 12308,
+      "sha256": "e149d11e969f7b14c8345a9bdd94af1d19b6557f5225f18f39faac255dde2331",
+      "md5": "5e9c303dcc4560d030d662d527a04562"
+    },
+    {
+      "file": "data/raw/main_benchmark/ecoli_seed23.csv",
+      "bytes": 12308,
+      "sha256": "e149d11e969f7b14c8345a9bdd94af1d19b6557f5225f18f39faac255dde2331",
+      "md5": "5e9c303dcc4560d030d662d527a04562"
+    },
+    {
+      "file": "data/raw/main_benchmark/ecoli_seed3.csv",
+      "bytes": 12308,
+      "sha256": "e149d11e969f7b14c8345a9bdd94af1d19b6557f5225f18f39faac255dde2331",
+      "md5": "5e9c303dcc4560d030d662d527a04562"
+    },
+    {
+      "file": "data/raw/main_benchmark/ecoli_seed7.csv",
+      "bytes": 12308,
+      "sha256": "e149d11e969f7b14c8345a9bdd94af1d19b6557f5225f18f39faac255dde2331",
+      "md5": "5e9c303dcc4560d030d662d527a04562"
+    },
+    {
+      "file": "data/raw/main_benchmark/glass_seed11.csv",
+      "bytes": 10887,
+      "sha256": "129c1b38769ebd8890ab9f42d03f7c09c93a82c2fc77685d52a343a28c914ff5",
+      "md5": "362a629bf7343dd15ef77ce42e62a7af"
+    },
+    {
+      "file": "data/raw/main_benchmark/glass_seed19.csv",
+      "bytes": 10887,
+      "sha256": "129c1b38769ebd8890ab9f42d03f7c09c93a82c2fc77685d52a343a28c914ff5",
+      "md5": "362a629bf7343dd15ef77ce42e62a7af"
+    },
+    {
+      "file": "data/raw/main_benchmark/glass_seed23.csv",
+      "bytes": 10887,
+      "sha256": "129c1b38769ebd8890ab9f42d03f7c09c93a82c2fc77685d52a343a28c914ff5",
+      "md5": "362a629bf7343dd15ef77ce42e62a7af"
+    },
+    {
+      "file": "data/raw/main_benchmark/glass_seed3.csv",
+      "bytes": 10887,
+      "sha256": "129c1b38769ebd8890ab9f42d03f7c09c93a82c2fc77685d52a343a28c914ff5",
+      "md5": "362a629bf7343dd15ef77ce42e62a7af"
+    },
+    {
+      "file": "data/raw/main_benchmark/glass_seed7.csv",
+      "bytes": 10887,
+      "sha256": "129c1b38769ebd8890ab9f42d03f7c09c93a82c2fc77685d52a343a28c914ff5",
+      "md5": "362a629bf7343dd15ef77ce42e62a7af"
+    },
+    {
+      "file": "data/raw/main_benchmark/iris_seed11.csv",
+      "bytes": 2881,
+      "sha256": "0a8d4356fd8bf4a814252d2923ebc9bb9446d46cff4bc7d52a5521b11fd520fd",
+      "md5": "53a50a624597ab04119cceffb7438246"
+    },
+    {
+      "file": "data/raw/main_benchmark/iris_seed19.csv",
+      "bytes": 2881,
+      "sha256": "0a8d4356fd8bf4a814252d2923ebc9bb9446d46cff4bc7d52a5521b11fd520fd",
+      "md5": "53a50a624597ab04119cceffb7438246"
+    },
+    {
+      "file": "data/raw/main_benchmark/iris_seed23.csv",
+      "bytes": 2881,
+      "sha256": "0a8d4356fd8bf4a814252d2923ebc9bb9446d46cff4bc7d52a5521b11fd520fd",
+      "md5": "53a50a624597ab04119cceffb7438246"
+    },
+    {
+      "file": "data/raw/main_benchmark/iris_seed3.csv",
+      "bytes": 2881,
+      "sha256": "0a8d4356fd8bf4a814252d2923ebc9bb9446d46cff4bc7d52a5521b11fd520fd",
+      "md5": "53a50a624597ab04119cceffb7438246"
+    },
+    {
+      "file": "data/raw/main_benchmark/iris_seed7.csv",
+      "bytes": 2881,
+      "sha256": "0a8d4356fd8bf4a814252d2923ebc9bb9446d46cff4bc7d52a5521b11fd520fd",
+      "md5": "53a50a624597ab04119cceffb7438246"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_circles_seed11.csv",
+      "bytes": 21341,
+      "sha256": "f9210c484ac889b8a3ed3b92d8bd5136d931046b376f21011cc1b70272e00abc",
+      "md5": "4abe53c24ae241732c8933b4919321ca"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_circles_seed19.csv",
+      "bytes": 21313,
+      "sha256": "af437a3636d1e6cc8dd8569967557b945578e7d9738423b74be7a1282f917b51",
+      "md5": "5c99a1eace9b6356378473241964f19d"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_circles_seed23.csv",
+      "bytes": 21359,
+      "sha256": "5dbf5f6861fac7cdd7a49f22aa2196b98bc4300b9c24e7e60e702d10b08ffb6d",
+      "md5": "a351c39e9d2ad7bf984516dc32206165"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_circles_seed3.csv",
+      "bytes": 21363,
+      "sha256": "47750804d137fd927f3122cf986fd2bcb28904cc9c5567d08d0f746ae30905e7",
+      "md5": "0881ec31a875380ab5bc7ae659ddd262"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_circles_seed7.csv",
+      "bytes": 21354,
+      "sha256": "0cf740223605aef7650ec6da4c809d5fc491868817934f242c1ba7a462e9073d",
+      "md5": "a740ad11229c03604346b6990307ad2e"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_moons_seed11.csv",
+      "bytes": 21053,
+      "sha256": "b97cac90e27dd86f1c323a751c094af1015d9ade5dd0fff51c48f47d8980c8bc",
+      "md5": "d6afa6a143a05ece4962d4d4ded1dd32"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_moons_seed19.csv",
+      "bytes": 21065,
+      "sha256": "0b956e9a39855ad22aa51270c51a429c8e5c9d5bf653426526d5d80ff778476b",
+      "md5": "46b2a376e22196854249477aeea511b8"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_moons_seed23.csv",
+      "bytes": 21031,
+      "sha256": "8015947f3766fe8212171e2de7cc9336954cbb9312512690e93b2bd4c8ec177e",
+      "md5": "2834773630f9421fcf6d6aef35628377"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_moons_seed3.csv",
+      "bytes": 21032,
+      "sha256": "40f48871924e80aace8aa0c567eb52d1e0bc82fc8fc80d91f99bb40deee67f8c",
+      "md5": "4cf6104de5a5a2cbc74f50daeaf1b2f7"
+    },
+    {
+      "file": "data/raw/main_benchmark/noisy_moons_seed7.csv",
+      "bytes": 20999,
+      "sha256": "a390a4dea05d499628efa9a622b2911c36db686b354bc816d60b54af418450e6",
+      "md5": "31e25522c97d1a1a2d301d835f5a11f4"
+    },
+    {
+      "file": "data/raw/main_benchmark/two_moons_seed11.csv",
+      "bytes": 21074,
+      "sha256": "2ed91f72487ab90cd7e557888f43c7d3235169ef54638d83cf7598d6a1812982",
+      "md5": "4e160cd8f1fc9e2f4fd5e4c603fa7b08"
+    },
+    {
+      "file": "data/raw/main_benchmark/two_moons_seed19.csv",
+      "bytes": 21049,
+      "sha256": "5a320935ae8ffd64af917f553ca46ffd59be081b3a12bf5c0c13a3834e496b15",
+      "md5": "8fa65e151b22a77554ccd4499471079f"
+    },
+    {
+      "file": "data/raw/main_benchmark/two_moons_seed23.csv",
+      "bytes": 21062,
+      "sha256": "8c77683c9125bb0af3da8b8a0fe5a984b2fb3cb7bc71dd61bc336dcfb14af178",
+      "md5": "1fd3d7b7556e006898e751a8f08b0af7"
+    },
+    {
+      "file": "data/raw/main_benchmark/two_moons_seed3.csv",
+      "bytes": 21060,
+      "sha256": "a54ff2679b535bd9d26c7890f073ad0a0392029abf74f8ad12077c531fa4c5ea",
+      "md5": "035b9ff4752a6fe845130de3fbdcc409"
+    },
+    {
+      "file": "data/raw/main_benchmark/two_moons_seed7.csv",
+      "bytes": 21066,
+      "sha256": "d040c71022560357f9ffb1807e36dd8be2308c75b0f53dd16a0acc8876745cb1",
+      "md5": "b29df41130120f08528163d6df4d4ae0"
+    },
+    {
+      "file": "data/raw/main_benchmark/varied_density_seed11.csv",
+      "bytes": 21275,
+      "sha256": "d978e684c19d2ed349f03a0628a1292c5cb397a50dc7f995e94000505f31863a",
+      "md5": "efefe805374ac88904344b01b7f37b86"
+    },
+    {
+      "file": "data/raw/main_benchmark/varied_density_seed19.csv",
+      "bytes": 21276,
+      "sha256": "b311210ba5b5ca38ac55a298ef2b0e9f003caa2ea56d69e6769dc35722d88fbb",
+      "md5": "e2c8f7e8cd01ac46138bec9ffa07cf79"
+    },
+    {
+      "file": "data/raw/main_benchmark/varied_density_seed23.csv",
+      "bytes": 21260,
+      "sha256": "d529d1f9d94277629a8de7ab6b06dd01e69b0319343f60fe11b51d59ee1315bf",
+      "md5": "67ebfe4889df27136472f3d5ffdceaf2"
+    },
+    {
+      "file": "data/raw/main_benchmark/varied_density_seed3.csv",
+      "bytes": 21200,
+      "sha256": "eae3c849ea9e6cc236cd35bd5e61ef188853a148ec3783f745e92f785d245ac7",
+      "md5": "ba9e4a1bde1c57d06fa8b2731c3ca506"
+    },
+    {
+      "file": "data/raw/main_benchmark/varied_density_seed7.csv",
+      "bytes": 21292,
+      "sha256": "7e38972a909967fbb5cdc11942d28f5a5ab469d003842e53f3c201690a6f7819",
+      "md5": "b54488d8a9c9766dcf39ba0f746bd017"
+    },
+    {
+      "file": "data/raw/main_benchmark/vehicle_seed11.csv",
+      "bytes": 84382,
+      "sha256": "e98904701323e0dc6f99678edc57ec78d10d7fcb9585fd91e809cbe4b747e58e",
+      "md5": "fd538724c75f5454fdfe15ea2b44ea58"
+    },
+    {
+      "file": "data/raw/main_benchmark/vehicle_seed19.csv",
+      "bytes": 84382,
+      "sha256": "e98904701323e0dc6f99678edc57ec78d10d7fcb9585fd91e809cbe4b747e58e",
+      "md5": "fd538724c75f5454fdfe15ea2b44ea58"
+    },
+    {
+      "file": "data/raw/main_benchmark/vehicle_seed23.csv",
+      "bytes": 84382,
+      "sha256": "e98904701323e0dc6f99678edc57ec78d10d7fcb9585fd91e809cbe4b747e58e",
+      "md5": "fd538724c75f5454fdfe15ea2b44ea58"
+    },
+    {
+      "file": "data/raw/main_benchmark/vehicle_seed3.csv",
+      "bytes": 84382,
+      "sha256": "e98904701323e0dc6f99678edc57ec78d10d7fcb9585fd91e809cbe4b747e58e",
+      "md5": "fd538724c75f5454fdfe15ea2b44ea58"
+    },
+    {
+      "file": "data/raw/main_benchmark/vehicle_seed7.csv",
+      "bytes": 84382,
+      "sha256": "e98904701323e0dc6f99678edc57ec78d10d7fcb9585fd91e809cbe4b747e58e",
+      "md5": "fd538724c75f5454fdfe15ea2b44ea58"
+    },
+    {
+      "file": "data/raw/main_benchmark/wdbc_seed11.csv",
+      "bytes": 121046,
+      "sha256": "63898810f681740a00548934466ba98923f397ef6c2a080e57b32836b1d78346",
+      "md5": "5460a6e382147b87d48cd711a94ca395"
+    },
+    {
+      "file": "data/raw/main_benchmark/wdbc_seed19.csv",
+      "bytes": 121046,
+      "sha256": "63898810f681740a00548934466ba98923f397ef6c2a080e57b32836b1d78346",
+      "md5": "5460a6e382147b87d48cd711a94ca395"
+    },
+    {
+      "file": "data/raw/main_benchmark/wdbc_seed23.csv",
+      "bytes": 121046,
+      "sha256": "63898810f681740a00548934466ba98923f397ef6c2a080e57b32836b1d78346",
+      "md5": "5460a6e382147b87d48cd711a94ca395"
+    },
+    {
+      "file": "data/raw/main_benchmark/wdbc_seed3.csv",
+      "bytes": 121046,
+      "sha256": "63898810f681740a00548934466ba98923f397ef6c2a080e57b32836b1d78346",
+      "md5": "5460a6e382147b87d48cd711a94ca395"
+    },
+    {
+      "file": "data/raw/main_benchmark/wdbc_seed7.csv",
+      "bytes": 121046,
+      "sha256": "63898810f681740a00548934466ba98923f397ef6c2a080e57b32836b1d78346",
+      "md5": "5460a6e382147b87d48cd711a94ca395"
+    },
+    {
+      "file": "data/raw/main_benchmark/wine_seed11.csv",
+      "bytes": 12338,
+      "sha256": "15191a6fc529e9136613e2d8826c5f0d601f93eb55cd8a26db13bd32039e7741",
+      "md5": "95e52fad59140d862b26828ae7690f1e"
+    },
+    {
+      "file": "data/raw/main_benchmark/wine_seed19.csv",
+      "bytes": 12338,
+      "sha256": "15191a6fc529e9136613e2d8826c5f0d601f93eb55cd8a26db13bd32039e7741",
+      "md5": "95e52fad59140d862b26828ae7690f1e"
+    },
+    {
+      "file": "data/raw/main_benchmark/wine_seed23.csv",
+      "bytes": 12338,
+      "sha256": "15191a6fc529e9136613e2d8826c5f0d601f93eb55cd8a26db13bd32039e7741",
+      "md5": "95e52fad59140d862b26828ae7690f1e"
+    },
+    {
+      "file": "data/raw/main_benchmark/wine_seed3.csv",
+      "bytes": 12338,
+      "sha256": "15191a6fc529e9136613e2d8826c5f0d601f93eb55cd8a26db13bd32039e7741",
+      "md5": "95e52fad59140d862b26828ae7690f1e"
+    },
+    {
+      "file": "data/raw/main_benchmark/wine_seed7.csv",
+      "bytes": 12338,
+      "sha256": "15191a6fc529e9136613e2d8826c5f0d601f93eb55cd8a26db13bd32039e7741",
+      "md5": "95e52fad59140d862b26828ae7690f1e"
+    },
+    {
+      "file": "data/raw/openml/openml_1464_blood-transfusion-service-center.csv",
+      "bytes": 10505,
+      "sha256": "3b62345e94fbf4c84273e7175b1ed3d4d44e2e80dc816bbb93284510097e8e1e",
+      "md5": "ae064da641802f44c8412006ba37c154"
+    },
+    {
+      "file": "data/raw/openml/openml_31_credit-g.csv",
+      "bytes": 139019,
+      "sha256": "6134da30262e25cc7581836370294b6a8a80c9de0c86500c979069ea48213d50",
+      "md5": "e00778b74bd79b19fb9849d3214936b7"
+    },
+    {
+      "file": "data/raw/openml/openml_37_diabetes.csv",
+      "bytes": 33993,
+      "sha256": "e300844257e79e472ff2fcbf4331610066aef4c98a17e0d979eb6d3ad97dbb94",
+      "md5": "6a7b3b46bde1936bf7c0ee9812d6b5fb"
+    },
+    {
+      "file": "data/raw/openml/openml_40966_MiceProtein.csv",
+      "bytes": 980815,
+      "sha256": "43f85ba5dc90e7fe08a76031749a9e9fb535bd6520c744e8724d441d3bed1225",
+      "md5": "fcaf1e60ccbb292be6203510a600f19f"
+    },
+    {
+      "file": "data/raw/openml/openml_45090_Leukemia.csv",
+      "bytes": 3198156,
+      "sha256": "04590a9f627641ed2c2b3e1866ea6000236ee26f6a2c6ee5599a77593c4ec640",
+      "md5": "b2c452b98c66de0f5927f27a3e7102cd"
+    },
+    {
+      "file": "data/raw/openml/openml_45091_Leukemia-3.csv",
+      "bytes": 3198297,
+      "sha256": "736e13d93686828b638bb3180c3f5084a69f58e63a8bb2220c0665824915547f",
+      "md5": "8f72f8df788e727fd99923ab2c7f1f5a"
+    },
+    {
+      "file": "data/raw/openml/openml_45093_Lung.csv",
+      "bytes": 16283059,
+      "sha256": "98086fc80d2080e5d73a0273604529e50e7c19883efa5c7dfb18ee98030d6356",
+      "md5": "3ac6f8d56131ab1513962d12e2af42d3"
+    },
+    {
+      "file": "data/raw/openml/openml_45094_Lymphoma-3.csv",
+      "bytes": 1412439,
+      "sha256": "38f434120b8e809c82bf80a6e342ffef3994df6fbc8e5d7d405dc6f3ce8c7344",
+      "md5": "ce90ad55c835fdd99b2e6fd4130946f5"
+    },
+    {
+      "file": "data/raw/openml/openml_54_vehicle.csv",
+      "bytes": 55457,
+      "sha256": "eef48ab4689a4bbbf23d6c8ec43eca94ac910b94497eb9ef77bc673ff0e88396",
+      "md5": "818e1fe407963ac22d1802cd6c2e9fb1"
+    },
+    {
+      "file": "data/raw/openml/openml_59_ionosphere.csv",
+      "bytes": 81734,
+      "sha256": "db7b6bcdd62ccc04fc01be27ec5b35c5a02af70fef887eed87967bcfe4cc08b8",
+      "md5": "e2e7e27037840d7fcf6abba441625524"
+    },
+    {
+      "file": "data/raw/sipu/aggregation.arff",
+      "bytes": 10764,
+      "sha256": "667bc279cde757f880b96f1ac3712945c2996314c5b61eb30442dca11ed871f9",
+      "md5": "fffccf2703e766c96dc7da4e313be819"
+    },
+    {
+      "file": "data/raw/sipu/compound.arff",
+      "bytes": 5744,
+      "sha256": "79ccf0a921768e3412e35b521c632b5f1a75ca0c58be98e394c45d6a9c028c73",
+      "md5": "0d7078a36b60ad0670d565ed1253546a"
+    },
+    {
+      "file": "data/raw/sipu/spiral.arff",
+      "bytes": 19488,
+      "sha256": "ddef722bb9a7a5835ec86e147103c0f03e3c2003fda16b412d9067e04feae9bb",
+      "md5": "b2aa35e95e41d5d2eb466f12a6105a56"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/blood-transfusion_processed.csv",
+      "bytes": 60416,
+      "sha256": "4656c3d9ea8c0d685c8b04fd405b6fde50e5ea4a5ddf73b8a8b7693cd8d3c5b0",
+      "md5": "115fc9ce7217e35e532821af883ab332"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/credit-g_processed.csv",
+      "bytes": 233578,
+      "sha256": "0f5c6e92c9cb56b6d0ae66655a123bfa62b588ad58b805ca3ac3b679c49b580b",
+      "md5": "712f0fc00dc0d0ddf76f8602ecc9f249"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/diabetes_processed.csv",
+      "bytes": 121527,
+      "sha256": "ba9c628130515422f82b30d2efda4df3aa00eadaafa143e8867e93a0963cba49",
+      "md5": "9a2616dd03e9a18d5b68d39f1ae9eabf"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/ionosphere_processed.csv",
+      "bytes": 82234,
+      "sha256": "6d622dba918f19cf1959e9bf983aec302544824763cc522324b29a238f33ee96",
+      "md5": "0d4c32087e2016ffceb3e1989264bf51"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/Leukemia_2class_processed.csv",
+      "bytes": 16579,
+      "sha256": "3f24ff3b4d25faeae6aaa43e90d63755977508ccb70c977bdc91f4e7613c0bca",
+      "md5": "06718ae2d15bcd020a271b6d58ccb02a"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/Leukemia_3class_processed.csv",
+      "bytes": 16579,
+      "sha256": "a388b71042a0e71c5bf304dca5f03bd4102385040d9e7fb0ddb9c925f9c5e88b",
+      "md5": "c90ea9b5ca11e532aa495f864725e77c"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/Lung_5class_processed.csv",
+      "bytes": 47315,
+      "sha256": "407fda3661a8fbc8448fe2d1d9073946ef0c779d7d12281e80e6c3197efaa804",
+      "md5": "83da9bf7f34f858d3cc926007edd967a"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/Lymphoma_3class_processed.csv",
+      "bytes": 15154,
+      "sha256": "ce9f6690718fd1e1fccb9da20d4e06b7dfe9dbacf4fb0b8a2e23cb8f2768a4e7",
+      "md5": "3ed92e0ac343a973fccb4ebb8224018d"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/MiceProtein_8class_processed.csv",
+      "bytes": 251311,
+      "sha256": "9249918f76d57bfc17f3fd8d84916834981cab928b2b44b9da0795f61a1ecadc",
+      "md5": "0d255dcad3d6f1d2a8b0cc196d7e81c1"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/MiceProtein_behavior_processed.csv",
+      "bytes": 251311,
+      "sha256": "92a77108172ee642969e59fe655a91c3e17292d629db5d19e70a8145a1dc8489",
+      "md5": "546234de4e7811f496687a35c2d4ca30"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/MiceProtein_genotype_processed.csv",
+      "bytes": 251311,
+      "sha256": "a31f9f36298829c9a499e619e86a48fb37f58987b42d48604038ced607767f90",
+      "md5": "5d468367557b1d6f11ed19f9c14ce72b"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/MiceProtein_treatment_processed.csv",
+      "bytes": 251311,
+      "sha256": "a3eca4f6e2c571ee7b7bc1949cc03f09909a3932e503be9808dcb8ea16d6ac26",
+      "md5": "9109be64e6e70e0803ef0d15bc2dd1bf"
+    },
+    {
+      "file": "data/processed/external_real_benchmark/vehicle_processed.csv",
+      "bytes": 198709,
+      "sha256": "f81e7a22312a43dee5fb19ff83329148140ba7fda33178467d0f2d3d7e30b181",
+      "md5": "866ee313654a8662027d7ba36238c495"
+    },
+    {
+      "file": "data/processed/main_benchmark/anisotropic_blobs_seed11_processed.csv",
+      "bytes": 21215,
+      "sha256": "ab9865f667b128301307e93dc6a0f7ee0479343a621c342558f6e0ab7c791e07",
+      "md5": "af216fb365f34352db957332dfb34071"
+    },
+    {
+      "file": "data/processed/main_benchmark/anisotropic_blobs_seed19_processed.csv",
+      "bytes": 21083,
+      "sha256": "6a192d1f54739e1660fed833de0ff7869bf5b6ee1c58efcbc28861df7920953c",
+      "md5": "041df96f99f9dcf2dccc286f0c53a35e"
+    },
+    {
+      "file": "data/processed/main_benchmark/anisotropic_blobs_seed23_processed.csv",
+      "bytes": 20987,
+      "sha256": "735144f2bf705ffcb4bb541f7cb212d31a8163a05c15f5b32e78b60476b9746b",
+      "md5": "b70d34646aee5f72ad1df127bf767c28"
+    },
+    {
+      "file": "data/processed/main_benchmark/anisotropic_blobs_seed3_processed.csv",
+      "bytes": 21076,
+      "sha256": "9f3dad607e0aee2efd4a6cf38ff4b37462fc778c977d5ff6a3b4a4b5fb165b26",
+      "md5": "cc68fd57a9122d61280045c03189f0cd"
+    },
+    {
+      "file": "data/processed/main_benchmark/anisotropic_blobs_seed7_processed.csv",
+      "bytes": 20903,
+      "sha256": "8222322791e3e3212e5bf971396f3283ac974717cdbd423bbf91891596086b71",
+      "md5": "5175bc171738aa7fb49687e48a4d95e9"
+    },
+    {
+      "file": "data/processed/main_benchmark/breast_cancer_seed11_processed.csv",
+      "bytes": 113502,
+      "sha256": "562ebcc4f8cc0846ae6b4a6c66b676f65c5dc313e907d60637ce3b7f7605faf4",
+      "md5": "51d9d7a4e37b187dc7ecdc407454e7b7"
+    },
+    {
+      "file": "data/processed/main_benchmark/breast_cancer_seed19_processed.csv",
+      "bytes": 113502,
+      "sha256": "562ebcc4f8cc0846ae6b4a6c66b676f65c5dc313e907d60637ce3b7f7605faf4",
+      "md5": "51d9d7a4e37b187dc7ecdc407454e7b7"
+    },
+    {
+      "file": "data/processed/main_benchmark/breast_cancer_seed23_processed.csv",
+      "bytes": 113502,
+      "sha256": "562ebcc4f8cc0846ae6b4a6c66b676f65c5dc313e907d60637ce3b7f7605faf4",
+      "md5": "51d9d7a4e37b187dc7ecdc407454e7b7"
+    },
+    {
+      "file": "data/processed/main_benchmark/breast_cancer_seed3_processed.csv",
+      "bytes": 113502,
+      "sha256": "562ebcc4f8cc0846ae6b4a6c66b676f65c5dc313e907d60637ce3b7f7605faf4",
+      "md5": "51d9d7a4e37b187dc7ecdc407454e7b7"
+    },
+    {
+      "file": "data/processed/main_benchmark/breast_cancer_seed7_processed.csv",
+      "bytes": 113502,
+      "sha256": "562ebcc4f8cc0846ae6b4a6c66b676f65c5dc313e907d60637ce3b7f7605faf4",
+      "md5": "51d9d7a4e37b187dc7ecdc407454e7b7"
+    },
+    {
+      "file": "data/processed/main_benchmark/circles_seed11_processed.csv",
+      "bytes": 21098,
+      "sha256": "2ac3a287f1cf06381ba22c7e30faf27dd054a4a57af00168cb7c6c180ac15ee4",
+      "md5": "f909607f33cc5c19ccd8be2ef9bee9e0"
+    },
+    {
+      "file": "data/processed/main_benchmark/circles_seed19_processed.csv",
+      "bytes": 21129,
+      "sha256": "143c68dbe5767f5780eeef46ac482ab9a43daf2f5f0e28ced81da89da3aae781",
+      "md5": "b82075f51b975a7ca66167233364da84"
+    },
+    {
+      "file": "data/processed/main_benchmark/circles_seed23_processed.csv",
+      "bytes": 21105,
+      "sha256": "44ee71b5a2ace6ad198d066f9fadffad1fe96f0e97bd9b636d38a1cef5bb3252",
+      "md5": "69e67a6ca1b774a22e29cd376652a7d4"
+    },
+    {
+      "file": "data/processed/main_benchmark/circles_seed3_processed.csv",
+      "bytes": 21121,
+      "sha256": "b20593ad31a2f7811909b5fe9e1f9d0ded49249fb9a705f99baf81ee0eff8572",
+      "md5": "c1eb1c68f4fc20749dabc35332d84be2"
+    },
+    {
+      "file": "data/processed/main_benchmark/circles_seed7_processed.csv",
+      "bytes": 21131,
+      "sha256": "47d82d9a987ca1b7d2078d29ed0bf9d09abaab4fa1272053f19d5cdd15fa4318",
+      "md5": "84009194a2869e1e31cccf2ef06f05cf"
+    },
+    {
+      "file": "data/processed/main_benchmark/cmc_seed11_processed.csv",
+      "bytes": 261328,
+      "sha256": "c6279c92d6b33d6131bff3b76fc00e5a1850e71cb2c20922a1fa78a79016c86b",
+      "md5": "cecfcc7993f7621a81234fef437df230"
+    },
+    {
+      "file": "data/processed/main_benchmark/cmc_seed19_processed.csv",
+      "bytes": 261328,
+      "sha256": "c6279c92d6b33d6131bff3b76fc00e5a1850e71cb2c20922a1fa78a79016c86b",
+      "md5": "cecfcc7993f7621a81234fef437df230"
+    },
+    {
+      "file": "data/processed/main_benchmark/cmc_seed23_processed.csv",
+      "bytes": 261328,
+      "sha256": "c6279c92d6b33d6131bff3b76fc00e5a1850e71cb2c20922a1fa78a79016c86b",
+      "md5": "cecfcc7993f7621a81234fef437df230"
+    },
+    {
+      "file": "data/processed/main_benchmark/cmc_seed3_processed.csv",
+      "bytes": 261328,
+      "sha256": "c6279c92d6b33d6131bff3b76fc00e5a1850e71cb2c20922a1fa78a79016c86b",
+      "md5": "cecfcc7993f7621a81234fef437df230"
+    },
+    {
+      "file": "data/processed/main_benchmark/cmc_seed7_processed.csv",
+      "bytes": 261328,
+      "sha256": "c6279c92d6b33d6131bff3b76fc00e5a1850e71cb2c20922a1fa78a79016c86b",
+      "md5": "cecfcc7993f7621a81234fef437df230"
+    },
+    {
+      "file": "data/processed/main_benchmark/digits_0_4_seed11_processed.csv",
+      "bytes": 177985,
+      "sha256": "7226d24ee1aa4c4776d36b91aebf6d4e8e11cd8848e4ccd2d24d23cf0f218cd3",
+      "md5": "83e0e01e7c9459102be85e773461b7d9"
+    },
+    {
+      "file": "data/processed/main_benchmark/digits_0_4_seed19_processed.csv",
+      "bytes": 177985,
+      "sha256": "7226d24ee1aa4c4776d36b91aebf6d4e8e11cd8848e4ccd2d24d23cf0f218cd3",
+      "md5": "83e0e01e7c9459102be85e773461b7d9"
+    },
+    {
+      "file": "data/processed/main_benchmark/digits_0_4_seed23_processed.csv",
+      "bytes": 177985,
+      "sha256": "7226d24ee1aa4c4776d36b91aebf6d4e8e11cd8848e4ccd2d24d23cf0f218cd3",
+      "md5": "83e0e01e7c9459102be85e773461b7d9"
+    },
+    {
+      "file": "data/processed/main_benchmark/digits_0_4_seed3_processed.csv",
+      "bytes": 177985,
+      "sha256": "7226d24ee1aa4c4776d36b91aebf6d4e8e11cd8848e4ccd2d24d23cf0f218cd3",
+      "md5": "83e0e01e7c9459102be85e773461b7d9"
+    },
+    {
+      "file": "data/processed/main_benchmark/digits_0_4_seed7_processed.csv",
+      "bytes": 177985,
+      "sha256": "7226d24ee1aa4c4776d36b91aebf6d4e8e11cd8848e4ccd2d24d23cf0f218cd3",
+      "md5": "83e0e01e7c9459102be85e773461b7d9"
+    },
+    {
+      "file": "data/processed/main_benchmark/ecoli_seed11_processed.csv",
+      "bytes": 48013,
+      "sha256": "ec7220fc55f79b05135bdfe8ac66383512c0c94e73bfbe04463848530d5e2a95",
+      "md5": "7e8daca1704710ff4b9a969d422c0bed"
+    },
+    {
+      "file": "data/processed/main_benchmark/ecoli_seed19_processed.csv",
+      "bytes": 48013,
+      "sha256": "ec7220fc55f79b05135bdfe8ac66383512c0c94e73bfbe04463848530d5e2a95",
+      "md5": "7e8daca1704710ff4b9a969d422c0bed"
+    },
+    {
+      "file": "data/processed/main_benchmark/ecoli_seed23_processed.csv",
+      "bytes": 48013,
+      "sha256": "ec7220fc55f79b05135bdfe8ac66383512c0c94e73bfbe04463848530d5e2a95",
+      "md5": "7e8daca1704710ff4b9a969d422c0bed"
+    },
+    {
+      "file": "data/processed/main_benchmark/ecoli_seed3_processed.csv",
+      "bytes": 48013,
+      "sha256": "ec7220fc55f79b05135bdfe8ac66383512c0c94e73bfbe04463848530d5e2a95",
+      "md5": "7e8daca1704710ff4b9a969d422c0bed"
+    },
+    {
+      "file": "data/processed/main_benchmark/ecoli_seed7_processed.csv",
+      "bytes": 48013,
+      "sha256": "ec7220fc55f79b05135bdfe8ac66383512c0c94e73bfbe04463848530d5e2a95",
+      "md5": "7e8daca1704710ff4b9a969d422c0bed"
+    },
+    {
+      "file": "data/processed/main_benchmark/glass_seed11_processed.csv",
+      "bytes": 38703,
+      "sha256": "5cf1a2e00150bf997e763ecc2825cfb3432b4479c973f5b2423a06fa41940e3f",
+      "md5": "08595b8399a8470290029cb32374902d"
+    },
+    {
+      "file": "data/processed/main_benchmark/glass_seed19_processed.csv",
+      "bytes": 38703,
+      "sha256": "5cf1a2e00150bf997e763ecc2825cfb3432b4479c973f5b2423a06fa41940e3f",
+      "md5": "08595b8399a8470290029cb32374902d"
+    },
+    {
+      "file": "data/processed/main_benchmark/glass_seed23_processed.csv",
+      "bytes": 38703,
+      "sha256": "5cf1a2e00150bf997e763ecc2825cfb3432b4479c973f5b2423a06fa41940e3f",
+      "md5": "08595b8399a8470290029cb32374902d"
+    },
+    {
+      "file": "data/processed/main_benchmark/glass_seed3_processed.csv",
+      "bytes": 38703,
+      "sha256": "5cf1a2e00150bf997e763ecc2825cfb3432b4479c973f5b2423a06fa41940e3f",
+      "md5": "08595b8399a8470290029cb32374902d"
+    },
+    {
+      "file": "data/processed/main_benchmark/glass_seed7_processed.csv",
+      "bytes": 38703,
+      "sha256": "5cf1a2e00150bf997e763ecc2825cfb3432b4479c973f5b2423a06fa41940e3f",
+      "md5": "08595b8399a8470290029cb32374902d"
+    },
+    {
+      "file": "data/processed/main_benchmark/iris_seed11_processed.csv",
+      "bytes": 12170,
+      "sha256": "d98672182d9655bf3f982916bdca86bd5ef7a6607c2470f22e9e730d3b68b607",
+      "md5": "08cd250c5a59da1ed376773efc9a855f"
+    },
+    {
+      "file": "data/processed/main_benchmark/iris_seed19_processed.csv",
+      "bytes": 12170,
+      "sha256": "d98672182d9655bf3f982916bdca86bd5ef7a6607c2470f22e9e730d3b68b607",
+      "md5": "08cd250c5a59da1ed376773efc9a855f"
+    },
+    {
+      "file": "data/processed/main_benchmark/iris_seed23_processed.csv",
+      "bytes": 12170,
+      "sha256": "d98672182d9655bf3f982916bdca86bd5ef7a6607c2470f22e9e730d3b68b607",
+      "md5": "08cd250c5a59da1ed376773efc9a855f"
+    },
+    {
+      "file": "data/processed/main_benchmark/iris_seed3_processed.csv",
+      "bytes": 12170,
+      "sha256": "d98672182d9655bf3f982916bdca86bd5ef7a6607c2470f22e9e730d3b68b607",
+      "md5": "08cd250c5a59da1ed376773efc9a855f"
+    },
+    {
+      "file": "data/processed/main_benchmark/iris_seed7_processed.csv",
+      "bytes": 12170,
+      "sha256": "d98672182d9655bf3f982916bdca86bd5ef7a6607c2470f22e9e730d3b68b607",
+      "md5": "08cd250c5a59da1ed376773efc9a855f"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_circles_seed11_processed.csv",
+      "bytes": 21073,
+      "sha256": "8a04fa86c6319daa7e6ad750e9dd725b71e60a65924992662eb9a736d4be6a7b",
+      "md5": "7f12312a7582b71737dca47d696bc4fa"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_circles_seed19_processed.csv",
+      "bytes": 21044,
+      "sha256": "66ff15d78073fb0b83549ee312a9dd660380b8bb841ccf64a54a78abcca20818",
+      "md5": "6b28bdd9437a28ddf35731b189785853"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_circles_seed23_processed.csv",
+      "bytes": 21080,
+      "sha256": "16a4a39788e273648eeecaa0fb051ff5a8bd57afba548f7a59395a5118e4e1ce",
+      "md5": "0ce5581adab8e21fe05dffccdb2c67b3"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_circles_seed3_processed.csv",
+      "bytes": 21077,
+      "sha256": "d45656bd4f14d46234e673e6043a19fba8dfbe10c506cdd88d1e4ebbe2bca76d",
+      "md5": "b977a955c2b1e49bac7d14485e9c6c8a"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_circles_seed7_processed.csv",
+      "bytes": 21072,
+      "sha256": "ddbb845933ea78ea4ae94a660c434a0b031f8a9e352d3cf6c8c716573ed778a2",
+      "md5": "7fc1377f1178ca41f44a2d7293799e9f"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_moons_seed11_processed.csv",
+      "bytes": 21072,
+      "sha256": "972092d3b4e6d082f9561c3ef5d18ba89488b3cdf8991c31247461b70aec385c",
+      "md5": "07ffd22737222baee92f78c3add40b52"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_moons_seed19_processed.csv",
+      "bytes": 21124,
+      "sha256": "4105b83b0d206d4513d980869624dcacb6b537b59f7c30db12ed7559d3c09a32",
+      "md5": "027dc13f70f064dd07ea4aca0e24cd38"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_moons_seed23_processed.csv",
+      "bytes": 21107,
+      "sha256": "8d9749f766c6a73b41fd27135830461e354b47c324cd9bd1ff44ba174bdc541f",
+      "md5": "33f293c201ff5b17fc7e196fd50408a8"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_moons_seed3_processed.csv",
+      "bytes": 21118,
+      "sha256": "053fdb9c98841b523cb876342d241a206b1e4bb4122db19ed8bb5c3657fd8016",
+      "md5": "8b9890be4f4304f51e2c6b25edd8e74c"
+    },
+    {
+      "file": "data/processed/main_benchmark/noisy_moons_seed7_processed.csv",
+      "bytes": 21105,
+      "sha256": "b548b6ca178b73fa256b497d86b684b78f9fe4a987f9e8a27557c09960eff0fc",
+      "md5": "3504db8952623280157d93c541c4e5ec"
+    },
+    {
+      "file": "data/processed/main_benchmark/two_moons_seed11_processed.csv",
+      "bytes": 21117,
+      "sha256": "a665a12345c00e449c9c7d9afd1e519905d1e9ae5299776ffea104945dd2c8e1",
+      "md5": "47d4df5948b7c0c7ac3ae740080e5706"
+    },
+    {
+      "file": "data/processed/main_benchmark/two_moons_seed19_processed.csv",
+      "bytes": 21095,
+      "sha256": "2e1f4e298c29cbee009c83f05e32d5f43dedef834efa318c7c477372801f728d",
+      "md5": "6d613649bac2410929dfecbf0b75b3c2"
+    },
+    {
+      "file": "data/processed/main_benchmark/two_moons_seed23_processed.csv",
+      "bytes": 21100,
+      "sha256": "7782dbf3028bb0b63b273b0fd7121e2307d603b9198bdab1f92eb940e1105a75",
+      "md5": "e1e184d66e25576d5d633299793e543e"
+    },
+    {
+      "file": "data/processed/main_benchmark/two_moons_seed3_processed.csv",
+      "bytes": 21129,
+      "sha256": "9ddeb633411317dad8bd8de5848bb83c4f8fabbcf10040e732e9bdac38336bb6",
+      "md5": "5bfc70b0dace62c8dbccf60fb1e6f5bc"
+    },
+    {
+      "file": "data/processed/main_benchmark/two_moons_seed7_processed.csv",
+      "bytes": 21120,
+      "sha256": "ebc91646cd1bef9c1f87b23dc85dd7c9869c57ccbe12bda49862e46b6c229a15",
+      "md5": "21580761c8968468c68a93e189997e67"
+    },
+    {
+      "file": "data/processed/main_benchmark/varied_density_seed11_processed.csv",
+      "bytes": 21118,
+      "sha256": "7bfbe17707b46896f9e2718b76b500e344e223fe7184f50c87b6f244c2f2f2ba",
+      "md5": "1b853b77458d8c5e5a7dd47ff3f51f9b"
+    },
+    {
+      "file": "data/processed/main_benchmark/varied_density_seed19_processed.csv",
+      "bytes": 21121,
+      "sha256": "73eee0ab73457bee17d258d836f7a849c09c6b2a4a4aaf04265e424e4523d3d9",
+      "md5": "4bda5ba45dc7d1387aab9ef2868d7872"
+    },
+    {
+      "file": "data/processed/main_benchmark/varied_density_seed23_processed.csv",
+      "bytes": 21128,
+      "sha256": "7a5b42704cf151f57621a3fce0b5ff268c5d8310d56f8c423e472f6ec9e25869",
+      "md5": "2af6a8ca9e1d369f5c39573cd183adb1"
+    },
+    {
+      "file": "data/processed/main_benchmark/varied_density_seed3_processed.csv",
+      "bytes": 21135,
+      "sha256": "bdbdac9f20e02c9a9db2c62b01bceccfeabbc920a69b0da6152eb9e7f7dfcabb",
+      "md5": "1a90e3c4955a9416d4a569058eaf7bf0"
+    },
+    {
+      "file": "data/processed/main_benchmark/varied_density_seed7_processed.csv",
+      "bytes": 21120,
+      "sha256": "10f315f9f76418b7159000b5cda32e92da6c0b7b97574b4da7781023f6d5bc9f",
+      "md5": "7ee050314f6b81670ec2102b5488e3be"
+    },
+    {
+      "file": "data/processed/main_benchmark/vehicle_seed11_processed.csv",
+      "bytes": 169813,
+      "sha256": "976066c708b88603d412a57c1609c1a25979eafe399063869babce968d8daa79",
+      "md5": "78af8ab9692665c8e95ae627ae1feee2"
+    },
+    {
+      "file": "data/processed/main_benchmark/vehicle_seed19_processed.csv",
+      "bytes": 169813,
+      "sha256": "976066c708b88603d412a57c1609c1a25979eafe399063869babce968d8daa79",
+      "md5": "78af8ab9692665c8e95ae627ae1feee2"
+    },
+    {
+      "file": "data/processed/main_benchmark/vehicle_seed23_processed.csv",
+      "bytes": 169813,
+      "sha256": "976066c708b88603d412a57c1609c1a25979eafe399063869babce968d8daa79",
+      "md5": "78af8ab9692665c8e95ae627ae1feee2"
+    },
+    {
+      "file": "data/processed/main_benchmark/vehicle_seed3_processed.csv",
+      "bytes": 169813,
+      "sha256": "976066c708b88603d412a57c1609c1a25979eafe399063869babce968d8daa79",
+      "md5": "78af8ab9692665c8e95ae627ae1feee2"
+    },
+    {
+      "file": "data/processed/main_benchmark/vehicle_seed7_processed.csv",
+      "bytes": 169813,
+      "sha256": "976066c708b88603d412a57c1609c1a25979eafe399063869babce968d8daa79",
+      "md5": "78af8ab9692665c8e95ae627ae1feee2"
+    },
+    {
+      "file": "data/processed/main_benchmark/wine_seed11_processed.csv",
+      "bytes": 35650,
+      "sha256": "7c72bc50be494be9000cb86ddc22b91bd7dce9e26b56718b7a78a70dfa914d08",
+      "md5": "41fd774711123e474c7098cc89117513"
+    },
+    {
+      "file": "data/processed/main_benchmark/wine_seed19_processed.csv",
+      "bytes": 35650,
+      "sha256": "7c72bc50be494be9000cb86ddc22b91bd7dce9e26b56718b7a78a70dfa914d08",
+      "md5": "41fd774711123e474c7098cc89117513"
+    },
+    {
+      "file": "data/processed/main_benchmark/wine_seed23_processed.csv",
+      "bytes": 35650,
+      "sha256": "7c72bc50be494be9000cb86ddc22b91bd7dce9e26b56718b7a78a70dfa914d08",
+      "md5": "41fd774711123e474c7098cc89117513"
+    },
+    {
+      "file": "data/processed/main_benchmark/wine_seed3_processed.csv",
+      "bytes": 35650,
+      "sha256": "7c72bc50be494be9000cb86ddc22b91bd7dce9e26b56718b7a78a70dfa914d08",
+      "md5": "41fd774711123e474c7098cc89117513"
+    },
+    {
+      "file": "data/processed/main_benchmark/wine_seed7_processed.csv",
+      "bytes": 35650,
+      "sha256": "7c72bc50be494be9000cb86ddc22b91bd7dce9e26b56718b7a78a70dfa914d08",
+      "md5": "41fd774711123e474c7098cc89117513"
+    },
+    {
+      "file": "data/source_main_external/cmc_seed11.csv",
+      "bytes": 59005,
+      "sha256": "b87003c986edde12676ca122e9ab3140688e524020c1ea293729c79516de78b4",
+      "md5": "bb281bf2bdc944c859b1dd3e9cbe86c2"
+    },
+    {
+      "file": "data/source_main_external/cmc_seed19.csv",
+      "bytes": 59005,
+      "sha256": "b87003c986edde12676ca122e9ab3140688e524020c1ea293729c79516de78b4",
+      "md5": "bb281bf2bdc944c859b1dd3e9cbe86c2"
+    },
+    {
+      "file": "data/source_main_external/cmc_seed23.csv",
+      "bytes": 59005,
+      "sha256": "b87003c986edde12676ca122e9ab3140688e524020c1ea293729c79516de78b4",
+      "md5": "bb281bf2bdc944c859b1dd3e9cbe86c2"
+    },
+    {
+      "file": "data/source_main_external/cmc_seed3.csv",
+      "bytes": 59005,
+      "sha256": "b87003c986edde12676ca122e9ab3140688e524020c1ea293729c79516de78b4",
+      "md5": "bb281bf2bdc944c859b1dd3e9cbe86c2"
+    },
+    {
+      "file": "data/source_main_external/cmc_seed7.csv",
+      "bytes": 59005,
+      "sha256": "b87003c986edde12676ca122e9ab3140688e524020c1ea293729c79516de78b4",
+      "md5": "bb281bf2bdc944c859b1dd3e9cbe86c2"
+    },
+    {
+      "file": "data/source_main_external/ecoli_seed11.csv",
+      "bytes": 12308,
+      "sha256": "e149d11e969f7b14c8345a9bdd94af1d19b6557f5225f18f39faac255dde2331",
+      "md5": "5e9c303dcc4560d030d662d527a04562"
+    },
+    {
+      "file": "data/source_main_external/ecoli_seed19.csv",
+      "bytes": 12308,
+      "sha256": "e149d11e969f7b14c8345a9bdd94af1d19b6557f5225f18f39faac255dde2331",
+      "md5": "5e9c303dcc4560d030d662d527a04562"
+    },
+    {
+      "file": "data/source_main_external/ecoli_seed23.csv",
+      "bytes": 12308,
+      "sha256": "e149d11e969f7b14c8345a9bdd94af1d19b6557f5225f18f39faac255dde2331",
+      "md5": "5e9c303dcc4560d030d662d527a04562"
+    },
+    {
+      "file": "data/source_main_external/ecoli_seed3.csv",
+      "bytes": 12308,
+      "sha256": "e149d11e969f7b14c8345a9bdd94af1d19b6557f5225f18f39faac255dde2331",
+      "md5": "5e9c303dcc4560d030d662d527a04562"
+    },
+    {
+      "file": "data/source_main_external/ecoli_seed7.csv",
+      "bytes": 12308,
+      "sha256": "e149d11e969f7b14c8345a9bdd94af1d19b6557f5225f18f39faac255dde2331",
+      "md5": "5e9c303dcc4560d030d662d527a04562"
+    },
+    {
+      "file": "data/source_main_external/glass_seed11.csv",
+      "bytes": 10887,
+      "sha256": "129c1b38769ebd8890ab9f42d03f7c09c93a82c2fc77685d52a343a28c914ff5",
+      "md5": "362a629bf7343dd15ef77ce42e62a7af"
+    },
+    {
+      "file": "data/source_main_external/glass_seed19.csv",
+      "bytes": 10887,
+      "sha256": "129c1b38769ebd8890ab9f42d03f7c09c93a82c2fc77685d52a343a28c914ff5",
+      "md5": "362a629bf7343dd15ef77ce42e62a7af"
+    },
+    {
+      "file": "data/source_main_external/glass_seed23.csv",
+      "bytes": 10887,
+      "sha256": "129c1b38769ebd8890ab9f42d03f7c09c93a82c2fc77685d52a343a28c914ff5",
+      "md5": "362a629bf7343dd15ef77ce42e62a7af"
+    },
+    {
+      "file": "data/source_main_external/glass_seed3.csv",
+      "bytes": 10887,
+      "sha256": "129c1b38769ebd8890ab9f42d03f7c09c93a82c2fc77685d52a343a28c914ff5",
+      "md5": "362a629bf7343dd15ef77ce42e62a7af"
+    },
+    {
+      "file": "data/source_main_external/glass_seed7.csv",
+      "bytes": 10887,
+      "sha256": "129c1b38769ebd8890ab9f42d03f7c09c93a82c2fc77685d52a343a28c914ff5",
+      "md5": "362a629bf7343dd15ef77ce42e62a7af"
+    },
+    {
+      "file": "data/source_main_external/vehicle_seed11.csv",
+      "bytes": 84382,
+      "sha256": "e98904701323e0dc6f99678edc57ec78d10d7fcb9585fd91e809cbe4b747e58e",
+      "md5": "fd538724c75f5454fdfe15ea2b44ea58"
+    },
+    {
+      "file": "data/source_main_external/vehicle_seed19.csv",
+      "bytes": 84382,
+      "sha256": "e98904701323e0dc6f99678edc57ec78d10d7fcb9585fd91e809cbe4b747e58e",
+      "md5": "fd538724c75f5454fdfe15ea2b44ea58"
+    },
+    {
+      "file": "data/source_main_external/vehicle_seed23.csv",
+      "bytes": 84382,
+      "sha256": "e98904701323e0dc6f99678edc57ec78d10d7fcb9585fd91e809cbe4b747e58e",
+      "md5": "fd538724c75f5454fdfe15ea2b44ea58"
+    },
+    {
+      "file": "data/source_main_external/vehicle_seed3.csv",
+      "bytes": 84382,
+      "sha256": "e98904701323e0dc6f99678edc57ec78d10d7fcb9585fd91e809cbe4b747e58e",
+      "md5": "fd538724c75f5454fdfe15ea2b44ea58"
+    },
+    {
+      "file": "data/source_main_external/vehicle_seed7.csv",
+      "bytes": 84382,
+      "sha256": "e98904701323e0dc6f99678edc57ec78d10d7fcb9585fd91e809cbe4b747e58e",
+      "md5": "fd538724c75f5454fdfe15ea2b44ea58"
+    },
+    {
+      "file": "data/yyc200_hyperspectral/yyc200",
+      "bytes": 5120000,
+      "sha256": "a10611ad087ee3e0c08dafc7495112c4fd57eeaa835672d981d130c0053daef9",
+      "md5": "8b5bbcebeb73db5438a9d6cf0eb5f169"
+    },
+    {
+      "file": "data/yyc200_hyperspectral/yyc200.hdr",
+      "bytes": 3130,
+      "sha256": "3f88756d1ba278713a22fbe6b75e1585e89337841f7812ee6d423079ce1adf3f",
+      "md5": "a0b494c0d26ede2bcd043d339a8a6168"
+    }
+  ]
+}

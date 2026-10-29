@@ -1,106 +1,66 @@
-# MBC — Final Submission Package
+# MBC R3 offline reproduction package (checked 2026-10-27)
 
-**Manuscript:** *Morphogenetic Buds Clustering: Local Prototype Dynamics and Continuity-Aware Fusion for
-Continuous Non-Convex Structures*
-**Authors:** Xuewen Shen¹, Xinyue Ji¹, Min Zhao¹, Liang Hong¹,²,*
-**Package date:** 2026-09-21
+This package contains the Python source, bundled input data, result ledgers, generated figures, and the notebook used for the revised manuscript. It is separate from the submission-only TeX package. The public repository is not required.
 
-This package contains everything required to (i) submit the revision and (ii) regenerate every number,
-table, and figure reported in the manuscript and in the three response letters. Intermediate review
-materials — verification scripts, consistency reports, and LaTeX build artefacts — have been removed.
+## Contents
 
----
+- `code/main/`: experiment implementations and individual drivers.
+- `code/generate/`: checkpointed result generation.
+- `code/generate/export_baseline_parameters.py`: offline export of resolved estimator defaults and data-derived DBSCAN/MeanShift values; it does not fit clustering models.
+- `code/plot/`: figures generated from the result ledgers.
+- `code/run_all.py`: offline orchestration entry point.
+- `code/notebooks/run_all.ipynb`: notebook wrapper for the entry point.
+- `data/`: bundled raw and processed inputs. The corrected OpenML 45093 Lung file has 203 rows and five labels.
+- `data/input_hashes.json`: SHA-256 and MD5 digests for the exact bundled raw and processed data files. These are local integrity hashes, not upstream-provider checksum claims.
+- `results/`: bundled CSV/JSON result ledgers and figures.
+- `results/exp/baseline_parameters.json`: comparator call rules, installed estimator defaults and 97 per-input density-scale records for the primary, public SIPU and scale suites.
+- `audit/`: offline consistency check used for this checked package.
+- `requirements.txt`: versions tested in the local `hologpu` Python 3.10.18 environment.
 
-## 1. What to send to the editorial office
+The package does not bundle Python or dependency wheels. Running it without network access requires an environment where the listed dependencies are already installed. The recorded experiment blocked Python network access, but the Windows host was not physically disconnected.
 
-| File | Pages | Purpose |
-|---|---|---|
-| `Cover_Letter.pdf` | 1 | Letter to the Editor-in-Chief |
-| `MBC_CMC_revision_tracked.pdf` | 26 | Revised manuscript, changes tracked in colour |
-| `Response_to_Reviewer_1.pdf` | 7 | Point-to-point reply to Reviewer 1 (6 comments) |
-| `Response_to_Reviewer_2.pdf` | 8 | Point-to-point reply to Reviewer 2 (9 comments) |
-| `Response_to_Reviewer_3.pdf` | 16 | Point-to-point reply to Reviewer 3 (21 comments) |
+## Offline checks
 
-Sources are included alongside each PDF, so nothing has to be re-typeset before submission.
+From this directory, run:
 
-**Reading the tracked manuscript.** Reviewer 1 additions appear in red, Reviewer 2 in blue, Reviewer 3 in
-green, and follow-up author corrections in purple. Unchanged text is black.
-
-## 2. Reproducing every reported result
-
-Python 3.10 or newer with the pinned dependencies in `requirements.txt`. From the package root, create an isolated environment and install the dependencies:
-
-```powershell
-py -3 -m venv .venv
-.venv\Scripts\python.exe -m pip install -r requirements.txt
-.venv\Scripts\python.exe code\reproduce_all.py --list
-.venv\Scripts\python.exe code\reproduce_all.py
+```text
+python audit/audit_repo_vs_manuscript.py
 ```
 
-On macOS or Linux, use `python3 -m venv .venv`, `./.venv/bin/python -m pip install -r requirements.txt`, and `./.venv/bin/python code/reproduce_all.py`. The complete run regenerates all analyses, tables, and figures and overwrites files under `results/` and `figures/`; it may take substantially longer than the quick `--list` check. The bundled raw and processed caches are sufficient for the reported analyses, so network access is normally unnecessary.
+This reads only local files and checks the main MBC means, the two compact scale cases, the 11-method scale ledger, the corrected Lung-5 data and values, the CSV manifest, the comparator-parameter export, and every digest in `data/input_hashes.json`. A successful run writes `results/audit/audit_result.json`.
 
-The script resolves all paths from its own location, so it runs correctly from the package root without
-configuration. Two source files carry the whole method and analysis:
+The top-level `code/run_all.py` regenerates both metadata exports between experiment generation and plotting. To regenerate either export by itself without rerunning model fits:
 
-* `code/mbc.py` — the MBC implementation.
-* `code/reproduce_all.py` — main benchmark, external real-data benchmark, sensitivity study, runtime and
-  biological analyses, the hyperspectral case study, all paper figures, and the Reviewer 1–3 analyses.
-
-The script resolves all paths from its own location and can be run from any working directory. If an
-optional cached external file is absent, the script attempts an OpenML download; if that is unavailable,
-the affected diagnostic row is skipped with a warning rather than silently fabricated. `Lung_5class` is
-bundled for the Reviewer 3 dataset inventory and is not part of the main external benchmark summary.
-
-## 3. Package contents
-
-```
-Cover_Letter.tex / .pdf              cover letter to the editor
-MBC_CMC_revision_tracked.tex / .pdf  revised manuscript + journal class usage
-Response_to_Reviewer_{1,2,3}.tex/.pdf
-Definitions/                         journal class (tsp.cls) and supporting style files
-attrib.sty                           local stub, see note below
-code/                                mbc.py, reproduce_all.py
-data/                                manifests, cached datasets, hyperspectral cube
-results/                             every result table referenced in the text
-figures/paper_figures/               the eight PDF figures included in the manuscript
-figures/hyperspectral_exploration/   supporting figures for the exploratory case study
-docs/dataset_sources.md              provenance and licensing of every dataset
-requirements.txt                     pinned Python dependencies
+```text
+python code/generate/export_baseline_parameters.py
+python code/generate/export_input_hashes.py
 ```
 
-No separate supplementary-materials file is needed: the inventories, diagnostics, and limitations are
-reported inside the revised manuscript, and this package regenerates them. Precomputed CSV, JSON, PNG,
-and PDF result files are included so that the submission can be inspected without rerunning the full study.
+To see the ordered pipeline stages:
 
-## 4. Recompiling the LaTeX sources
-
-```powershell
-pdflatex MBC_CMC_revision_tracked.tex    # run twice
-pdflatex Response_to_Reviewer_1.tex      # run twice
-pdflatex Response_to_Reviewer_2.tex
-pdflatex Response_to_Reviewer_3.tex
-pdflatex Cover_Letter.tex
+```text
+python code/run_all.py --list
 ```
 
-The manuscript uses `Definitions/tsp.cls`, which loads the `attrib` package. That package is absent from
-some TeX Live distributions, and the class loads it without using any of its commands; the bundled
-`attrib.sty` is therefore a minimal local stub that satisfies the loading step. Keep it next to the
-`.tex` file. It was verified to compile cleanly under TeX Live 2026.
+## Re-running experiments
 
-## 5. Verification performed before packaging
+The package includes the result ledgers and verified stage snapshots from the archived offline run. Running `python code/run_all.py` without `--force` resumes only snapshots whose source and output hashes still match; changed stages are recomputed. In the eleven-method scale driver, incomplete output is written to an `_in_progress.csv` file, and the last complete ledger is replaced only after all rows finish.
 
-* All 34 reference entries are cited, none are orphaned, and they are numbered strictly in order of first
-  appearance.
-* Each quotation block labelled "Corresponding revised text" in the three response letters reproduces the
-  tracked manuscript verbatim — 119 of 119 fragments matched.
-* The five submission PDFs were checked for page counts, readable text, and missing placeholder strings.
-* `code/reproduce_all.py --list` was executed successfully from the package root.
-* The data manifest was checked against the bundled raw and processed files; optional inventory-only files
-  are identified in `docs/dataset_sources.md`.
+A targeted Affinity Propagation recheck was completed in the local Windows `hologpu` environment on the 10,446-observation large-sample case for all three seeds. The runs completed in 124.190, 137.470 and 108.665 seconds, with ARI values 0.091228796, 0.095228576 and 0.090477391. The host had 31.73 GiB visible RAM; a process-memory sample during the first fit showed 4.36 GiB private memory. Full run details and the tested code hashes are recorded in `results/generated_json/affinity_propagation_large_n_recheck_20261027.json`. This targeted check does not constitute a forced rerun of every pipeline stage. No network access is needed or used.
 
-## 6. Declarations
+Affinity Propagation uses an O(n^2) pairwise matrix. To rerun the full eleven-method scale stage:
 
-Funding: Open Fund of Zhejiang Key Laboratory of Film and TV Media Technology (2024E10023); National
-Natural Science Foundation of China (61671404).
-Code and supporting materials: <https://github.com/xinyueji1-beep/Morphogenetic-Buds-Clustering>.
-Third-party datasets retain their original licences; see `docs/dataset_sources.md`.
+```text
+python code/generate/generate_results.py --stage r3_scale_all_methods --force
+```
+
+Incomplete stage output is kept in an `_in_progress.csv` file; the complete ledger is replaced only when all rows finish.
+
+## Data and result facts checked here
+
+- Lung-5 raw and processed inputs: 203 observations, five classes with counts 139/21/20/17/6.
+- Lung-5 three-seed mean ARI: DBSCAN 0.4092, Spectral 0.2908, GMM 0.2906, Agglomerative 0.2232, MBC 0.1492.
+- Main 14-dataset MBC mean: 0.5919.
+- Compact scale MBC means: 0.9448 (high-dimensional case) and 0.8934 (large-n case).
+
+Timing values remain hardware dependent. Clustering scores and dataset contents are the values stored in the supplied ledgers.

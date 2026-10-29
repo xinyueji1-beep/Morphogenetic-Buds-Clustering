@@ -1,2 +1,0 @@
-dataset,source,type,n_original,n_retained,d_original,d_retained,K,class_counts
-Indian Pines,Zenodo 10.5281/zenodo.22828439 (AVIRIS 1992),labelled real hyperspectral,21025,10249,220,10,16,46/1428/830/237/483/730/28/478/20/972/2455/593/205/1265/386/93

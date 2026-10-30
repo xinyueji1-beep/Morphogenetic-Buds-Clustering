@@ -1,0 +1,5 @@
+,accepted_edge,accepted_edge,accepted_without_channel,accepted_without_channel,organs,organs
+,mean,std,mean,std,mean,std
+dataset,,,,,,
+empty_channel,0.0,0.0,1.0,0.0,4.0,0.0
+populated_channel,1.0,0.0,1.0,0.0,3.0,0.0

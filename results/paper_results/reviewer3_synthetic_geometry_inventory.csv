@@ -1,0 +1,7 @@
+dataset,seed,n_samples,n_features,classes,label_counts
+two_moons,3,500,2,2,250/250
+circles,3,500,2,2,250/250
+noisy_moons,3,500,2,2,250/250
+noisy_circles,3,500,2,2,250/250
+varied_density,3,500,2,3,140/220/140
+anisotropic_blobs,3,500,2,4,125/125/125/125

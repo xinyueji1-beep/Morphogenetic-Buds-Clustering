@@ -1,0 +1,68 @@
+{
+  "stage": "manuscript_10",
+  "label": "Reviewer 1 analyses",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\manuscript_pipeline.py",
+    "--only",
+    "Reviewer 1 analyses"
+  ],
+  "status": "complete",
+  "started_unix": 1792942806.95153,
+  "sources": {
+    "manuscript_pipeline.py": "d364ab09228fc1308d6f970ccd7d777a1f2c38ecb3f63f03fd4df7d5ed61a42a",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f"
+  },
+  "fingerprint": "2508ba8b3f3bc80f74f113b9d9087870293a41f4558fec18938e77cb34c6bb2e",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792943192.666863,
+  "elapsed_seconds": 385.57937579997815,
+  "outputs": [
+    {
+      "path": "results/paper_results/reviewer1_broad_sensitivity_ranges.csv",
+      "snapshot": "results/stage_snapshots/manuscript_10/results/paper_results/reviewer1_broad_sensitivity_ranges.csv",
+      "sha256": "9493dad84c10e2eea3bf613973c404f6565dba87a17c9b115acc835040a45ed1",
+      "bytes": 2209
+    },
+    {
+      "path": "results/paper_results/reviewer1_broad_sensitivity_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_10/results/paper_results/reviewer1_broad_sensitivity_raw.csv",
+      "sha256": "d6a10ebdf6d57f931e40c8600b2d7d2356cf73afb06424876feac9f58ae0e608",
+      "bytes": 36753
+    },
+    {
+      "path": "results/paper_results/reviewer1_broad_sensitivity_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_10/results/paper_results/reviewer1_broad_sensitivity_summary.csv",
+      "sha256": "2561cb2b0fb97b96070bb944276f595294e542dbcabee8a74b64759e9c1c0920",
+      "bytes": 1106
+    },
+    {
+      "path": "results/paper_results/reviewer1_k_estimation_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_10/results/paper_results/reviewer1_k_estimation_summary.csv",
+      "sha256": "a611649af7974d235da3da0b5b17c85df8d2f25b09ddbe8bd2537b9fd170452b",
+      "bytes": 1063
+    },
+    {
+      "path": "results/paper_results/reviewer1_k_sensitivity_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_10/results/paper_results/reviewer1_k_sensitivity_raw.csv",
+      "sha256": "1eecbb9af90ca171cc8c984b7b171969a3d7a7eaf3480f66122d0485fba10e9b",
+      "bytes": 5765
+    },
+    {
+      "path": "results/paper_results/reviewer1_targeted_ablation_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_10/results/paper_results/reviewer1_targeted_ablation_raw.csv",
+      "sha256": "ac421431e22fd197c09374aa8854a30912dca61ed708eaa350811a947836f6a6",
+      "bytes": 3545
+    },
+    {
+      "path": "results/paper_results/reviewer1_targeted_ablation_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_10/results/paper_results/reviewer1_targeted_ablation_summary.csv",
+      "sha256": "de324b0df92681f6637b36debf6223103283ef1503ee7d234c2e0cf87b2178c6",
+      "bytes": 1048
+    }
+  ],
+  "log": "results/generated_json/manuscript_10.log",
+  "log_sha256": "3bca515f1a77dcf4f1a3f1162d244e70f67dac93283cb37e6dd9920a63eec9da"
+}

@@ -1,0 +1,80 @@
+{
+  "stage": "manuscript_11",
+  "label": "Reviewer 2 analyses",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\manuscript_pipeline.py",
+    "--only",
+    "Reviewer 2 analyses"
+  ],
+  "status": "complete",
+  "started_unix": 1792943192.8788624,
+  "sources": {
+    "manuscript_pipeline.py": "d364ab09228fc1308d6f970ccd7d777a1f2c38ecb3f63f03fd4df7d5ed61a42a",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f"
+  },
+  "fingerprint": "33bddfffaa5b9bf459de421d82926fe7649f8cebb39697ce4511203f38c3905e",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792943307.7882555,
+  "elapsed_seconds": 114.76719540008344,
+  "outputs": [
+    {
+      "path": "results/paper_results/reviewer2_channel_continuity_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_11/results/paper_results/reviewer2_channel_continuity_raw.csv",
+      "sha256": "51c815f573aba015c6a6059e2c41a4f5f4fb27e0a396226ed276be9545531c1d",
+      "bytes": 1029
+    },
+    {
+      "path": "results/paper_results/reviewer2_channel_continuity_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_11/results/paper_results/reviewer2_channel_continuity_summary.csv",
+      "sha256": "8f4090861aab27024b18c5009c8a0efbda4269beaefb867a8a6ce6b61fc61b2b",
+      "bytes": 220
+    },
+    {
+      "path": "results/paper_results/reviewer2_initialization_winners.csv",
+      "snapshot": "results/stage_snapshots/manuscript_11/results/paper_results/reviewer2_initialization_winners.csv",
+      "sha256": "65d5662e2e16ee99992b3549bb5b2b559b3625a475752a4dd6f4a1a9bd7162be",
+      "bytes": 2462
+    },
+    {
+      "path": "results/paper_results/reviewer2_initialization_winner_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_11/results/paper_results/reviewer2_initialization_winner_summary.csv",
+      "sha256": "c13eac917ea029dc231555ad011e756228e33aec9d65c550e74c83728240e4f2",
+      "bytes": 43
+    },
+    {
+      "path": "results/paper_results/reviewer2_joint_sensitivity_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_11/results/paper_results/reviewer2_joint_sensitivity_raw.csv",
+      "sha256": "e697ccdda29a2abceda3825063a5a2263ba72a4633891f643ff566f4578cc6d2",
+      "bytes": 8205
+    },
+    {
+      "path": "results/paper_results/reviewer2_joint_sensitivity_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_11/results/paper_results/reviewer2_joint_sensitivity_summary.csv",
+      "sha256": "dc62fd4b2f4ddecbf3b325e5cd9c683ae5c262bd1183287d185370ab991fecb5",
+      "bytes": 543
+    },
+    {
+      "path": "results/paper_results/reviewer2_k_undersegmentation.csv",
+      "snapshot": "results/stage_snapshots/manuscript_11/results/paper_results/reviewer2_k_undersegmentation.csv",
+      "sha256": "aaf4d06d479a007abe3c538223a271e4790aa21a900b41dcd4b8601c1cfcc65f",
+      "bytes": 223
+    },
+    {
+      "path": "results/paper_results/reviewer2_related_methods_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_11/results/paper_results/reviewer2_related_methods_raw.csv",
+      "sha256": "aa6af5ea7d9ddf02d0e88af9be50b773b561a3cbcf66d83044a421eebab8c603",
+      "bytes": 7657
+    },
+    {
+      "path": "results/paper_results/reviewer2_related_methods_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_11/results/paper_results/reviewer2_related_methods_summary.csv",
+      "sha256": "43824fc27f3ab5adfbbf30a3fb6318b9204442b02c081d3089f1dfa964c63879",
+      "bytes": 706
+    }
+  ],
+  "log": "results/generated_json/manuscript_11.log",
+  "log_sha256": "445b0b771d092155a31f715231100ca254f16d6745134561c7bf1ff86e7c0baf"
+}

@@ -1,0 +1,110 @@
+{
+  "stage": "manuscript_14",
+  "label": "Round-2 follow-up tables",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\manuscript_pipeline.py",
+    "--only",
+    "Round-2 follow-up tables"
+  ],
+  "status": "complete",
+  "started_unix": 1792943822.2433755,
+  "sources": {
+    "manuscript_pipeline.py": "d364ab09228fc1308d6f970ccd7d777a1f2c38ecb3f63f03fd4df7d5ed61a42a",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f"
+  },
+  "fingerprint": "767ba338b067c614fe778fd899efe7e8fbacd34a3e728b50a986bf42f8320043",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792944910.789589,
+  "elapsed_seconds": 1088.3749144000467,
+  "outputs": [
+    {
+      "path": "results/paper_results/dynamics_trajectory.csv",
+      "snapshot": "results/stage_snapshots/manuscript_14/results/paper_results/dynamics_trajectory.csv",
+      "sha256": "f8aa253ce5e2ff09eecadb3afe5128d71c38736f12241489c531a496ea284527",
+      "bytes": 17320
+    },
+    {
+      "path": "results/paper_results/reviewer3r2_indian_pines_inventory.csv",
+      "snapshot": "results/stage_snapshots/manuscript_14/results/paper_results/reviewer3r2_indian_pines_inventory.csv",
+      "sha256": "b18c02da4a4556012354adfcf1c325ab3a9b59f9dbc8bb1d58543ccb04aa5b1d",
+      "bytes": 252
+    },
+    {
+      "path": "results/paper_results/reviewer3r2_indian_pines_maps.png",
+      "snapshot": "results/stage_snapshots/manuscript_14/results/paper_results/reviewer3r2_indian_pines_maps.png",
+      "sha256": "43c6caf0cabeae562ef196a0f1d845970edfa49a95e804bb14ce15b5799c3069",
+      "bytes": 79737
+    },
+    {
+      "path": "results/paper_results/reviewer3r2_indian_pines_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_14/results/paper_results/reviewer3r2_indian_pines_raw.csv",
+      "sha256": "e4902a136ccac85ab73f037bda47605ec5b5f64126523c03cff240e11d7f97ff",
+      "bytes": 3177
+    },
+    {
+      "path": "results/paper_results/reviewer3r2_indian_pines_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_14/results/paper_results/reviewer3r2_indian_pines_summary.csv",
+      "sha256": "74cd73d5556d34e0cdc5ec736c8295387edc28a77ec86bbb6b4c910ad495d267",
+      "bytes": 1299
+    },
+    {
+      "path": "figures/paper_figures/bud_evolution.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_14/figures/paper_figures/bud_evolution.pdf",
+      "sha256": "a8da04b99623af69298c809c7333c436e8f9e569e55fb4ca17439ed38964749a",
+      "bytes": 50627
+    },
+    {
+      "path": "figures/paper_figures/indian_pines_maps.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_14/figures/paper_figures/indian_pines_maps.pdf",
+      "sha256": "02d393c8523113313f037fd8e1ca012eebc2ad0702917b044907642fd2b486b7",
+      "bytes": 52076
+    },
+    {
+      "path": "figures/paper_figures/paper_fig_ablation_lollipop.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_14/figures/paper_figures/paper_fig_ablation_lollipop.pdf",
+      "sha256": "dcb28c85ab56deb9f34e4beaa20a33e4e58965692f77c99916c53d9dea634772",
+      "bytes": 23621
+    },
+    {
+      "path": "figures/paper_figures/refinement_trajectory.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_14/figures/paper_figures/refinement_trajectory.pdf",
+      "sha256": "458042b6e20223a753a5056f4eecadf3726a07d9acca6d348f5fb4ac44c7c180",
+      "bytes": 17922
+    },
+    {
+      "path": "figures/paper_figures/reviewer3r2_indian_pines_maps.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_14/figures/paper_figures/reviewer3r2_indian_pines_maps.pdf",
+      "sha256": "02d393c8523113313f037fd8e1ca012eebc2ad0702917b044907642fd2b486b7",
+      "bytes": 52076
+    },
+    {
+      "path": "figures/paper_figures/runtime_axes.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_14/figures/paper_figures/runtime_axes.pdf",
+      "sha256": "fd6c4e329985a76756ae0828d017394bc5c514443a1eea845e44068ed1f34642",
+      "bytes": 17102
+    },
+    {
+      "path": "figures/paper_figures/six_structures.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_14/figures/paper_figures/six_structures.pdf",
+      "sha256": "fe89ec84dbf40a0ac859f3a8ffdac18494c32548f20213a4dad5e78d05725817",
+      "bytes": 62817
+    },
+    {
+      "path": "figures/paper_figures/synthetic_geometries.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_14/figures/paper_figures/synthetic_geometries.pdf",
+      "sha256": "8c3d9b702ad5a2071554a13ff9f78f68bdf871560246d7ddb9679045e254f310",
+      "bytes": 72563
+    },
+    {
+      "path": "figures/paper_png_previews/paper_fig_ablation_lollipop.png",
+      "snapshot": "results/stage_snapshots/manuscript_14/figures/paper_png_previews/paper_fig_ablation_lollipop.png",
+      "sha256": "5edd1a9b37077c5001adf561a152c0524461d55df1a173745c53817dccf57b75",
+      "bytes": 32901
+    }
+  ],
+  "log": "results/generated_json/manuscript_14.log",
+  "log_sha256": "2321fdaa79a4ba690b6e8e42f43ed68b64dc0ac1e4a7e2c30be7540a75d7f723"
+}

@@ -1,0 +1,32 @@
+{
+  "stage": "r3_scale_all_methods",
+  "label": "r3_scale_all_methods",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\reviewer3_scale_all_methods.py"
+  ],
+  "status": "complete",
+  "started_unix": 1792945472.2957313,
+  "sources": {
+    "reviewer3_scale_all_methods.py": "8ffeca184422570a638e0cfb8ccedf6bf194c8f570ca18cb0c0d241d2a9428f0",
+    "exp_driver.py": "0ca7dc382ec52e38e13cdb38cb751b9ececaaac28546959c785fb9f63515595e",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f",
+    "gng.py": "e2aaee6df41d89a6431674fa37a86911546cb1935972b1d35e073d12095bdf77"
+  },
+  "fingerprint": "2a16f10354d4d3ea4d21cddcecd405d52cb4783a136b7415f9d2320707399c76",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792946052.3738995,
+  "elapsed_seconds": 579.885479999939,
+  "outputs": [
+    {
+      "path": "results/paper_results/reviewer3_scale_all_methods_raw.csv",
+      "snapshot": "results/stage_snapshots/r3_scale_all_methods/results/paper_results/reviewer3_scale_all_methods_raw.csv",
+      "sha256": "bbe71fe6819490c96abf28c423f00070ec65ffb136de57fd34680d76c1e3f0da",
+      "bytes": 7233
+    }
+  ],
+  "log": "results/generated_json/r3_scale_all_methods.log",
+  "log_sha256": "534d41baab6a45fc0cef79ce29665f01117750145bd03c1c4d08962f2d217833"
+}

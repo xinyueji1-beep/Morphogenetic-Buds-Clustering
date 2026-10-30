@@ -1,0 +1,1940 @@
+{
+  "schema_version": 1,
+  "purpose": "Comparator settings and derived density scales; this export does not run clustering fits or modify result ledgers.",
+  "environment": {
+    "python": "3.10.18",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "pandas": "2.3.2",
+      "scipy": "1.15.3",
+      "scikit-learn": "1.7.2",
+      "hdbscan": "0.8.44"
+    }
+  },
+  "source_of_callsite_rules": "code/main/exp_driver.py and the suite-specific drivers listed for each protocol",
+  "library_resolved_defaults": {
+    "KMeans": {
+      "algorithm": "lloyd",
+      "copy_x": true,
+      "init": "k-means++",
+      "max_iter": 300,
+      "n_clusters": 8,
+      "n_init": "auto",
+      "random_state": null,
+      "tol": 0.0001,
+      "verbose": 0
+    },
+    "GMM": {
+      "covariance_type": "full",
+      "init_params": "kmeans",
+      "max_iter": 100,
+      "means_init": null,
+      "n_components": 1,
+      "n_init": 1,
+      "precisions_init": null,
+      "random_state": null,
+      "reg_covar": 1e-06,
+      "tol": 0.001,
+      "verbose": 0,
+      "verbose_interval": 10,
+      "warm_start": false,
+      "weights_init": null
+    },
+    "Agglomerative": {
+      "compute_distances": false,
+      "compute_full_tree": "auto",
+      "connectivity": null,
+      "distance_threshold": null,
+      "linkage": "ward",
+      "memory": null,
+      "metric": "euclidean",
+      "n_clusters": 2
+    },
+    "Spectral": {
+      "affinity": "rbf",
+      "assign_labels": "kmeans",
+      "coef0": 1,
+      "degree": 3,
+      "eigen_solver": null,
+      "eigen_tol": "auto",
+      "gamma": 1.0,
+      "kernel_params": null,
+      "n_clusters": 8,
+      "n_components": null,
+      "n_init": 10,
+      "n_jobs": null,
+      "n_neighbors": 10,
+      "random_state": null,
+      "verbose": false
+    },
+    "DBSCAN": {
+      "algorithm": "auto",
+      "eps": 0.5,
+      "leaf_size": 30,
+      "metric": "euclidean",
+      "metric_params": null,
+      "min_samples": 5,
+      "n_jobs": null,
+      "p": null
+    },
+    "HDBSCAN": {
+      "algorithm": "best",
+      "allow_single_cluster": false,
+      "alpha": 1.0,
+      "approx_min_span_tree": true,
+      "branch_detection_data": false,
+      "cluster_selection_epsilon": 0.0,
+      "cluster_selection_epsilon_max": "Infinity",
+      "cluster_selection_method": "eom",
+      "cluster_selection_persistence": 0.0,
+      "core_dist_n_jobs": 4,
+      "gen_min_span_tree": false,
+      "leaf_size": 40,
+      "match_reference_implementation": false,
+      "max_cluster_size": 0,
+      "memory": "Memory(location=None)",
+      "metric": "euclidean",
+      "min_cluster_size": 5,
+      "min_samples": null,
+      "p": null,
+      "prediction_data": false
+    },
+    "MeanShift": {
+      "bandwidth": null,
+      "bin_seeding": false,
+      "cluster_all": true,
+      "max_iter": 300,
+      "min_bin_freq": 1,
+      "n_jobs": null,
+      "seeds": null
+    },
+    "AffinityPropagation": {
+      "affinity": "euclidean",
+      "convergence_iter": 15,
+      "copy": true,
+      "damping": 0.5,
+      "max_iter": 200,
+      "preference": null,
+      "random_state": null,
+      "verbose": false
+    }
+  },
+  "method_call_rules": {
+    "MBC": {
+      "source": "code/main/exp_driver.py:make_mbc",
+      "arguments": {
+        "initial_buds": "max(12, 6*K)",
+        "steps": 140,
+        "growth_rate": 0.15,
+        "inhibition": 0.045,
+        "apoptosis_mass": "max(2.5, 0.0055*n)",
+        "birth_quantile": 0.88,
+        "organ_merge_radius": 3.6,
+        "valley_ratio": 0.18,
+        "tangent_alignment": 0.35,
+        "max_bridge_void": 0.46,
+        "target_clusters": "supplied K",
+        "compact_refinement_steps": 18,
+        "compact_refinement_restarts": 10,
+        "compact_refinement_dim_threshold": 3,
+        "random_state": "seed"
+      }
+    },
+    "KMeans": {
+      "source": "code/main/exp_driver.py:run_baseline",
+      "arguments": {
+        "n_clusters": "K",
+        "n_init": 30,
+        "random_state": "seed",
+        "other_arguments": "installed scikit-learn defaults"
+      }
+    },
+    "GMM": {
+      "source": "code/main/exp_driver.py:run_baseline",
+      "arguments": {
+        "n_components": "K",
+        "covariance_type": "full",
+        "random_state": "seed",
+        "other_arguments": "installed scikit-learn defaults"
+      }
+    },
+    "Agglomerative": {
+      "source": "code/main/exp_driver.py:run_baseline",
+      "arguments": {
+        "n_clusters": "K",
+        "linkage": "ward",
+        "other_arguments": "installed scikit-learn defaults"
+      }
+    },
+    "Spectral": {
+      "source": "code/main/exp_driver.py:run_baseline",
+      "arguments": {
+        "n_clusters": "K",
+        "affinity": "nearest_neighbors",
+        "n_neighbors": "min(12, n-1)",
+        "random_state": "seed",
+        "other_arguments": "installed scikit-learn defaults"
+      }
+    },
+    "DBSCAN": {
+      "source": "code/main/exp_driver.py:run_baseline",
+      "arguments": {
+        "eps": "per-input value in data_derived_density_values",
+        "min_samples": "max(4, d+1)",
+        "other_arguments": "installed scikit-learn defaults"
+      }
+    },
+    "HDBSCAN": {
+      "source": "code/main/exp_driver.py:run_baseline",
+      "arguments": {
+        "min_cluster_size": "max(10, floor(n/40))",
+        "min_samples": 5,
+        "other_arguments": "installed hdbscan defaults"
+      }
+    },
+    "MeanShift": {
+      "source": "code/main/exp_driver.py:run_baseline",
+      "arguments": {
+        "bandwidth": "per-input value in data_derived_density_values",
+        "bin_seeding": true,
+        "other_arguments": "installed scikit-learn defaults"
+      }
+    },
+    "AffinityPropagation": {
+      "source": "code/main/exp_driver.py:run_baseline",
+      "arguments": {
+        "affinity": "euclidean",
+        "preference": "None (library resolves median similarity)",
+        "damping": 0.75,
+        "max_iter": 500,
+        "random_state": "seed",
+        "other_arguments": "installed scikit-learn defaults, including convergence_iter=15"
+      }
+    },
+    "CompactRefineOnly": {
+      "source": "code/main/exp_driver.py:run_baseline",
+      "arguments": {
+        "candidates": 10,
+        "initialization": "local k-means++ helper, numpy default_rng(seed)",
+        "finite_lloyd_updates": 18,
+        "selection": "lowest inertia"
+      }
+    },
+    "GNG": {
+      "source": "code/main/exp_driver.py:growing_neural_gas",
+      "arguments": {
+        "n_epochs": 12,
+        "max_nodes": "max(32, min(120, 12*K))",
+        "insertion_interval": "max(50, min(100, floor(n/4)))",
+        "max_age": 50,
+        "winner_learning_rate": 0.2,
+        "neighbor_learning_rate": 0.006,
+        "insertion_error_decay": 0.5,
+        "global_error_decay": 0.995,
+        "random_state": "seed",
+        "post_grouping": "KMeans(n_clusters=min(K, node_count), n_init=20, random_state=seed)"
+      }
+    }
+  },
+  "gng_suite_protocols": {
+    "public_sipu_shapes": {
+      "source": "code/main/reviewer3_true_gng_shapes.py",
+      "arguments": {
+        "n_epochs": 12,
+        "max_nodes": "max(32, min(120, 12*K))",
+        "insertion_interval": "max(50, min(100, floor(n/4)))",
+        "max_age": 50,
+        "winner_learning_rate": 0.2,
+        "neighbor_learning_rate": 0.006,
+        "insertion_error_decay": 0.5,
+        "global_error_decay": 0.995,
+        "random_state": "seed",
+        "post_grouping": "KMeans(n_clusters=min(K, node_count), n_init=20, random_state=seed)"
+      }
+    },
+    "analogous_generated_shapes": {
+      "source": "code/main/reviewer3_true_gng.py and code/main/reviewer2_related_methods.py",
+      "arguments": "12 epochs; max_nodes=max(32,min(120,12*K)); insertion_interval=max(50,floor(n/4)); max_age=50; remaining GrowingNeuralGas defaults; supplied-K node grouping"
+    },
+    "compact_scale_all_methods": {
+      "source": "code/main/reviewer3_true_gng.py",
+      "arguments": {
+        "n_epochs": 3,
+        "max_nodes": "max(32, min(120, 12*K))",
+        "insertion_interval": "max(50, floor(n/4))",
+        "max_age": 50,
+        "other_arguments": "GrowingNeuralGas defaults; supplied-K node grouping"
+      }
+    },
+    "two_moon_scale": {
+      "source": "code/main/reviewer3_true_gng.py",
+      "arguments": {
+        "n_epochs": 3,
+        "max_nodes": 48,
+        "insertion_interval": "max(50, floor(n/4))",
+        "max_age": 50,
+        "other_arguments": "GrowingNeuralGas defaults; supplied-K node grouping"
+      }
+    }
+  },
+  "generator_source_files": [
+    "code/main/exp_driver.py",
+    "code/main/reviewer3_scale_all_methods.py",
+    "code/main/scale_geometry.py",
+    "code/main/reviewer3_true_gng.py",
+    "code/main/reviewer3_true_gng_shapes.py",
+    "code/main/reviewer3_complexity_analysis.py"
+  ],
+  "data_derived_density_values": [
+    {
+      "suite": "primary",
+      "case": "two_moons",
+      "seed": 3,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.1317972850863719,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.270889071700837,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "two_moons",
+      "seed": 7,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.13426530087479924,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.26108950612508874,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "two_moons",
+      "seed": 11,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.12774615869383968,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.26197581478669907,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "two_moons",
+      "seed": 19,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.1323201618345725,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.2699787358440394,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "two_moons",
+      "seed": 23,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.13017005039888316,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.26823913061260074,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "noisy_moons",
+      "seed": 3,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.1750505834038976,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.3530413186514647,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "noisy_moons",
+      "seed": 7,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.1726223334370342,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.33085172650445427,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "noisy_moons",
+      "seed": 11,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.18343881350908872,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.35872674569442586,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "noisy_moons",
+      "seed": 19,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.17522832804793984,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.34560297323461525,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "noisy_moons",
+      "seed": 23,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.18112028809231714,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.3525364744128829,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "circles",
+      "seed": 3,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.16883890018922806,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.33818037789794375,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "circles",
+      "seed": 7,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.15785009990741775,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.3178166990114844,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "circles",
+      "seed": 11,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.16411331387478179,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.3267801752379762,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "circles",
+      "seed": 19,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.16957531375303853,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.3411807143208382,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "circles",
+      "seed": 23,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.16318113065248657,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.3267008282139179,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "noisy_circles",
+      "seed": 3,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.1808601696750584,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.35986879776342207,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "noisy_circles",
+      "seed": 7,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.16932212600160232,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.3480087240941969,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "noisy_circles",
+      "seed": 11,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.1815447356167811,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.36486317725176776,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "noisy_circles",
+      "seed": 19,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.1738258275151041,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.36296209989388395,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "noisy_circles",
+      "seed": 23,
+      "n": 500,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.17786307685600714,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.36633306653341463,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "varied_density",
+      "seed": 3,
+      "n": 500,
+      "d": 2,
+      "K": 3,
+      "dbscan": {
+        "eps": 0.18866802768164262,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.3402525955796948,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "varied_density",
+      "seed": 7,
+      "n": 500,
+      "d": 2,
+      "K": 3,
+      "dbscan": {
+        "eps": 0.19798368234744654,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.3444490838621743,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "varied_density",
+      "seed": 11,
+      "n": 500,
+      "d": 2,
+      "K": 3,
+      "dbscan": {
+        "eps": 0.19633524519811868,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.376493878885299,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "varied_density",
+      "seed": 19,
+      "n": 500,
+      "d": 2,
+      "K": 3,
+      "dbscan": {
+        "eps": 0.20527792815289075,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.36515326239137413,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "varied_density",
+      "seed": 23,
+      "n": 500,
+      "d": 2,
+      "K": 3,
+      "dbscan": {
+        "eps": 0.18526141357523182,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.34710813324605994,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "anisotropic_blobs",
+      "seed": 3,
+      "n": 500,
+      "d": 2,
+      "K": 4,
+      "dbscan": {
+        "eps": 0.08774509081974614,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.15417408349646627,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "anisotropic_blobs",
+      "seed": 7,
+      "n": 500,
+      "d": 2,
+      "K": 4,
+      "dbscan": {
+        "eps": 0.06760791907329369,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.11284622265453162,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "anisotropic_blobs",
+      "seed": 11,
+      "n": 500,
+      "d": 2,
+      "K": 4,
+      "dbscan": {
+        "eps": 0.09445662810395247,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.16535798742795618,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "anisotropic_blobs",
+      "seed": 19,
+      "n": 500,
+      "d": 2,
+      "K": 4,
+      "dbscan": {
+        "eps": 0.06572275056502554,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.1173752234282634,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "anisotropic_blobs",
+      "seed": 23,
+      "n": 500,
+      "d": 2,
+      "K": 4,
+      "dbscan": {
+        "eps": 0.07444016198299368,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.12322939931606142,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "iris",
+      "seed": 3,
+      "n": 150,
+      "d": 4,
+      "K": 3,
+      "dbscan": {
+        "eps": 0.6228710328875066,
+        "min_samples": 5,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 1.1111511220386565,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "iris",
+      "seed": 7,
+      "n": 150,
+      "d": 4,
+      "K": 3,
+      "dbscan": {
+        "eps": 0.6228710328875066,
+        "min_samples": 5,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 1.1111511220386565,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "iris",
+      "seed": 11,
+      "n": 150,
+      "d": 4,
+      "K": 3,
+      "dbscan": {
+        "eps": 0.6228710328875066,
+        "min_samples": 5,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 1.1111511220386565,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "iris",
+      "seed": 19,
+      "n": 150,
+      "d": 4,
+      "K": 3,
+      "dbscan": {
+        "eps": 0.6228710328875066,
+        "min_samples": 5,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 1.1111511220386565,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "iris",
+      "seed": 23,
+      "n": 150,
+      "d": 4,
+      "K": 3,
+      "dbscan": {
+        "eps": 0.6228710328875066,
+        "min_samples": 5,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 1.1111511220386565,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "wine",
+      "seed": 3,
+      "n": 178,
+      "d": 10,
+      "K": 3,
+      "dbscan": {
+        "eps": 2.433549151662813,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.556402191364253,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "wine",
+      "seed": 7,
+      "n": 178,
+      "d": 10,
+      "K": 3,
+      "dbscan": {
+        "eps": 2.433549151662813,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.556402191364253,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "wine",
+      "seed": 11,
+      "n": 178,
+      "d": 10,
+      "K": 3,
+      "dbscan": {
+        "eps": 2.433549151662813,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.556402191364253,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "wine",
+      "seed": 19,
+      "n": 178,
+      "d": 10,
+      "K": 3,
+      "dbscan": {
+        "eps": 2.433549151662813,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.556402191364253,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "wine",
+      "seed": 23,
+      "n": 178,
+      "d": 10,
+      "K": 3,
+      "dbscan": {
+        "eps": 2.433549151662813,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.556402191364253,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "breast_cancer",
+      "seed": 3,
+      "n": 569,
+      "d": 10,
+      "K": 2,
+      "dbscan": {
+        "eps": 2.8752299202690317,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.886522285983624,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "breast_cancer",
+      "seed": 7,
+      "n": 569,
+      "d": 10,
+      "K": 2,
+      "dbscan": {
+        "eps": 2.8752299202690317,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.886522285983624,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "breast_cancer",
+      "seed": 11,
+      "n": 569,
+      "d": 10,
+      "K": 2,
+      "dbscan": {
+        "eps": 2.8752299202690317,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.886522285983624,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "breast_cancer",
+      "seed": 19,
+      "n": 569,
+      "d": 10,
+      "K": 2,
+      "dbscan": {
+        "eps": 2.8752299202690317,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.886522285983624,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "breast_cancer",
+      "seed": 23,
+      "n": 569,
+      "d": 10,
+      "K": 2,
+      "dbscan": {
+        "eps": 2.8752299202690317,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.886522285983624,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "digits_0_4",
+      "seed": 3,
+      "n": 901,
+      "d": 10,
+      "K": 5,
+      "dbscan": {
+        "eps": 2.48593107239458,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.413822014663323,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "digits_0_4",
+      "seed": 7,
+      "n": 901,
+      "d": 10,
+      "K": 5,
+      "dbscan": {
+        "eps": 2.48593107239458,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.413822014663323,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "digits_0_4",
+      "seed": 11,
+      "n": 901,
+      "d": 10,
+      "K": 5,
+      "dbscan": {
+        "eps": 2.48593107239458,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.413822014663323,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "digits_0_4",
+      "seed": 19,
+      "n": 901,
+      "d": 10,
+      "K": 5,
+      "dbscan": {
+        "eps": 2.48593107239458,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.413822014663323,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "digits_0_4",
+      "seed": 23,
+      "n": 901,
+      "d": 10,
+      "K": 5,
+      "dbscan": {
+        "eps": 2.48593107239458,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 4.413822014663323,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "ecoli",
+      "seed": 3,
+      "n": 336,
+      "d": 7,
+      "K": 8,
+      "dbscan": {
+        "eps": 1.0222765698841956,
+        "min_samples": 8,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 1.8059859622103271,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "ecoli",
+      "seed": 7,
+      "n": 336,
+      "d": 7,
+      "K": 8,
+      "dbscan": {
+        "eps": 1.0222765698841956,
+        "min_samples": 8,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 1.8059859622103271,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "ecoli",
+      "seed": 11,
+      "n": 336,
+      "d": 7,
+      "K": 8,
+      "dbscan": {
+        "eps": 1.0222765698841956,
+        "min_samples": 8,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 1.8059859622103271,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "ecoli",
+      "seed": 19,
+      "n": 336,
+      "d": 7,
+      "K": 8,
+      "dbscan": {
+        "eps": 1.0222765698841956,
+        "min_samples": 8,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 1.8059859622103271,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "ecoli",
+      "seed": 23,
+      "n": 336,
+      "d": 7,
+      "K": 8,
+      "dbscan": {
+        "eps": 1.0222765698841956,
+        "min_samples": 8,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 1.8059859622103271,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "glass",
+      "seed": 3,
+      "n": 214,
+      "d": 9,
+      "K": 6,
+      "dbscan": {
+        "eps": 1.4119318554540852,
+        "min_samples": 10,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 2.187551015539081,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "glass",
+      "seed": 7,
+      "n": 214,
+      "d": 9,
+      "K": 6,
+      "dbscan": {
+        "eps": 1.4119318554540852,
+        "min_samples": 10,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 2.187551015539081,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "glass",
+      "seed": 11,
+      "n": 214,
+      "d": 9,
+      "K": 6,
+      "dbscan": {
+        "eps": 1.4119318554540852,
+        "min_samples": 10,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 2.187551015539081,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "glass",
+      "seed": 19,
+      "n": 214,
+      "d": 9,
+      "K": 6,
+      "dbscan": {
+        "eps": 1.4119318554540852,
+        "min_samples": 10,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 2.187551015539081,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "glass",
+      "seed": 23,
+      "n": 214,
+      "d": 9,
+      "K": 6,
+      "dbscan": {
+        "eps": 1.4119318554540852,
+        "min_samples": 10,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 2.187551015539081,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "vehicle",
+      "seed": 3,
+      "n": 846,
+      "d": 10,
+      "K": 4,
+      "dbscan": {
+        "eps": 1.6760524546514972,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 3.223930902830649,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "vehicle",
+      "seed": 7,
+      "n": 846,
+      "d": 10,
+      "K": 4,
+      "dbscan": {
+        "eps": 1.6760524546514972,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 3.223930902830649,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "vehicle",
+      "seed": 11,
+      "n": 846,
+      "d": 10,
+      "K": 4,
+      "dbscan": {
+        "eps": 1.6760524546514972,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 3.223930902830649,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "vehicle",
+      "seed": 19,
+      "n": 846,
+      "d": 10,
+      "K": 4,
+      "dbscan": {
+        "eps": 1.6760524546514972,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 3.223930902830649,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "vehicle",
+      "seed": 23,
+      "n": 846,
+      "d": 10,
+      "K": 4,
+      "dbscan": {
+        "eps": 1.6760524546514972,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 3.223930902830649,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "cmc",
+      "seed": 3,
+      "n": 1473,
+      "d": 9,
+      "K": 3,
+      "dbscan": {
+        "eps": 1.3505344967708421,
+        "min_samples": 10,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 2.326052095473822,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "cmc",
+      "seed": 7,
+      "n": 1473,
+      "d": 9,
+      "K": 3,
+      "dbscan": {
+        "eps": 1.3505344967708421,
+        "min_samples": 10,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 2.326052095473822,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "cmc",
+      "seed": 11,
+      "n": 1473,
+      "d": 9,
+      "K": 3,
+      "dbscan": {
+        "eps": 1.3505344967708421,
+        "min_samples": 10,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 2.326052095473822,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "cmc",
+      "seed": 19,
+      "n": 1473,
+      "d": 9,
+      "K": 3,
+      "dbscan": {
+        "eps": 1.3505344967708421,
+        "min_samples": 10,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 2.326052095473822,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "primary",
+      "case": "cmc",
+      "seed": 23,
+      "n": 1473,
+      "d": 9,
+      "K": 3,
+      "dbscan": {
+        "eps": 1.3505344967708421,
+        "min_samples": 10,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 2.326052095473822,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "public_sipu_shapes",
+      "case": "Aggregation",
+      "seed": 3,
+      "n": 788,
+      "d": 2,
+      "K": 7,
+      "dbscan": {
+        "eps": 0.12455091762575687,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.2654465463725115,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "public_sipu_shapes",
+      "case": "Aggregation",
+      "seed": 7,
+      "n": 788,
+      "d": 2,
+      "K": 7,
+      "dbscan": {
+        "eps": 0.12455091762575687,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.2654465463725115,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "public_sipu_shapes",
+      "case": "Aggregation",
+      "seed": 11,
+      "n": 788,
+      "d": 2,
+      "K": 7,
+      "dbscan": {
+        "eps": 0.12455091762575687,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.2654465463725115,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "public_sipu_shapes",
+      "case": "Compound",
+      "seed": 3,
+      "n": 399,
+      "d": 2,
+      "K": 6,
+      "dbscan": {
+        "eps": 0.16886299982319186,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.30005516210029914,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "public_sipu_shapes",
+      "case": "Compound",
+      "seed": 7,
+      "n": 399,
+      "d": 2,
+      "K": 6,
+      "dbscan": {
+        "eps": 0.16886299982319186,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.30005516210029914,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "public_sipu_shapes",
+      "case": "Compound",
+      "seed": 11,
+      "n": 399,
+      "d": 2,
+      "K": 6,
+      "dbscan": {
+        "eps": 0.16886299982319186,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.30005516210029914,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "public_sipu_shapes",
+      "case": "Spiral",
+      "seed": 3,
+      "n": 1000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.09631105038562994,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.20076170365064072,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "public_sipu_shapes",
+      "case": "Spiral",
+      "seed": 7,
+      "n": 1000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.09631105038562994,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.20076170365064072,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "public_sipu_shapes",
+      "case": "Spiral",
+      "seed": 11,
+      "n": 1000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.09631105038562994,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.20076170365064072,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "compact_scale_all_methods",
+      "case": "large_n_imbalanced_largeK_d30",
+      "seed": 3,
+      "n": 10446,
+      "d": 30,
+      "K": 15,
+      "dbscan": {
+        "eps": 3.476500881597152,
+        "min_samples": 31,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 6.711953195087456,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "compact_scale_all_methods",
+      "case": "high_d_6000_K20_imbalanced_pca10",
+      "seed": 3,
+      "n": 1011,
+      "d": 10,
+      "K": 20,
+      "dbscan": {
+        "eps": 1.8905731922351532,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 3.613889601419937,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "compact_scale_all_methods",
+      "case": "large_n_imbalanced_largeK_d30",
+      "seed": 7,
+      "n": 10446,
+      "d": 30,
+      "K": 15,
+      "dbscan": {
+        "eps": 3.4830852277633153,
+        "min_samples": 31,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 6.728338856651084,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "compact_scale_all_methods",
+      "case": "high_d_6000_K20_imbalanced_pca10",
+      "seed": 7,
+      "n": 1011,
+      "d": 10,
+      "K": 20,
+      "dbscan": {
+        "eps": 1.8747966592845464,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 3.574187129326782,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "compact_scale_all_methods",
+      "case": "large_n_imbalanced_largeK_d30",
+      "seed": 11,
+      "n": 10446,
+      "d": 30,
+      "K": 15,
+      "dbscan": {
+        "eps": 3.54504652141834,
+        "min_samples": 31,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 6.832985447534101,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "compact_scale_all_methods",
+      "case": "high_d_6000_K20_imbalanced_pca10",
+      "seed": 11,
+      "n": 1011,
+      "d": 10,
+      "K": 20,
+      "dbscan": {
+        "eps": 1.9085669253701842,
+        "min_samples": 11,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 3.647989537240063,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "two_moon_scale",
+      "case": "n=1000",
+      "seed": 3,
+      "n": 1000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.09781878409193105,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.19063089564128124,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "two_moon_scale",
+      "case": "n=2000",
+      "seed": 3,
+      "n": 2000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.0688607043142806,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.13710558659170674,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "two_moon_scale",
+      "case": "n=4000",
+      "seed": 3,
+      "n": 4000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.04809319133742815,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.09377113625190164,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "two_moon_scale",
+      "case": "n=8000",
+      "seed": 3,
+      "n": 8000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.03454363688307272,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.06640660781504415,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "two_moon_scale",
+      "case": "n=1000",
+      "seed": 7,
+      "n": 1000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.09576447799942381,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.19309479753068645,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "two_moon_scale",
+      "case": "n=2000",
+      "seed": 7,
+      "n": 2000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.06801384286953172,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.13362528933195067,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "two_moon_scale",
+      "case": "n=4000",
+      "seed": 7,
+      "n": 4000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.0481515691145364,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.09368592116502868,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "two_moon_scale",
+      "case": "n=8000",
+      "seed": 7,
+      "n": 8000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.034064086988267114,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.06616937411576934,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "two_moon_scale",
+      "case": "n=1000",
+      "seed": 11,
+      "n": 1000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.10025683548465754,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.1948326657517842,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "two_moon_scale",
+      "case": "n=2000",
+      "seed": 11,
+      "n": 2000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.0695073450569044,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.13413236434840042,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "two_moon_scale",
+      "case": "n=4000",
+      "seed": 11,
+      "n": 4000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.0487542014077428,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.09623629802567535,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    },
+    {
+      "suite": "two_moon_scale",
+      "case": "n=8000",
+      "seed": 11,
+      "n": 8000,
+      "d": 2,
+      "K": 2,
+      "dbscan": {
+        "eps": 0.03459157147757887,
+        "min_samples": 4,
+        "rule": "quantile 0.72 of the sixth-neighbor distances; kneighbors(X) includes the query point"
+      },
+      "mean_shift": {
+        "bandwidth": 0.06647082352841843,
+        "rule": "max(2 * median eighth-neighbor distance from kneighbors(X), 0.001); query point included"
+      }
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "stage": "manuscript_05",
+  "label": "Runtime and biological visuals",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\manuscript_pipeline.py",
+    "--only",
+    "Runtime and biological visuals"
+  ],
+  "status": "complete",
+  "started_unix": 1792942649.4726744,
+  "sources": {
+    "manuscript_pipeline.py": "d364ab09228fc1308d6f970ccd7d777a1f2c38ecb3f63f03fd4df7d5ed61a42a",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f"
+  },
+  "fingerprint": "ae29951caabe0f033ce5af6fb0eb85285275e17d7605519b6c22a389d6a4e2fd",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792942673.8681488,
+  "elapsed_seconds": 24.30339300003834,
+  "outputs": [
+    {
+      "path": "results/paper_results/bio_visual_Leukemia_3class.png",
+      "snapshot": "results/stage_snapshots/manuscript_05/results/paper_results/bio_visual_Leukemia_3class.png",
+      "sha256": "76813c916cdbd31d1f7f62f1b86435ef5f1564b933145209f8e3eea84744c5aa",
+      "bytes": 91654
+    },
+    {
+      "path": "results/paper_results/bio_visual_Lymphoma_3class.png",
+      "snapshot": "results/stage_snapshots/manuscript_05/results/paper_results/bio_visual_Lymphoma_3class.png",
+      "sha256": "f7450a3b19eeff977427c7b9353467a1c85c93660e837f9b0cd52be25afff7d2",
+      "bytes": 81693
+    },
+    {
+      "path": "results/paper_results/bio_visual_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_05/results/paper_results/bio_visual_summary.csv",
+      "sha256": "90cb9b339b2127094cead37dc157924d2943f93450696ea483644ad45c77cc78",
+      "bytes": 140
+    },
+    {
+      "path": "results/paper_results/runtime_and_bio_visuals_report.md",
+      "snapshot": "results/stage_snapshots/manuscript_05/results/paper_results/runtime_and_bio_visuals_report.md",
+      "sha256": "4e4e1a90db8542b3d188089e3050c1a740528291d69d828919bf6621458f11e5",
+      "bytes": 1615
+    },
+    {
+      "path": "results/paper_results/runtime_scaling.png",
+      "snapshot": "results/stage_snapshots/manuscript_05/results/paper_results/runtime_scaling.png",
+      "sha256": "bf1b8f5b37b52341640e5fc402cb0d8dbcd42e31876e78347ae6bb58511fec7f",
+      "bytes": 113781
+    },
+    {
+      "path": "results/paper_results/runtime_scaling_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_05/results/paper_results/runtime_scaling_raw.csv",
+      "sha256": "4248af0a605ecdc736ab544edb9ee1a750721c7de0c8dd4871c91f3a72c43d76",
+      "bytes": 4418
+    },
+    {
+      "path": "results/paper_results/runtime_scaling_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_05/results/paper_results/runtime_scaling_summary.csv",
+      "sha256": "ccb9eb692e0a41551749a57236aaf2ca24243c107b49559fbb5a7a3d9e05976e",
+      "bytes": 2201
+    }
+  ],
+  "log": "results/generated_json/manuscript_05.log",
+  "log_sha256": "72a663462941e3cf5eac86e61140dd9df2d42e92bda5416628214ed211f6c962"
+}

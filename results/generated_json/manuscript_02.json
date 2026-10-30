@@ -1,0 +1,116 @@
+{
+  "stage": "manuscript_02",
+  "label": "Main benchmark",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\manuscript_pipeline.py",
+    "--only",
+    "Main benchmark"
+  ],
+  "status": "complete",
+  "started_unix": 1792942117.1938212,
+  "sources": {
+    "manuscript_pipeline.py": "d364ab09228fc1308d6f970ccd7d777a1f2c38ecb3f63f03fd4df7d5ed61a42a",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f"
+  },
+  "fingerprint": "976f25705a0e32fa2a40f08aaa3b6a23573ca6d8c600af736812a2b69c254f92",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792942398.8420463,
+  "elapsed_seconds": 281.5732985001523,
+  "outputs": [
+    {
+      "path": "results/paper_results/paper_ablation_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_ablation_raw.csv",
+      "sha256": "c340fb97821382866edd3f39d0da0b09ef4a26c174d16751316fdcfc860b1002",
+      "bytes": 56302
+    },
+    {
+      "path": "results/paper_results/paper_ablation_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_ablation_summary.csv",
+      "sha256": "b5290a3d9dca6473087f748ac4af8b116d7a893c9df332252076cd87abaef71d",
+      "bytes": 19657
+    },
+    {
+      "path": "results/paper_results/paper_average_ranks.csv",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_average_ranks.csv",
+      "sha256": "ec920b965b30bb4424ab055a013d482610677756e5e0c1a1e6e978c51771b3d2",
+      "bytes": 352
+    },
+    {
+      "path": "results/paper_results/paper_benchmark_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_benchmark_raw.csv",
+      "sha256": "b978d1e6396328081d524b694810b87fa863df61214d33e79c271186ac2bbac4",
+      "bytes": 78991
+    },
+    {
+      "path": "results/paper_results/paper_benchmark_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_benchmark_summary.csv",
+      "sha256": "0ab086e967774dcc364fd11c6dae43384016f29f94714bf70e2e143aced7ce59",
+      "bytes": 25430
+    },
+    {
+      "path": "results/paper_results/paper_experiment_report.md",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_experiment_report.md",
+      "sha256": "bf1261417c67f5c8bfa1c90334a5d2addde94f3b9f1ccdc569cdbb069d007dfe",
+      "bytes": 5639
+    },
+    {
+      "path": "results/paper_results/paper_family_ari.csv",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_family_ari.csv",
+      "sha256": "f8414af07d3484d28bd59f18ca668d395616312984229cb84d2e308883a922d7",
+      "bytes": 975
+    },
+    {
+      "path": "results/paper_results/paper_fig_ablation.png",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_fig_ablation.png",
+      "sha256": "3ac6b844e6b39cd948ffce8f786856a115bfd3df18ee7f8c0b0d8d51c85dd0c9",
+      "bytes": 106271
+    },
+    {
+      "path": "results/paper_results/paper_fig_ari_by_dataset.png",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_fig_ari_by_dataset.png",
+      "sha256": "351027b18424224adf360f2b2ec969ef300cde0679dbde64d78543b596a5be14",
+      "bytes": 115378
+    },
+    {
+      "path": "results/paper_results/paper_fig_ari_by_family.png",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_fig_ari_by_family.png",
+      "sha256": "63d659259f98c883fb0e890f9c2a04bfe992cd6ddfe30726029e849d5bb2490f",
+      "bytes": 69969
+    },
+    {
+      "path": "results/paper_results/paper_friedman_nemenyi.csv",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_friedman_nemenyi.csv",
+      "sha256": "881ef57b3b7d32f88452f61dc2875dba939195616cb4f41c5d27f11da699e69c",
+      "bytes": 418
+    },
+    {
+      "path": "results/paper_results/paper_friedman_scalars.json",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_friedman_scalars.json",
+      "sha256": "0f4b3c47df6774a911742cf3cca5073d795988adcb5c7850330a77413a3834c6",
+      "bytes": 198
+    },
+    {
+      "path": "results/paper_results/paper_mean_ari_ranking.csv",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_mean_ari_ranking.csv",
+      "sha256": "a9877b25871963cada62eea5b7078840b78c82ca2b5d4108f4d19bb7c4f07c44",
+      "bytes": 362
+    },
+    {
+      "path": "results/paper_results/paper_tables_latex_snippet.txt",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_tables_latex_snippet.txt",
+      "sha256": "b58d3a29685909c1bd9386eb54fdd97201e5e73b3b65309b59272c10bc664064",
+      "bytes": 2506
+    },
+    {
+      "path": "results/paper_results/paper_wilcoxon_vs_mbc.csv",
+      "snapshot": "results/stage_snapshots/manuscript_02/results/paper_results/paper_wilcoxon_vs_mbc.csv",
+      "sha256": "8333d4e07ec1790120213e10f78628183e5d147e992f1b6a3083dcbd71f04538",
+      "bytes": 734
+    }
+  ],
+  "log": "results/generated_json/manuscript_02.log",
+  "log_sha256": "a76ed57861a205f64e1ae9da1cc311a3dd0de2439a1669229bea300b5751eac5"
+}

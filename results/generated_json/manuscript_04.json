@@ -1,0 +1,50 @@
+{
+  "stage": "manuscript_04",
+  "label": "External real-data benchmark",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\manuscript_pipeline.py",
+    "--only",
+    "External real-data benchmark"
+  ],
+  "status": "complete",
+  "started_unix": 1792942518.5455816,
+  "sources": {
+    "manuscript_pipeline.py": "d364ab09228fc1308d6f970ccd7d777a1f2c38ecb3f63f03fd4df7d5ed61a42a",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f"
+  },
+  "fingerprint": "a837abe26c762ebf9210fabe5a13b31ca2e5f855ded09c520272ead7fc64e74a",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792942649.3326783,
+  "elapsed_seconds": 130.69856530008838,
+  "outputs": [
+    {
+      "path": "results/paper_results/external_real_benchmark_ari.png",
+      "snapshot": "results/stage_snapshots/manuscript_04/results/paper_results/external_real_benchmark_ari.png",
+      "sha256": "0bbf3154b6c3d0379e791f6da5581a3937d23e99918057baf87764a0b4c3c9df",
+      "bytes": 133592
+    },
+    {
+      "path": "results/paper_results/external_real_benchmark_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_04/results/paper_results/external_real_benchmark_raw.csv",
+      "sha256": "c2670216ed701eb4ed76b570c1802869ede71aa79cc8a28f37a44b7d301d377f",
+      "bytes": 38201
+    },
+    {
+      "path": "results/paper_results/external_real_benchmark_report.md",
+      "snapshot": "results/stage_snapshots/manuscript_04/results/paper_results/external_real_benchmark_report.md",
+      "sha256": "b53bba3feefefe0f106d2e94626ea6a6e0b2dbf0c490208e10b256aa73d77593",
+      "bytes": 4431
+    },
+    {
+      "path": "results/paper_results/external_real_benchmark_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_04/results/paper_results/external_real_benchmark_summary.csv",
+      "sha256": "d4e4124e462ef899232f53db254dd254aed6357a96c6b83bf1769a231292d7ae",
+      "bytes": 7119
+    }
+  ],
+  "log": "results/generated_json/manuscript_04.log",
+  "log_sha256": "b80e1cb82a6d5c0141d19fc1a116396eef2e3f9595efd706b159726adc1754a7"
+}

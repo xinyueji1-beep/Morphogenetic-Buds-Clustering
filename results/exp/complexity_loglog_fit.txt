@@ -1,0 +1,11 @@
+Controlled log-log timing audit
+
+Full Eq. 20 OLS coefficients c1..c4: [9.414539269480917e-09, 1.8777031817576215e-07, 8.702773527282256e-08, 4.713004523693272e-09]
+OLS R^2 = 0.9921 (descriptive; coefficients are not causal operation costs)
+Full Eq. 20 non-negative least-squares coefficients c1..c4: [9.414539269480907e-09, 1.8777031817576154e-07, 8.70277352728223e-08, 4.713004523693268e-09]
+NNLS R^2 = 0.9921 (descriptive only)
+
+axis    slope  ci95_low  ci95_high  r_squared  points
+   n 0.995240  0.873638   1.116841   0.984694       6
+   K 0.387508  0.136332   0.638684   0.695669       6
+   d 0.609762  0.545072   0.674452   0.994174       4

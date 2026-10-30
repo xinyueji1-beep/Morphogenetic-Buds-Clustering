@@ -1,0 +1,79 @@
+{
+  "stage": "r3_exp_driver",
+  "label": "r3_exp_driver",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\exp_driver.py"
+  ],
+  "status": "complete",
+  "started_unix": 1792944911.194585,
+  "sources": {
+    "exp_driver.py": "0ca7dc382ec52e38e13cdb38cb751b9ececaaac28546959c785fb9f63515595e",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f",
+    "gng.py": "e2aaee6df41d89a6431674fa37a86911546cb1935972b1d35e073d12095bdf77"
+  },
+  "fingerprint": "20f8f8ee2cea77e2a86d6bf93c74c364a08b386adbce09fc55a93a339e7d4808",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792945197.6845186,
+  "elapsed_seconds": 286.3110883999616,
+  "outputs": [
+    {
+      "path": "results/exp/complexity.csv",
+      "snapshot": "results/stage_snapshots/r3_exp_driver/results/exp/complexity.csv",
+      "sha256": "432df45074436019d0747a414f2ee633c2df0c8de70c61813357712517a3bd91",
+      "bytes": 3802
+    },
+    {
+      "path": "results/exp/complexity_fit.txt",
+      "snapshot": "results/stage_snapshots/r3_exp_driver/results/exp/complexity_fit.txt",
+      "sha256": "efc70600c7d2dab86333ad6210e793899332068a3a66d324caac7f61df1c91d7",
+      "bytes": 209
+    },
+    {
+      "path": "results/exp/family_means.csv",
+      "snapshot": "results/stage_snapshots/r3_exp_driver/results/exp/family_means.csv",
+      "sha256": "4bc4bb3b48b5e4a5ebf2a2e7f9faf585dc92e3cc6cb64acc4f16a90e99edb0bc",
+      "bytes": 1435
+    },
+    {
+      "path": "results/exp/friedman.txt",
+      "snapshot": "results/stage_snapshots/r3_exp_driver/results/exp/friedman.txt",
+      "sha256": "df27ee4afc629e06df90a4c2a7966f28df272c0b84a1b23994988229c1914356",
+      "bytes": 139
+    },
+    {
+      "path": "results/exp/primary_ari.csv",
+      "snapshot": "results/stage_snapshots/r3_exp_driver/results/exp/primary_ari.csv",
+      "sha256": "ade231ac7ba1bf31ac9e9e011dae4b6054ca7e4a3faaa08bbf181474b451288f",
+      "bytes": 57190
+    },
+    {
+      "path": "results/exp/primary_in_progress.csv",
+      "snapshot": "results/stage_snapshots/r3_exp_driver/results/exp/primary_in_progress.csv",
+      "sha256": "ade231ac7ba1bf31ac9e9e011dae4b6054ca7e4a3faaa08bbf181474b451288f",
+      "bytes": 57190
+    },
+    {
+      "path": "results/exp/primary_predictions.json",
+      "snapshot": "results/stage_snapshots/r3_exp_driver/results/exp/primary_predictions.json",
+      "sha256": "3b89e9f9ded9986442104d4e24fd8a75442d9bcdab93d88ce0114266fd4676a6",
+      "bytes": 1439595
+    },
+    {
+      "path": "results/exp/shape.csv",
+      "snapshot": "results/stage_snapshots/r3_exp_driver/results/exp/shape.csv",
+      "sha256": "591c7f5b139ca25cd87937f27582ad05e04978d8b62756a8b4e7d1cd8f741033",
+      "bytes": 715
+    },
+    {
+      "path": "results/exp/shape_raw.csv",
+      "snapshot": "results/stage_snapshots/r3_exp_driver/results/exp/shape_raw.csv",
+      "sha256": "ef999208c310d7ad6f66779c8e4a049342b529a768d885c35907edbfcd4c34cf",
+      "bytes": 3953
+    }
+  ],
+  "log": "results/generated_json/r3_exp_driver.log",
+  "log_sha256": "845a2edab35e34b1af1f276920ddba95562d66b5fc38f9beb6f5247123010d8f"
+}

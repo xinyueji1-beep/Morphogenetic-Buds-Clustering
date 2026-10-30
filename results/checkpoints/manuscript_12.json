@@ -1,0 +1,146 @@
+{
+  "stage": "manuscript_12",
+  "label": "Reviewer 3 analyses",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\manuscript_pipeline.py",
+    "--only",
+    "Reviewer 3 analyses"
+  ],
+  "status": "complete",
+  "started_unix": 1792943308.0528405,
+  "sources": {
+    "manuscript_pipeline.py": "d364ab09228fc1308d6f970ccd7d777a1f2c38ecb3f63f03fd4df7d5ed61a42a",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f"
+  },
+  "fingerprint": "b3d5bc6e584f34be22394e93a7fee1e56d46d9c3410a85bf323edf5e9d647840",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792943709.5766728,
+  "elapsed_seconds": 401.3759418001864,
+  "outputs": [
+    {
+      "path": "results/paper_results/reviewer3_bud_evolution.png",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_bud_evolution.png",
+      "sha256": "b0caf83ca216e66144eae0e4cbc490d8c9d435c15f9cce130d344a552720ac59",
+      "bytes": 229672
+    },
+    {
+      "path": "results/paper_results/reviewer3_dataset_inventory.csv",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_dataset_inventory.csv",
+      "sha256": "b33ea0628a7dcf1fd1a39c530e0a322ce06f077498ed5542c1f23bacb8a4e7f9",
+      "bytes": 3269
+    },
+    {
+      "path": "results/paper_results/reviewer3_dynamics_trajectory.csv",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_dynamics_trajectory.csv",
+      "sha256": "f8aa253ce5e2ff09eecadb3afe5128d71c38736f12241489c531a496ea284527",
+      "bytes": 17320
+    },
+    {
+      "path": "results/paper_results/reviewer3_dynamics_trajectory.png",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_dynamics_trajectory.png",
+      "sha256": "1f8b2ddd0106d8b5068b3cbf087acb059106d4612ba1c9a4d60c99e6d80382aa",
+      "bytes": 159669
+    },
+    {
+      "path": "results/paper_results/reviewer3_full_suite_wallclock.csv",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_full_suite_wallclock.csv",
+      "sha256": "b90f95647df1421261db3bd855a5ee0fd484eda55f938f0588cb51e3c6d6945e",
+      "bytes": 225
+    },
+    {
+      "path": "results/paper_results/reviewer3_runtime_axes.png",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_runtime_axes.png",
+      "sha256": "db3c481f269ba51773b87d7fb411d21bafd7a3f5790b770543434444aa4bf5e2",
+      "bytes": 92149
+    },
+    {
+      "path": "results/paper_results/reviewer3_runtime_axes_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_runtime_axes_raw.csv",
+      "sha256": "1037555bfc9e8fa41531c0e4ba9b63fad1fa9d174bafbccd7a2d346a4f0948b2",
+      "bytes": 2213
+    },
+    {
+      "path": "results/paper_results/reviewer3_runtime_axes_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_runtime_axes_summary.csv",
+      "sha256": "3473cfe1478b1d22ad13865b4bea60babd3c07ec9629375011e04c32e2f94a3e",
+      "bytes": 734
+    },
+    {
+      "path": "results/paper_results/reviewer3_runtime_complexity_fit.csv",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_runtime_complexity_fit.csv",
+      "sha256": "353de84037d75d53a1873b63ec70d73edf2d16840ea42bfd06ab312eafb728b0",
+      "bytes": 160
+    },
+    {
+      "path": "results/paper_results/reviewer3_scale_benchmark_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_scale_benchmark_raw.csv",
+      "sha256": "6a09d3ce384fe197c9bd9452de4919aecc34e7746041595f02fbe1ecdccee6ec",
+      "bytes": 4342
+    },
+    {
+      "path": "results/paper_results/reviewer3_scale_benchmark_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_scale_benchmark_summary.csv",
+      "sha256": "97f3af86601fc82a2c6338398788c5ba7c0113af53ba7d61c7af6c429639144e",
+      "bytes": 1110
+    },
+    {
+      "path": "results/paper_results/reviewer3_synthetic_geometry.png",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_synthetic_geometry.png",
+      "sha256": "fd8b25a5cb326915aff5f1014a01f73f197240f5ce718009e4a34541e07fe30c",
+      "bytes": 397553
+    },
+    {
+      "path": "results/paper_results/reviewer3_synthetic_geometry_inventory.csv",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_synthetic_geometry_inventory.csv",
+      "sha256": "ab4422b9cdb5b808eaf1521c60110185eeb6dbc0a15b790041d03448182acc1f",
+      "bytes": 259
+    },
+    {
+      "path": "results/paper_results/reviewer3_trigger_sensitivity_by_dataset.csv",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_trigger_sensitivity_by_dataset.csv",
+      "sha256": "d0cabf71eadbafbc3944e21f2f195f7d4fd049843863d0cee0c620ac4413416e",
+      "bytes": 847
+    },
+    {
+      "path": "results/paper_results/reviewer3_trigger_sensitivity_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_trigger_sensitivity_raw.csv",
+      "sha256": "fa78389dd04fbb9ec08bbab398bb20592f124d2bbb98aa975c856b7ff46363a8",
+      "bytes": 8133
+    },
+    {
+      "path": "results/paper_results/reviewer3_trigger_sensitivity_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_12/results/paper_results/reviewer3_trigger_sensitivity_summary.csv",
+      "sha256": "5846af12535cb0fe4c4d3421c57ebd17141f230d5a90e98492d9e71429722f28",
+      "bytes": 502
+    },
+    {
+      "path": "figures/paper_figures/reviewer3_bud_evolution.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_12/figures/paper_figures/reviewer3_bud_evolution.pdf",
+      "sha256": "a8da04b99623af69298c809c7333c436e8f9e569e55fb4ca17439ed38964749a",
+      "bytes": 50627
+    },
+    {
+      "path": "figures/paper_figures/reviewer3_dynamics_trajectory.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_12/figures/paper_figures/reviewer3_dynamics_trajectory.pdf",
+      "sha256": "292eec1c66f877bbd0d4fbc7c376410b0d85c5d8023be6181dae01d5f6b7b218",
+      "bytes": 19826
+    },
+    {
+      "path": "figures/paper_figures/reviewer3_runtime_axes.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_12/figures/paper_figures/reviewer3_runtime_axes.pdf",
+      "sha256": "fd6c4e329985a76756ae0828d017394bc5c514443a1eea845e44068ed1f34642",
+      "bytes": 17102
+    },
+    {
+      "path": "figures/paper_figures/reviewer3_synthetic_geometry.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_12/figures/paper_figures/reviewer3_synthetic_geometry.pdf",
+      "sha256": "8c3d9b702ad5a2071554a13ff9f78f68bdf871560246d7ddb9679045e254f310",
+      "bytes": 72563
+    }
+  ],
+  "log": "results/generated_json/manuscript_12.log",
+  "log_sha256": "1098bac6f93419d1eabf85c5e679f1436f256d406dbc96a03baa3e538c49f96e"
+}

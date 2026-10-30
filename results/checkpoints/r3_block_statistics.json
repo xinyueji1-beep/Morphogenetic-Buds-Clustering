@@ -1,0 +1,42 @@
+{
+  "stage": "r3_block_statistics",
+  "label": "r3_block_statistics",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\reviewer3_statistics.py"
+  ],
+  "status": "complete",
+  "started_unix": 1792946123.65495,
+  "sources": {
+    "reviewer3_statistics.py": "bef7f326a50298389e0a069c0f62913f904d26719b03c084cf5c114cd2e001c4",
+    "exp_driver.py": "0ca7dc382ec52e38e13cdb38cb751b9ececaaac28546959c785fb9f63515595e"
+  },
+  "fingerprint": "e4d53fcf92b2f773e4a439005b50142c5b4a79c5c0c271203e5d2394ee4f312f",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792946128.8782248,
+  "elapsed_seconds": 5.004355000099167,
+  "outputs": [
+    {
+      "path": "results/exp/primary_block_means.csv",
+      "snapshot": "results/stage_snapshots/r3_block_statistics/results/exp/primary_block_means.csv",
+      "sha256": "18d4527c09ccf67dab4bfa1e489a85a1ff57bb63db05319a7ff203c2def3005e",
+      "bytes": 2204
+    },
+    {
+      "path": "results/exp/primary_block_statistics.json",
+      "snapshot": "results/stage_snapshots/r3_block_statistics/results/exp/primary_block_statistics.json",
+      "sha256": "2b500bc7d4b0e6b30d0b9b1518427584dd4fea1015d03f5bbd5fe177f1b1bb33",
+      "bytes": 1323
+    },
+    {
+      "path": "results/exp/primary_block_wilcoxon.csv",
+      "snapshot": "results/stage_snapshots/r3_block_statistics/results/exp/primary_block_wilcoxon.csv",
+      "sha256": "88e71364713ab40ec8a44fb28bc6a6c77bbd0931756d7b69af00ac7421a3735c",
+      "bytes": 944
+    }
+  ],
+  "log": "results/generated_json/r3_block_statistics.log",
+  "log_sha256": "97f7dde405e1c730d356c0eb0857916e024b7b2c81f4c23f084c42b8cb662f8a"
+}

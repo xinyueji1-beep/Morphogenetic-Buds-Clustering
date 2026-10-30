@@ -1,0 +1,41 @@
+{
+  "stage": "r3_complexity_analysis",
+  "label": "r3_complexity_analysis",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\reviewer3_complexity_analysis.py"
+  ],
+  "status": "complete",
+  "started_unix": 1792946144.1782951,
+  "sources": {
+    "reviewer3_complexity_analysis.py": "dd4c2935477d42386f71be6b5448ac43f8ba36cfe8eaec10b9d065c9af9fd853"
+  },
+  "fingerprint": "b4e21329e1a9dead73e7afec43f9e63b07b209c19a645be22296d99176b90c0a",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792946147.007333,
+  "elapsed_seconds": 2.598197199869901,
+  "outputs": [
+    {
+      "path": "results/exp/complexity_loglog_fit.json",
+      "snapshot": "results/stage_snapshots/r3_complexity_analysis/results/exp/complexity_loglog_fit.json",
+      "sha256": "d60ad2b0a752d08ba4315610a2a41a7f10fcc99063dac3010fd9006de5cf7dcb",
+      "bytes": 1635
+    },
+    {
+      "path": "results/exp/complexity_loglog_fit.txt",
+      "snapshot": "results/stage_snapshots/r3_complexity_analysis/results/exp/complexity_loglog_fit.txt",
+      "sha256": "f26e1e43e1f7360760943f12ed42fe004a4942373da2882ab0859f75e2631083",
+      "bytes": 658
+    },
+    {
+      "path": "results/exp/complexity_loglog_summary.csv",
+      "snapshot": "results/stage_snapshots/r3_complexity_analysis/results/exp/complexity_loglog_summary.csv",
+      "sha256": "737ce869266bd5006c9c1a7741a77e0d1ea112d535383096c12425d39852f425",
+      "bytes": 292
+    }
+  ],
+  "log": "results/generated_json/r3_complexity_analysis.log",
+  "log_sha256": "f26e1e43e1f7360760943f12ed42fe004a4942373da2882ab0859f75e2631083"
+}

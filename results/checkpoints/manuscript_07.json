@@ -1,0 +1,80 @@
+{
+  "stage": "manuscript_07",
+  "label": "Cluster figures",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\manuscript_pipeline.py",
+    "--only",
+    "Cluster figures"
+  ],
+  "status": "complete",
+  "started_unix": 1792942756.1335297,
+  "sources": {
+    "manuscript_pipeline.py": "d364ab09228fc1308d6f970ccd7d777a1f2c38ecb3f63f03fd4df7d5ed61a42a",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f"
+  },
+  "fingerprint": "c89b0121248b9639aa85428dbd7dd4a0ac71425b54a5377c48913b27d3439f95",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792942775.5873282,
+  "elapsed_seconds": 19.348736099898815,
+  "outputs": [
+    {
+      "path": "results/paper_results/publication_bio_expression_pca.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_07/results/paper_results/publication_bio_expression_pca.pdf",
+      "sha256": "ed64801b9d10acb00e6561155c3e857a3a744df333e94011a6c5dd0bf073e212",
+      "bytes": 22259
+    },
+    {
+      "path": "results/paper_results/publication_bio_expression_pca.png",
+      "snapshot": "results/stage_snapshots/manuscript_07/results/paper_results/publication_bio_expression_pca.png",
+      "sha256": "d35de3bd727d0aad7992db91ddf2afee932c193216bbed78cc20483e6a6d0f53",
+      "bytes": 166668
+    },
+    {
+      "path": "results/paper_results/publication_bio_expression_pca_scores.csv",
+      "snapshot": "results/stage_snapshots/manuscript_07/results/paper_results/publication_bio_expression_pca_scores.csv",
+      "sha256": "36cfcdae8fab152ed0ea0737f9da0925840c9538e95e61b72fa1dd24bdf36f7f",
+      "bytes": 79
+    },
+    {
+      "path": "results/paper_results/publication_morphogenesis_diagram.png",
+      "snapshot": "results/stage_snapshots/manuscript_07/results/paper_results/publication_morphogenesis_diagram.png",
+      "sha256": "c8eaccfe4db786ec9aa32d1f17dad6b7c67d1e61a411085aa2d9df47ed1d7e78",
+      "bytes": 278162
+    },
+    {
+      "path": "results/paper_results/publication_nonconvex_showcase.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_07/results/paper_results/publication_nonconvex_showcase.pdf",
+      "sha256": "c97a67b30a59612080d30235955d0bfdbfe16c304f29ba904f60eede86ac9461",
+      "bytes": 122853
+    },
+    {
+      "path": "results/paper_results/publication_nonconvex_showcase.png",
+      "snapshot": "results/stage_snapshots/manuscript_07/results/paper_results/publication_nonconvex_showcase.png",
+      "sha256": "c148b4466ae8593855aba5dc568761f58f0cc9d8e37ad37f544eb6c2896e9298",
+      "bytes": 763700
+    },
+    {
+      "path": "results/paper_results/publication_nonconvex_showcase_scores.csv",
+      "snapshot": "results/stage_snapshots/manuscript_07/results/paper_results/publication_nonconvex_showcase_scores.csv",
+      "sha256": "1603762ef46b851b4b2228b282f9d2d18403f92806f906c6503c81a78e70bc08",
+      "bytes": 118
+    },
+    {
+      "path": "figures/paper_figures/publication_morphogenesis_diagram.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_07/figures/paper_figures/publication_morphogenesis_diagram.pdf",
+      "sha256": "b7f1d12002888e34ee9d6d9fd299901c7a614ecc7994a7aaf8670194a98fa541",
+      "bytes": 49722
+    },
+    {
+      "path": "figures/paper_png_previews/publication_morphogenesis_diagram.png",
+      "snapshot": "results/stage_snapshots/manuscript_07/figures/paper_png_previews/publication_morphogenesis_diagram.png",
+      "sha256": "c8eaccfe4db786ec9aa32d1f17dad6b7c67d1e61a411085aa2d9df47ed1d7e78",
+      "bytes": 278162
+    }
+  ],
+  "log": "results/generated_json/manuscript_07.log",
+  "log_sha256": "38900d55369f643b8d5561ac9c0f998e65f7ce4be29550ddd07293e1b18426f6"
+}

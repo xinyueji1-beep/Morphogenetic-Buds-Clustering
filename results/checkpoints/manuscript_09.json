@@ -1,0 +1,98 @@
+{
+  "stage": "manuscript_09",
+  "label": "YYC200 analysis",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\manuscript_pipeline.py",
+    "--only",
+    "YYC200 analysis"
+  ],
+  "status": "complete",
+  "started_unix": 1792942786.4870508,
+  "sources": {
+    "manuscript_pipeline.py": "d364ab09228fc1308d6f970ccd7d777a1f2c38ecb3f63f03fd4df7d5ed61a42a",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f"
+  },
+  "fingerprint": "9590972905f9aa5e6465c6092fca34962a1e012c58387a87a75146104bae68d0",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792942806.6755285,
+  "elapsed_seconds": 20.06409569992684,
+  "outputs": [
+    {
+      "path": "results/hyperspectral_exploration/band_stats.csv",
+      "snapshot": "results/stage_snapshots/manuscript_09/results/hyperspectral_exploration/band_stats.csv",
+      "sha256": "968ab301db1685c7570d15ad2ef13de3066a0e54bc634227b9f6a51a447258f3",
+      "bytes": 6450
+    },
+    {
+      "path": "results/hyperspectral_exploration/cluster_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_09/results/hyperspectral_exploration/cluster_summary.csv",
+      "sha256": "683274e9bb5eba333f1a411ade7237c751900e8fe4ad739120f101161b40871e",
+      "bytes": 473
+    },
+    {
+      "path": "results/hyperspectral_exploration/kmeans_labels.npy",
+      "snapshot": "results/stage_snapshots/manuscript_09/results/hyperspectral_exploration/kmeans_labels.npy",
+      "sha256": "18ecfa4a58d13c9bbec51df74f9efa4edbe0130c8e44e8a74cac677361b191bf",
+      "bytes": 80128
+    },
+    {
+      "path": "results/hyperspectral_exploration/k_selection_metrics.csv",
+      "snapshot": "results/stage_snapshots/manuscript_09/results/hyperspectral_exploration/k_selection_metrics.csv",
+      "sha256": "05b37f524de1fb0c8fe9e61b56d5add6aeb74140a1ee7d7bf138daa24ef44ca5",
+      "bytes": 446
+    },
+    {
+      "path": "results/hyperspectral_exploration/model_summary.json",
+      "snapshot": "results/stage_snapshots/manuscript_09/results/hyperspectral_exploration/model_summary.json",
+      "sha256": "59e2f53edbbaf338b1771852a648ca68eccbb0c25d922b11ea35d24a44c003dc",
+      "bytes": 1625
+    },
+    {
+      "path": "results/hyperspectral_exploration/yyc200_analysis_report.md",
+      "snapshot": "results/stage_snapshots/manuscript_09/results/hyperspectral_exploration/yyc200_analysis_report.md",
+      "sha256": "ce18b252ca5a908ab37afce8f71fb842774469c63781245c241a82f7fbca69ce",
+      "bytes": 3222
+    },
+    {
+      "path": "figures/hyperspectral_exploration/cluster_spectra.png",
+      "snapshot": "results/stage_snapshots/manuscript_09/figures/hyperspectral_exploration/cluster_spectra.png",
+      "sha256": "aed9cf534d00b9275d2d3e1df19ca26041f783c962d4e54e17165486ab02b2fc",
+      "bytes": 180515
+    },
+    {
+      "path": "figures/hyperspectral_exploration/kmeans_cluster_map.png",
+      "snapshot": "results/stage_snapshots/manuscript_09/figures/hyperspectral_exploration/kmeans_cluster_map.png",
+      "sha256": "307e6e2fa9f3829beaf44220ff3f962334faee346679de0c3dadc8e2583f7a1a",
+      "bytes": 54712
+    },
+    {
+      "path": "figures/hyperspectral_exploration/ndvi_like.png",
+      "snapshot": "results/stage_snapshots/manuscript_09/figures/hyperspectral_exploration/ndvi_like.png",
+      "sha256": "79f2500a0c862b0b0b6a6c7a9897b4b99e7abee933fe1593296483f58ba6ce52",
+      "bytes": 161235
+    },
+    {
+      "path": "figures/hyperspectral_exploration/pca_rgb.png",
+      "snapshot": "results/stage_snapshots/manuscript_09/figures/hyperspectral_exploration/pca_rgb.png",
+      "sha256": "257d6b6234b2ed7b3fb3becd74019bb80b573d8d0d6c21b97ee6748fca579536",
+      "bytes": 107853
+    },
+    {
+      "path": "figures/hyperspectral_exploration/pca_variance.png",
+      "snapshot": "results/stage_snapshots/manuscript_09/figures/hyperspectral_exploration/pca_variance.png",
+      "sha256": "b7066ec31de80e463adac88e4de11ef530a72abb33196b84c39f931c57356da0",
+      "bytes": 36776
+    },
+    {
+      "path": "figures/hyperspectral_exploration/quicklook_rgb.png",
+      "snapshot": "results/stage_snapshots/manuscript_09/figures/hyperspectral_exploration/quicklook_rgb.png",
+      "sha256": "144105ade223606873499130e84b0541ae324f6733c3e76a09a6221b32948b80",
+      "bytes": 110150
+    }
+  ],
+  "log": "results/generated_json/manuscript_09.log",
+  "log_sha256": "5063df7e9a1b5976b3ae9e9a74c9c9f5877ee65f0cf14912109a064393b297ba"
+}

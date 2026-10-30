@@ -1,0 +1,36 @@
+{
+  "stage": "r3_true_gng_shapes",
+  "label": "r3_true_gng_shapes",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\reviewer3_true_gng_shapes.py"
+  ],
+  "status": "complete",
+  "started_unix": 1792946129.123195,
+  "sources": {
+    "reviewer3_true_gng_shapes.py": "819dab9cd71920eeae87dff124c77c2e6d7ae56de89c59ed704e59d9ae9a5a75",
+    "gng.py": "e2aaee6df41d89a6431674fa37a86911546cb1935972b1d35e073d12095bdf77"
+  },
+  "fingerprint": "a6048c37b0d64347ded07d387c58e659a0c3dfe92f713995e41a65985f3f117d",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792946143.907328,
+  "elapsed_seconds": 14.579595200018957,
+  "outputs": [
+    {
+      "path": "results/exp/shape.csv",
+      "snapshot": "results/stage_snapshots/r3_true_gng_shapes/results/exp/shape.csv",
+      "sha256": "7206a9b6597cedffa154ae8acef4b135f8338e503a84da83e63d2aae85f19120",
+      "bytes": 708
+    },
+    {
+      "path": "results/exp/true_gng_shape_raw.csv",
+      "snapshot": "results/stage_snapshots/r3_true_gng_shapes/results/exp/true_gng_shape_raw.csv",
+      "sha256": "ff3aa0da9cae61f1cae8590f91195c83ad0fcf889e6ab1fad74de77fca547b0c",
+      "bytes": 685
+    }
+  ],
+  "log": "results/generated_json/r3_true_gng_shapes.log",
+  "log_sha256": "6a826bdac821548257a6546b6ffedf0095193231951035cf638a3ccd15a559af"
+}

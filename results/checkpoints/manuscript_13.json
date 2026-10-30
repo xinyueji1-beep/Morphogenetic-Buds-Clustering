@@ -1,0 +1,92 @@
+{
+  "stage": "manuscript_13",
+  "label": "Reviewer 3 round-2 analyses",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\manuscript_pipeline.py",
+    "--only",
+    "Reviewer 3 round-2 analyses"
+  ],
+  "status": "complete",
+  "started_unix": 1792943709.9806771,
+  "sources": {
+    "manuscript_pipeline.py": "d364ab09228fc1308d6f970ccd7d777a1f2c38ecb3f63f03fd4df7d5ed61a42a",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f"
+  },
+  "fingerprint": "9afdb71b51271062026e81c69dd339f4b30fd02f27aafdb3fd7707b77fe6ab24",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792943821.9694154,
+  "elapsed_seconds": 111.82445459999144,
+  "outputs": [
+    {
+      "path": "results/paper_results/reviewer3r2_disjoint_seeds_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_13/results/paper_results/reviewer3r2_disjoint_seeds_raw.csv",
+      "sha256": "72cf3b90cd19c8041997a53d00c6a2e41593b3bcfa8544b4bc80159d63420784",
+      "bytes": 27218
+    },
+    {
+      "path": "results/paper_results/reviewer3r2_disjoint_seeds_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_13/results/paper_results/reviewer3r2_disjoint_seeds_summary.csv",
+      "sha256": "0f006778f01e198530da4a34253df3ca570fde3b7b8ec33f3d5636e6bcc8ecaa",
+      "bytes": 360
+    },
+    {
+      "path": "results/paper_results/reviewer3r2_refinement_trajectory.csv",
+      "snapshot": "results/stage_snapshots/manuscript_13/results/paper_results/reviewer3r2_refinement_trajectory.csv",
+      "sha256": "4c6da349c3d7c408fcf4c83109d035150db9be2b8d98f76b1ee5c2e3040d2681",
+      "bytes": 10799
+    },
+    {
+      "path": "results/paper_results/reviewer3r2_refinement_trajectory.png",
+      "snapshot": "results/stage_snapshots/manuscript_13/results/paper_results/reviewer3r2_refinement_trajectory.png",
+      "sha256": "1428d5547b83242aac16f8bf5c348d8e090bbf94236cbaf2b57221c87100b9d6",
+      "bytes": 124127
+    },
+    {
+      "path": "results/paper_results/reviewer3r2_related_primary_by_dataset.csv",
+      "snapshot": "results/stage_snapshots/manuscript_13/results/paper_results/reviewer3r2_related_primary_by_dataset.csv",
+      "sha256": "08fbe721cee4b7bac74e9568c0afba35c46e945f676033a54b56b1bf130e8a53",
+      "bytes": 972
+    },
+    {
+      "path": "results/paper_results/reviewer3r2_related_primary_raw.csv",
+      "snapshot": "results/stage_snapshots/manuscript_13/results/paper_results/reviewer3r2_related_primary_raw.csv",
+      "sha256": "5bf9b8b3ce822dc98a4232c387068e7c5fb528c6c6fd89e03b239384c45aab54",
+      "bytes": 14415
+    },
+    {
+      "path": "results/paper_results/reviewer3r2_related_primary_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_13/results/paper_results/reviewer3r2_related_primary_summary.csv",
+      "sha256": "6c96720ecfb44a066f984652c46a78951954598f7d071c26571506ea627b4e7f",
+      "bytes": 175
+    },
+    {
+      "path": "results/paper_results/reviewer3r2_sensitivity_reconcile.csv",
+      "snapshot": "results/stage_snapshots/manuscript_13/results/paper_results/reviewer3r2_sensitivity_reconcile.csv",
+      "sha256": "ac53d1f97948bb70bb3e7cc1d21d0ffeca8b11ee18487653f66cc4fa51fcd9d9",
+      "bytes": 361
+    },
+    {
+      "path": "results/paper_results/reviewer3r2_six_structures.png",
+      "snapshot": "results/stage_snapshots/manuscript_13/results/paper_results/reviewer3r2_six_structures.png",
+      "sha256": "8b8cbd2bb747d7c71cb8f67505def8508b89ff30acf95d3cd50aca712282d829",
+      "bytes": 412763
+    },
+    {
+      "path": "figures/paper_figures/reviewer3r2_refinement_trajectory.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_13/figures/paper_figures/reviewer3r2_refinement_trajectory.pdf",
+      "sha256": "458042b6e20223a753a5056f4eecadf3726a07d9acca6d348f5fb4ac44c7c180",
+      "bytes": 17922
+    },
+    {
+      "path": "figures/paper_figures/reviewer3r2_six_structures.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_13/figures/paper_figures/reviewer3r2_six_structures.pdf",
+      "sha256": "fe89ec84dbf40a0ac859f3a8ffdac18494c32548f20213a4dad5e78d05725817",
+      "bytes": 62817
+    }
+  ],
+  "log": "results/generated_json/manuscript_13.log",
+  "log_sha256": "4b4f45cdeed00ef941fa1b3091da98872d384515817c9dd51e962119e2cf7630"
+}

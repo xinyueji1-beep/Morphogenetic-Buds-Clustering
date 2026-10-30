@@ -1,0 +1,66 @@
+{
+  "input": "results/exp/primary_ari.csv",
+  "methods": [
+    "AffinityPropagation",
+    "Agglomerative",
+    "CompactRefineOnly",
+    "DBSCAN",
+    "GMM",
+    "GNG",
+    "HDBSCAN",
+    "KMeans",
+    "MBC",
+    "MeanShift",
+    "Spectral"
+  ],
+  "n_raw_datasets": 14,
+  "n_blocks": 12,
+  "block_definitions": {
+    "Moons": [
+      "two_moons",
+      "noisy_moons"
+    ],
+    "Circles": [
+      "circles",
+      "noisy_circles"
+    ],
+    "Varied density": [
+      "varied_density"
+    ],
+    "Anisotropic blobs": [
+      "anisotropic_blobs"
+    ],
+    "Iris": [
+      "iris"
+    ],
+    "Wine": [
+      "wine"
+    ],
+    "Breast Cancer": [
+      "breast_cancer"
+    ],
+    "Digits 0-4": [
+      "digits_0_4"
+    ],
+    "Ecoli": [
+      "ecoli"
+    ],
+    "Glass": [
+      "glass"
+    ],
+    "Vehicle": [
+      "vehicle"
+    ],
+    "CMC": [
+      "cmc"
+    ]
+  },
+  "raw_friedman_chi2": 30.764456060111105,
+  "raw_friedman_p": 0.0006416401272459711,
+  "block_friedman_chi2": 27.943640517897958,
+  "block_friedman_p": 0.0018431360157347065,
+  "iman_davenport_f": 3.339041945892283,
+  "iman_davenport_p": 0.0007981410365685956,
+  "wilcoxon_method": "paired, two-sided; zero differences excluded",
+  "wilcoxon_output": "results/exp/primary_block_wilcoxon.csv"
+}

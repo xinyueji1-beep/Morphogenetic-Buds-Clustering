@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "check": "targeted_affinity_propagation_large_n_recheck",
+  "date": "2026-10-27",
+  "environment": {
+    "python": "3.10.18",
+    "numpy": "2.2.6",
+    "scikit_learn": "1.7.2",
+    "platform": "Windows 10.0.19045 x64",
+    "cpu": "Intel(R) Core(TM) i9-10885H CPU @ 2.40GHz",
+    "logical_processors": 16,
+    "visible_memory_gib": 31.73,
+    "free_memory_before_run_gib": 5.96,
+    "during_seed_3_sample": {
+      "process_working_set_gib": 3.42,
+      "process_private_memory_gib": 4.36,
+      "system_free_memory_gib": 2.68,
+      "note": "One sample while seed 3 was fitting; this is not a peak-memory measurement."
+    }
+  },
+  "case": {
+    "name": "large_n_imbalanced_largeK_d30",
+    "observations": 10446,
+    "dimensions": 30,
+    "clusters": 15,
+    "generator": "reviewer3_scale_all_methods.large_n",
+    "generator_seed_offset": 4000,
+    "center_radius": 8.0,
+    "cluster_size_rule": "round(geomspace(2000, 120, 15))",
+    "standardized": true
+  },
+  "method": {
+    "name": "AffinityPropagation",
+    "arguments": {
+      "damping": 0.75,
+      "max_iter": 500,
+      "random_state": "algorithm seed"
+    },
+    "other_parameters": "scikit-learn 1.7.2 defaults"
+  },
+  "runs": [
+    {
+      "seed": 3,
+      "ari": 0.091228796,
+      "seconds": 124.19
+    },
+    {
+      "seed": 7,
+      "ari": 0.095228576,
+      "seconds": 137.47
+    },
+    {
+      "seed": 11,
+      "ari": 0.090477391,
+      "seconds": 108.665
+    }
+  ],
+  "code_sha256": {
+    "code/main/reviewer3_scale_all_methods.py": "98f1b65acb2ddbe53dc5f94af75f7caea7846ac821326068cbc0cf4d5c0d5da",
+    "code/main/exp_driver.py": "0ca7dc382ec52e38e13cdb38cb751b9ececaaac28546959c785fb9f63515595e",
+    "code/main/mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f",
+    "code/main/gng.py": "e2aaee6df41d89a6431674fa37a86911546cb1935972b1d35e073d12095bdf77"
+  },
+  "note": "All three targeted fits completed in the local hologpu environment. Timings are host-dependent. This is a targeted algorithm check, not a forced rerun of the entire pipeline."
+}

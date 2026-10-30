@@ -1,0 +1,74 @@
+{
+  "stage": "manuscript_06",
+  "label": "YYC200 case study",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\manuscript_pipeline.py",
+    "--only",
+    "YYC200 case study"
+  ],
+  "status": "complete",
+  "started_unix": 1792942674.056182,
+  "sources": {
+    "manuscript_pipeline.py": "d364ab09228fc1308d6f970ccd7d777a1f2c38ecb3f63f03fd4df7d5ed61a42a",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f"
+  },
+  "fingerprint": "d98851f85b8df8237e522fc7f85db5bda50c8fd118dbcd6e42006b79a1b95e1f",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792942755.8925235,
+  "elapsed_seconds": 81.74003410013393,
+  "outputs": [
+    {
+      "path": "results/paper_results/hyperspectral_yyc_mbc_cluster_summary.csv",
+      "snapshot": "results/stage_snapshots/manuscript_06/results/paper_results/hyperspectral_yyc_mbc_cluster_summary.csv",
+      "sha256": "e6ac5052ee3307648cd19d4bce196f52ffbcd194442beb14bbdc7b9aa1e0cc86",
+      "bytes": 508
+    },
+    {
+      "path": "results/paper_results/hyperspectral_yyc_mbc_labels.npy",
+      "snapshot": "results/stage_snapshots/manuscript_06/results/paper_results/hyperspectral_yyc_mbc_labels.npy",
+      "sha256": "1e653d33f8f3e587fe20ef350458d05b27a2296a20899f38649e9a63233bbdd6",
+      "bytes": 80128
+    },
+    {
+      "path": "results/paper_results/hyperspectral_yyc_mbc_metrics.csv",
+      "snapshot": "results/stage_snapshots/manuscript_06/results/paper_results/hyperspectral_yyc_mbc_metrics.csv",
+      "sha256": "2be8b50fa187aa330bc5f34b0c0d111113f3985f345d4ab00f767d82a9435ff2",
+      "bytes": 1079
+    },
+    {
+      "path": "results/paper_results/hyperspectral_yyc_mbc_summary.json",
+      "snapshot": "results/stage_snapshots/manuscript_06/results/paper_results/hyperspectral_yyc_mbc_summary.json",
+      "sha256": "c11efe7397cb5c7e8f1504308b3ad93a4982e72149d19aa6a0ddd838e51fc701",
+      "bytes": 570
+    },
+    {
+      "path": "figures/paper_figures/hyperspectral_yyc_mbc_case.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_06/figures/paper_figures/hyperspectral_yyc_mbc_case.pdf",
+      "sha256": "8de6071ebbc82041c25d17499bb92a225d352618f43e307601a2f212f9d9917a",
+      "bytes": 340447
+    },
+    {
+      "path": "figures/paper_figures/hyperspectral_yyc_mbc_spectra.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_06/figures/paper_figures/hyperspectral_yyc_mbc_spectra.pdf",
+      "sha256": "516e099b05f63f74b944ae797049227e7b9fb0d822edc11ddb5e3ccf1531bef7",
+      "bytes": 18757
+    },
+    {
+      "path": "figures/paper_png_previews/hyperspectral_yyc_mbc_case.png",
+      "snapshot": "results/stage_snapshots/manuscript_06/figures/paper_png_previews/hyperspectral_yyc_mbc_case.png",
+      "sha256": "4fa49788a8dbdc3e759e0d6dd2c057def268ea628c219b9e1f81d28dd931ccb5",
+      "bytes": 395971
+    },
+    {
+      "path": "figures/paper_png_previews/hyperspectral_yyc_mbc_spectra.png",
+      "snapshot": "results/stage_snapshots/manuscript_06/figures/paper_png_previews/hyperspectral_yyc_mbc_spectra.png",
+      "sha256": "a4dac5e4d1953799c88cc0e8f8c9a04641233c21f5323d0d4411159ef9b26788",
+      "bytes": 212174
+    }
+  ],
+  "log": "results/generated_json/manuscript_06.log",
+  "log_sha256": "653649378c8e04831ba7293d2e8f11b84dd7155c282a01dd7849e756eecde059"
+}

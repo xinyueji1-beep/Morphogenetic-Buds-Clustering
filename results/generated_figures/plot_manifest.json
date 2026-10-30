@@ -1,0 +1,29 @@
+{
+  "status": "complete",
+  "model_fits": 0,
+  "outputs": [
+    "paper/figures/paper_figures/synthetic_geometries.pdf",
+    "paper/figures/paper_figures/publication_morphogenesis_diagram.pdf",
+    "paper/figures/paper_figures/paper_fig_ablation_lollipop.pdf",
+    "paper/figures/paper_figures/reviewer3r2_six_structures.pdf",
+    "paper/figures/paper_figures/reviewer3_dynamics_trajectory.pdf",
+    "paper/figures/paper_figures/reviewer3r2_refinement_trajectory.pdf",
+    "paper/figures/paper_figures/reviewer3_runtime_axes.pdf",
+    "paper/figures/paper_figures/reviewer3r2_indian_pines_maps.pdf",
+    "paper/figures/paper_figures/public_shape_benchmarks.pdf"
+  ],
+  "inputs": {
+    "complexity.json": "fb69b5f3e8a4d97dcd7de6b3b3c3a46f7ef355bf9a1e9f2bbe23d489fc0dad69",
+    "indian_maps.json": "282c9320075918823cb6e58d8385da04c61812f8e8db6db372141e4c907f1c36",
+    "overview.json": "40ace5347a26250212c9a427c286335684e5caeb9bde3382c2bb86f39ae22453",
+    "paper_ablation_raw.json": "c48c61531df80037811af9df23be291f1276fadc99465caf4017189dad54ed5b",
+    "primary_ari.json": "bbaf01e9c8f22d74814d71f9bb47f149cda01bdaed86d20d890edc2b395acaa9",
+    "primary_geometry.json": "4f5b3428d9dba70b40bdeae008284217bca390219d7da446b587d3570babb41f",
+    "reviewer3r2_refinement_trajectory.json": "5ad3373dbe7531c44106bf617472348bc895b31cd00f187409be885c860951cb",
+    "reviewer3_dynamics_trajectory.json": "c79940a8126524b5dadff7490d1fe15c24e5326c227e26af5e800133561a6c0e",
+    "six_structures.json": "0d8ee7404ed047de880bbff3708d6a997166e0bbe6cc71cb1c2af7f03cde6d8f",
+    "standard_shapes_raw.json": "45a8e2d02a32a2cadfa4da87117c46f81a2659e3867ecfc2cf95916c29b42314",
+    "wine_equation_walkthrough.json": "1fe1486b807c2f91790e236410ffa51eb458a99e3a513f8775f784f8ffb81a92",
+    "wine_stopping_steps.json": "64a1c43c56f999e1c19194952da95678d1428632a44639a8aaa7e325bd391bc3"
+  }
+}

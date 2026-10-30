@@ -1,0 +1,43 @@
+{
+  "stage": "standard_shapes",
+  "label": "standard_shapes",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\standard_shapes.py"
+  ],
+  "status": "complete",
+  "started_unix": 1792946147.2523246,
+  "sources": {
+    "standard_shapes.py": "3ccdaceca80a71cfa02763626e4be17cda1b67d2976cc07f0587b32f1063a81b",
+    "exp_driver.py": "0ca7dc382ec52e38e13cdb38cb751b9ececaaac28546959c785fb9f63515595e",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f"
+  },
+  "fingerprint": "b64ea211192ef3b771ce91f711db9c918f63a991f67bb0a9d102639c62341bf2",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792946179.798081,
+  "elapsed_seconds": 32.342750099953264,
+  "outputs": [
+    {
+      "path": "results/exp/standard_shapes_in_progress.csv",
+      "snapshot": "results/stage_snapshots/standard_shapes/results/exp/standard_shapes_in_progress.csv",
+      "sha256": "e146cc0451e2d8aeca1b977607138bbcf8a6e4dc482fd6d56220d2eaef89f53d",
+      "bytes": 7829
+    },
+    {
+      "path": "results/exp/standard_shapes_plot_data.json",
+      "snapshot": "results/stage_snapshots/standard_shapes/results/exp/standard_shapes_plot_data.json",
+      "sha256": "5f0f4fdeec68dd2ff019450cf0e87db7678106aab99117c5ac5f87b7e2927e5d",
+      "bytes": 176188
+    },
+    {
+      "path": "results/exp/standard_shapes_raw.csv",
+      "snapshot": "results/stage_snapshots/standard_shapes/results/exp/standard_shapes_raw.csv",
+      "sha256": "e146cc0451e2d8aeca1b977607138bbcf8a6e4dc482fd6d56220d2eaef89f53d",
+      "bytes": 7829
+    }
+  ],
+  "log": "results/generated_json/standard_shapes.log",
+  "log_sha256": "10547e9f389b6fada53e5775f604bedb0aac808a42e116ff04891569da877e27"
+}

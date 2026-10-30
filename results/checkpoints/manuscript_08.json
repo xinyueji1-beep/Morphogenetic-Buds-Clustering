@@ -1,0 +1,86 @@
+{
+  "stage": "manuscript_08",
+  "label": "Advanced figures",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\manuscript_pipeline.py",
+    "--only",
+    "Advanced figures"
+  ],
+  "status": "complete",
+  "started_unix": 1792942775.8753467,
+  "sources": {
+    "manuscript_pipeline.py": "d364ab09228fc1308d6f970ccd7d777a1f2c38ecb3f63f03fd4df7d5ed61a42a",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f"
+  },
+  "fingerprint": "256bc846a65555d8fe279101d7cec004c220412812ed3b067c484b094e3cd1c8",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792942786.131047,
+  "elapsed_seconds": 10.138015499804169,
+  "outputs": [
+    {
+      "path": "figures/paper_figures/external_real_benchmark_rankflow.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_08/figures/paper_figures/external_real_benchmark_rankflow.pdf",
+      "sha256": "a0649a4f99c0963ec52d7d963004ea723f9e910882d174bae459031880a10cfb",
+      "bytes": 30396
+    },
+    {
+      "path": "figures/paper_figures/mbc_sensitivity_curves.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_08/figures/paper_figures/mbc_sensitivity_curves.pdf",
+      "sha256": "90f17ceaf73bdb213aedb7eab73d7bc1190b09af9410da6392a5af350135c550",
+      "bytes": 24075
+    },
+    {
+      "path": "figures/paper_figures/paper_fig_ablation_lollipop.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_08/figures/paper_figures/paper_fig_ablation_lollipop.pdf",
+      "sha256": "2bd4c97a1209affa3e3c0810fc5cb759a39ac6f48741a3a2a2baa0bfc640febb",
+      "bytes": 23681
+    },
+    {
+      "path": "figures/paper_figures/paper_fig_dataset_dotprofile.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_08/figures/paper_figures/paper_fig_dataset_dotprofile.pdf",
+      "sha256": "085811064d4a639883d37ea7c47558d833c228913c877c0df51d560f775295df",
+      "bytes": 30755
+    },
+    {
+      "path": "figures/paper_figures/paper_fig_family_heatmap.pdf",
+      "snapshot": "results/stage_snapshots/manuscript_08/figures/paper_figures/paper_fig_family_heatmap.pdf",
+      "sha256": "5eee0cfe1118244558d6b8c34be9019af540ca06438100237c4d4e5f9b02cfac",
+      "bytes": 49695
+    },
+    {
+      "path": "figures/paper_png_previews/external_real_benchmark_rankflow.png",
+      "snapshot": "results/stage_snapshots/manuscript_08/figures/paper_png_previews/external_real_benchmark_rankflow.png",
+      "sha256": "b650bee7c58ef549c4d05c552b493cad10c872d046bb069ec354e7d112be0b45",
+      "bytes": 523085
+    },
+    {
+      "path": "figures/paper_png_previews/mbc_sensitivity_curves.png",
+      "snapshot": "results/stage_snapshots/manuscript_08/figures/paper_png_previews/mbc_sensitivity_curves.png",
+      "sha256": "334a664ee7c236e3b8ddd8f90ab240853f336a8bdd489d1e4914090d6b11eec9",
+      "bytes": 170791
+    },
+    {
+      "path": "figures/paper_png_previews/paper_fig_ablation_lollipop.png",
+      "snapshot": "results/stage_snapshots/manuscript_08/figures/paper_png_previews/paper_fig_ablation_lollipop.png",
+      "sha256": "e4ef48da673a2eacd29c81c6b889048645154010804a4d27eb487261190340c8",
+      "bytes": 126740
+    },
+    {
+      "path": "figures/paper_png_previews/paper_fig_dataset_dotprofile.png",
+      "snapshot": "results/stage_snapshots/manuscript_08/figures/paper_png_previews/paper_fig_dataset_dotprofile.png",
+      "sha256": "773b35aaeb9e656d7e2a319560611b672abab757b8303683374eb3864b6373f6",
+      "bytes": 247195
+    },
+    {
+      "path": "figures/paper_png_previews/paper_fig_family_heatmap.png",
+      "snapshot": "results/stage_snapshots/manuscript_08/figures/paper_png_previews/paper_fig_family_heatmap.png",
+      "sha256": "3dabe49c846a030de7cf86b770c0aa1d58a82513b1bdfacc5717bf97e74c7116",
+      "bytes": 293116
+    }
+  ],
+  "log": "results/generated_json/manuscript_08.log",
+  "log_sha256": "00fd869e2b0afb4b9c45eacc19ec1ed281a61a587fe91a2c8cafc3e3692f2fa6"
+}

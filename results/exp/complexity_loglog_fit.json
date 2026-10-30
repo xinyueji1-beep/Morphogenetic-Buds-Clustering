@@ -1,0 +1,60 @@
+{
+  "generator": {
+    "n_axis": "K=8, d=30; fixed circular centre geometry, Gaussian SD 0.3, jitter SD 0.05 only for replication",
+    "K_axis": "n=2000, d=2; centre count varied on the same circular geometry family, Gaussian SD 0.3",
+    "d_axis": "n=2000, K=8; centres in the first two coordinates, zero offsets in added dimensions, Gaussian SD 0.3",
+    "seeds": [
+      3,
+      7,
+      11
+    ]
+  },
+  "eq20_ols_coefficients": [
+    9.414539269480917e-09,
+    1.8777031817576215e-07,
+    8.702773527282256e-08,
+    4.713004523693272e-09
+  ],
+  "eq20_ols_r_squared": 0.9920817952033268,
+  "eq20_nonnegative_coefficients": [
+    9.414539269480907e-09,
+    1.8777031817576154e-07,
+    8.70277352728223e-08,
+    4.713004523693268e-09
+  ],
+  "eq20_nonnegative_r_squared": 0.9920817952033268,
+  "realized_k32_mean_sd": [
+    26.666666666666668,
+    3.7859388972001824
+  ],
+  "realized_k64_mean_sd": [
+    27.666666666666668,
+    0.5773502691896258
+  ],
+  "loglog": [
+    {
+      "axis": "n",
+      "slope": 0.9952395069831206,
+      "ci95_low": 0.8736383619045609,
+      "ci95_high": 1.1168406520616803,
+      "r_squared": 0.9846937381370392,
+      "points": 6
+    },
+    {
+      "axis": "K",
+      "slope": 0.3875077558093714,
+      "ci95_low": 0.13633175576065537,
+      "ci95_high": 0.6386837558580875,
+      "r_squared": 0.6956691031586837,
+      "points": 6
+    },
+    {
+      "axis": "d",
+      "slope": 0.6097621238711788,
+      "ci95_low": 0.5450719626183208,
+      "ci95_high": 0.6744522851240368,
+      "r_squared": 0.9941744620594448,
+      "points": 4
+    }
+  ]
+}

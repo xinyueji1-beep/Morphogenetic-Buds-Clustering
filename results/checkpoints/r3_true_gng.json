@@ -1,0 +1,88 @@
+{
+  "stage": "r3_true_gng",
+  "label": "r3_true_gng",
+  "command": [
+    "C:\\Users\\xyh\\anaconda3\\envs\\hologpu\\python.exe",
+    "-u",
+    "F:\\\u79d1\u7814\u4e13\u7528lean\u9a8c\u8bc1\\MBC1023\\\u672c\u4eba\u5355\u72ec\u6d4b\u8bd5\u7b2c\u4e8c\u6b21\\code\\main\\reviewer3_true_gng.py"
+  ],
+  "status": "complete",
+  "started_unix": 1792946052.6518986,
+  "sources": {
+    "reviewer3_true_gng.py": "15ef1e04082b5aa40ecc1f8a77eef75d2cb55d9b039bec8486bb5f42a109a5ad",
+    "reviewer3_scale_all_methods.py": "8ffeca184422570a638e0cfb8ccedf6bf194c8f570ca18cb0c0d241d2a9428f0",
+    "exp_driver.py": "0ca7dc382ec52e38e13cdb38cb751b9ececaaac28546959c785fb9f63515595e",
+    "mbc.py": "4b64b8e95f2a5b76ad7608e289416d5ae240f58cf4dc86cc987db502782e741f",
+    "gng.py": "e2aaee6df41d89a6431674fa37a86911546cb1935972b1d35e073d12095bdf77",
+    "scale_geometry.py": "10e5226f97bb545d124364df8a94a273c5b0d22afd98edec92e9db03eefa3c04"
+  },
+  "fingerprint": "bb896e37959325575df75ee7deb548ff699998f29f48ec9e4c44e46fc6cd8dc7",
+  "resumed": false,
+  "returncode": 0,
+  "completed_unix": 1792946123.2919598,
+  "elapsed_seconds": 70.42484120000154,
+  "outputs": [
+    {
+      "path": "results/paper_results/reviewer3_scale_all_methods_before_true_gng.csv",
+      "snapshot": "results/stage_snapshots/r3_true_gng/results/paper_results/reviewer3_scale_all_methods_before_true_gng.csv",
+      "sha256": "bbe71fe6819490c96abf28c423f00070ec65ffb136de57fd34680d76c1e3f0da",
+      "bytes": 7233
+    },
+    {
+      "path": "results/paper_results/reviewer3_scale_all_methods_raw.csv",
+      "snapshot": "results/stage_snapshots/r3_true_gng/results/paper_results/reviewer3_scale_all_methods_raw.csv",
+      "sha256": "13f8edad8651120774c037993215ec16ed09f21d32b4975fcc6b69f2deaa12be",
+      "bytes": 7255
+    },
+    {
+      "path": "results/paper_results/reviewer3_true_gng_scale_raw.csv",
+      "snapshot": "results/stage_snapshots/r3_true_gng/results/paper_results/reviewer3_true_gng_scale_raw.csv",
+      "sha256": "e30ef27cd4a17edf4f65870d2b0dde6f767a9679fd50d69d0c416846e20e7bd4",
+      "bytes": 782
+    },
+    {
+      "path": "results/exp/family_means.csv",
+      "snapshot": "results/stage_snapshots/r3_true_gng/results/exp/family_means.csv",
+      "sha256": "67485d93af68a53f7d9cc0861a695d286696f0b0e2792af2360b779d38e86d03",
+      "bytes": 1430
+    },
+    {
+      "path": "results/exp/primary_ari.csv",
+      "snapshot": "results/stage_snapshots/r3_true_gng/results/exp/primary_ari.csv",
+      "sha256": "fe668512941f8745418cfd9759a87b27335777ac060565c22a70b2b78d0afec0",
+      "bytes": 55793
+    },
+    {
+      "path": "results/exp/primary_ari_before_true_gng.csv",
+      "snapshot": "results/stage_snapshots/r3_true_gng/results/exp/primary_ari_before_true_gng.csv",
+      "sha256": "ade231ac7ba1bf31ac9e9e011dae4b6054ca7e4a3faaa08bbf181474b451288f",
+      "bytes": 57190
+    },
+    {
+      "path": "results/exp/primary_true_gng.csv",
+      "snapshot": "results/stage_snapshots/r3_true_gng/results/exp/primary_true_gng.csv",
+      "sha256": "65d698b2f156b6b2a442ec11846da8ce9ff877efc1230c9e7eedefb8dcec42c7",
+      "bytes": 4884
+    },
+    {
+      "path": "results/exp/true_gng_nonconvex_scale.csv",
+      "snapshot": "results/stage_snapshots/r3_true_gng/results/exp/true_gng_nonconvex_scale.csv",
+      "sha256": "39011f0ba414cea92e830d73a09ff5d2b96168cef6a68b0b74db95daa3c3863f",
+      "bytes": 823
+    },
+    {
+      "path": "results/exp/true_gng_primary_stats.json",
+      "snapshot": "results/stage_snapshots/r3_true_gng/results/exp/true_gng_primary_stats.json",
+      "sha256": "e1821bb364beb94496717b326d2e17e66894bc6d5c37d8b40e21e6d926982daa",
+      "bytes": 524
+    },
+    {
+      "path": "results/exp/true_gng_run_manifest.json",
+      "snapshot": "results/stage_snapshots/r3_true_gng/results/exp/true_gng_run_manifest.json",
+      "sha256": "f353886d46a52c92a1ef628adf48256068cd50adc77a80230a74834407f23a30",
+      "bytes": 771
+    }
+  ],
+  "log": "results/generated_json/r3_true_gng.log",
+  "log_sha256": "05a0ce4671eca191bdfb8cafb2668ad88ecb23e808a24ba14881e3ce8a7945ed"
+}

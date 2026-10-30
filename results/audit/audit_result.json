@@ -1,0 +1,221 @@
+{
+  "pass": 43,
+  "fail": 0,
+  "checks": [
+    {
+      "name": "main MBC rows",
+      "ok": true,
+      "detail": "rows=70"
+    },
+    {
+      "name": "main MBC overall",
+      "ok": true,
+      "detail": "got=0.5919, expected=0.5919"
+    },
+    {
+      "name": "main MBC two_moons",
+      "ok": true,
+      "detail": "got=1.0000, expected=1.0000"
+    },
+    {
+      "name": "main MBC noisy_moons",
+      "ok": true,
+      "detail": "got=0.6799, expected=0.6799"
+    },
+    {
+      "name": "main MBC circles",
+      "ok": true,
+      "detail": "got=1.0000, expected=1.0000"
+    },
+    {
+      "name": "main MBC noisy_circles",
+      "ok": true,
+      "detail": "got=1.0000, expected=1.0000"
+    },
+    {
+      "name": "main MBC varied_density",
+      "ok": true,
+      "detail": "got=0.0151, expected=0.0151"
+    },
+    {
+      "name": "main MBC anisotropic_blobs",
+      "ok": true,
+      "detail": "got=0.8895, expected=0.8895"
+    },
+    {
+      "name": "main MBC iris",
+      "ok": true,
+      "detail": "got=0.6161, expected=0.6161"
+    },
+    {
+      "name": "main MBC wine",
+      "ok": true,
+      "detail": "got=0.8975, expected=0.8975"
+    },
+    {
+      "name": "main MBC breast_cancer",
+      "ok": true,
+      "detail": "got=0.6673, expected=0.6673"
+    },
+    {
+      "name": "main MBC digits_0_4",
+      "ok": true,
+      "detail": "got=0.7335, expected=0.7335"
+    },
+    {
+      "name": "main MBC ecoli",
+      "ok": true,
+      "detail": "got=0.5279, expected=0.5279"
+    },
+    {
+      "name": "main MBC glass",
+      "ok": true,
+      "detail": "got=0.1604, expected=0.1604"
+    },
+    {
+      "name": "main MBC vehicle",
+      "ok": true,
+      "detail": "got=0.0758, expected=0.0758"
+    },
+    {
+      "name": "main MBC cmc",
+      "ok": true,
+      "detail": "got=0.0230, expected=0.0230"
+    },
+    {
+      "name": "scale summary MBC high_d_6000_K20_imbalanced_pca10",
+      "ok": true,
+      "detail": "got=0.9448, expected=0.9448"
+    },
+    {
+      "name": "scale summary MBC large_n_imbalanced_largeK_d30",
+      "ok": true,
+      "detail": "got=0.8934, expected=0.8934"
+    },
+    {
+      "name": "scale raw shape",
+      "ok": true,
+      "detail": "rows=66"
+    },
+    {
+      "name": "scale raw methods",
+      "ok": true,
+      "detail": "methods=11"
+    },
+    {
+      "name": "scale raw seeds",
+      "ok": true,
+      "detail": "seeds=[3, 7, 11]"
+    },
+    {
+      "name": "scale raw MBC high_d_6000_K20_imbalanced_pca10",
+      "ok": true,
+      "detail": "mean=0.9448, n=3"
+    },
+    {
+      "name": "scale raw MBC large_n_imbalanced_largeK_d30",
+      "ok": true,
+      "detail": "mean=0.8934, n=3"
+    },
+    {
+      "name": "Lung raw dimensions",
+      "ok": true,
+      "detail": "shape=(203, 12601)"
+    },
+    {
+      "name": "Lung raw labels",
+      "ok": true,
+      "detail": "counts=[6, 17, 20, 21, 139]"
+    },
+    {
+      "name": "Lung processed dimensions",
+      "ok": true,
+      "detail": "shape=(203, 13)"
+    },
+    {
+      "name": "Lung processed labels",
+      "ok": true,
+      "detail": "counts=[6, 17, 20, 21, 139]"
+    },
+    {
+      "name": "Lung ledger DBSCAN",
+      "ok": true,
+      "detail": "got=0.4092, expected=0.4092"
+    },
+    {
+      "name": "Lung ledger Spectral",
+      "ok": true,
+      "detail": "got=0.2908, expected=0.2908"
+    },
+    {
+      "name": "Lung ledger GMM",
+      "ok": true,
+      "detail": "got=0.2906, expected=0.2906"
+    },
+    {
+      "name": "Lung ledger Agglomerative",
+      "ok": true,
+      "detail": "got=0.2232, expected=0.2232"
+    },
+    {
+      "name": "Lung ledger MBC",
+      "ok": true,
+      "detail": "got=0.1492, expected=0.1492"
+    },
+    {
+      "name": "dataset manifest Lung rows",
+      "ok": true,
+      "detail": "n_samples=['203', '203']"
+    },
+    {
+      "name": "baseline parameter export schema",
+      "ok": true,
+      "detail": "schema=1"
+    },
+    {
+      "name": "baseline parameter methods",
+      "ok": true,
+      "detail": "methods=11"
+    },
+    {
+      "name": "baseline density record count",
+      "ok": true,
+      "detail": "records=97"
+    },
+    {
+      "name": "baseline density suite counts",
+      "ok": true,
+      "detail": "counts={'primary': 70, 'public_sipu_shapes': 9, 'compact_scale_all_methods': 6, 'two_moon_scale': 12}"
+    },
+    {
+      "name": "baseline density values finite and positive",
+      "ok": true,
+      "detail": "all exported epsilon and bandwidth values are positive"
+    },
+    {
+      "name": "input hash manifest schema",
+      "ok": true,
+      "detail": "schema=1"
+    },
+    {
+      "name": "input hash manifest entries",
+      "ok": true,
+      "detail": "files=195"
+    },
+    {
+      "name": "input hash manifest digests",
+      "ok": true,
+      "detail": "all bundled file digests have expected lengths"
+    },
+    {
+      "name": "input hash required records",
+      "ok": true,
+      "detail": "Lung raw/processed and public SIPU files present"
+    },
+    {
+      "name": "input hash manifest matches files",
+      "ok": true,
+      "detail": "verified=195"
+    }
+  ]
+}

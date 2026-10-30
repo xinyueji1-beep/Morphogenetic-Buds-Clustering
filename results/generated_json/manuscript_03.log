@@ -1,0 +1,10 @@
+
+==> Sensitivity analysis
+parameter
+compact_refinement_restarts    0.8941
+compact_refinement_steps       0.8425
+organ_merge_radius             0.9191
+tangent_alignment              0.9191
+<== completed in 114.0 s
+
+Selected analysis completed.
